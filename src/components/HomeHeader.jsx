@@ -13,7 +13,7 @@ function HomeHeader() {
               </h5>
             </div>
             <div className="navigation d-none d-lg-block">
-              <nav className="navigation__menu" id="offcanvas__menu">
+              <nav className="navigation__menu">
                 <ul className="list-unstyled">
                   <li className="navigation__menu--item">
                     <Link to="/" className="navigation__menu--item__link">Home</Link>
@@ -39,18 +39,9 @@ function HomeHeader() {
             </div>
 
             <div className="rts__menu d-flex gap-5 align-items-center">
-              <div className="header__right__btn d-flex gap-3">
-                <a
-                  href="#"
-                  className="small__btn he-3 d-none d-sm-flex no__fill__btn border-6 font-xs"
-                  aria-label="Login Button"
-                  data-bs-toggle="modal"
-                  data-bs-target="#loginModal"
-                >
-                  Sign In
-                </a>
-                
-              </div>
+            <div className="header__right__btn d-flex gap-3">
+                            <a href="#" className="small__btn d-none d-sm-flex no__fill__btn border-6 font-xs" aria-label="Login Button" data-bs-toggle="modal" data-bs-target="#loginModal"> <i className="rt-login"></i>Sign In</a>
+                                </div>
             </div>
           </div>
         </div>

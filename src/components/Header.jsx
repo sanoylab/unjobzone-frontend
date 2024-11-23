@@ -12,7 +12,6 @@ function Header() {
                <Link to="/">UN JobZone</Link>
               </h5>
                     </div>
-                    <div className="rts__menu d-flex gap-5 gap-lg-4 gap-xl-5 align-items-center">
                         <div className="navigation d-none d-lg-block">
                         <nav className="navigation__menu" id="offcanvas__menu">
                 <ul className="list-unstyled">
@@ -39,10 +38,10 @@ function Header() {
               </nav>
 </div>
 
-                        <div className="header__right__btn d-flex gap-3">
+<div className="header__right__btn d-flex gap-3">
                             <a href="#" className="small__btn d-none d-sm-flex no__fill__btn border-6 font-xs" aria-label="Login Button" data-bs-toggle="modal" data-bs-target="#loginModal"> <i className="rt-login"></i>Sign In</a>
                                 </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
