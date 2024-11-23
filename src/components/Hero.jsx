@@ -3,22 +3,23 @@ import itc_logo from '../assets/images/itc-logo.png'
 import un_logo from '../assets/images/un-logo.png'
 import unaids_logo from '../assets/images/unaids-logo.png'
 import who_logo from '../assets/images/who-logo.png'
-import wfp_logo from '../assets/images/wfp-logo.png'
+import unhcr_logo from '../assets/images/unhcr-logo.png'
 import hero_banner from '../assets/img/home-6/banner/banner-shape.svg'
+import sdg from '../assets/images/sdg.png'
 function Hero() {
   return (
     <section className="rts__banner position-relative home__six__banner">
     <div className="container">
       <div className="row justify-content-between">
-        {/* <div className="rts__banner__shape d-none d-lg-block">
+        <div className="rts__banner__shape d-none d-lg-block">
           <div className="shape__one shape">
             <img src={unicef_logo} alt="" className='small-image' />
           </div>
-          <div className="shape__two shape">
-            <img src={itc_logo} alt="" />
-          </div>
+          {/* <div className="shape__two shape" style={{ borderRadius: '50%' }}>
+                        <img src={itc_logo} alt="" />
+          </div> */}
           <div className="shape__three shape">
-            <img src={wfp_logo} alt="" />
+            <img src={unhcr_logo} alt="" />
           </div>
           <div className="shape__four shape">
             <img src={who_logo} alt="" />
@@ -29,11 +30,11 @@ function Hero() {
           <div className="shape__six shape">
             <img src={unaids_logo} alt="" />
           </div>
-        </div> */}
+        </div>
         <div className="rts__banner__wrapper position-relative z-3 text-center">
           <div className="rts__banner__content">
             <h1 className="rts__banner__title mb-4  wow animated fadeInUp">
-              Explore A new job opportunities
+              Explore United Nations <br />job opportunities
             </h1>
             <p className="mb-40 br-lg-none  wow animated fadeInUp">
               Looking for a new job can be both exciting and daunting.
@@ -99,9 +100,9 @@ function Hero() {
               />
             </div>
             <div>
-              <img
+              <img style={{ width: '310px' }}
                 className="rounded-2"
-                src="/src/assets/img/home-6/banner/banner-image-2.jpg"
+                src={sdg}
                 alt=""
               />
             </div>

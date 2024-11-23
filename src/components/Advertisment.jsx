@@ -1,4 +1,3 @@
-import React from 'react'
 
 const Advertisment = () => {
   return (
@@ -7,7 +6,7 @@ const Advertisment = () => {
         <div className="row align-items-center g-5">
             <div className="col-lg-6">
                 <div className="rts__content__section">
-                    <h3 className="fw-bold l--3 mb-4  wow animated fadeInUp">1000+ Jobs in Jobpath Find The One That Best Match You</h3>
+                    <h3 className="fw-bold l--3 mb-4  wow animated fadeInUp">1000+ Jobs in UN Job Zone Find The One That Best Match You</h3>
                     <p className=" wow animated fadeInUp">Whether you're an experienced professional or a fresh graduate eager to dive into the workforce, we have something for everyone. From tech wizards to marketing mavens</p>
                     <div className="mt-40 rts__listing style__six  wow animated fadeInUp">
                         <div className="single__listing d-flex align-items-center gap-4">
