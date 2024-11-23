@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -8,36 +9,30 @@ function Header() {
           <div className="d-flex align-items-center justify-content-between">
             <div className="rts__logo">
               <h5>
-                UN JobZone
+               <Link to="/">UN JobZone</Link>
               </h5>
             </div>
             <div className="navigation d-none d-lg-block">
               <nav className="navigation__menu" id="offcanvas__menu">
                 <ul className="list-unstyled">
                   <li className="navigation__menu--item">
-                    <a href="#" className="navigation__menu--item__link">
-                      Home
-                    </a>
+                    <Link to="/" className="navigation__menu--item__link">Home</Link>
+                    
                   </li>
                   <li className="navigation__menu--item">
-                    <a href="#" className="navigation__menu--item__link">
-                      Jobs
-                    </a>
+                    <Link to="/jobs" className="navigation__menu--item__link">Browse Jobs</Link>
+                    
                   </li>
                   <li className="navigation__menu--item">
-                    <a href="#" className="navigation__menu--item__link">
-                      Organizations
-                    </a>
+                    <Link to="/organizations" className="navigation__menu--item__link">Organizations</Link>
+                    
                   </li>
                   <li className="navigation__menu--item">
-                    <a href="#" className="navigation__menu--item__link">
-                      Duty Stations
-                    </a>
+                    <Link to="/duty-stations" className="navigation__menu--item__link">Duty Stations</Link>
+                   
                   </li>
                   <li className="navigation__menu--item">
-                    <a href="#" className="navigation__menu--item__link">
-                      Daily Blog
-                    </a>
+                    <Link to="/daily-blog" className="navigation__menu--item__link">Daily Blog</Link>                    
                   </li>
                 </ul>
               </nav>
@@ -54,22 +49,7 @@ function Header() {
                 >
                   Sign In
                 </a>
-                <a
-                  href="#"
-                  className="small__btn he-3 d-none d-sm-flex fill__btn border-6 font-xs"
-                  aria-label="Job Posting Button"
-                >
-                  Add Job
-                </a>
-                <button
-                  className="d-md-block d-lg-none"
-                  type="button"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#offcanvas"
-                  aria-controls="offcanvas"
-                >
-                  <i className="fa-sharp fa-regular fa-bars"></i>
-                </button>
+                
               </div>
             </div>
           </div>

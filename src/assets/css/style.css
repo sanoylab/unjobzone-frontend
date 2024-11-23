@@ -740,7 +740,7 @@ h2,
 
 h3,
 .h3 {
-   font-size: 48px !important;
+   font-size: var(--h3);
    line-height: 58px;
 }
 
@@ -5621,8 +5621,8 @@ input::placeholder {
 
 .home__five__banner .rts__banner__shape .shape__one,
 .home__five__banner .rts__banner__shape .shape__two {
-   height: 68px;
-   width: 68px;
+   height: 80px;
+   width: 80px;
    border-radius: 50%;
    background: linear-gradient(180deg, #58D379 0%, #44B964 100%);
 }
@@ -5713,7 +5713,7 @@ input::placeholder {
    place-items: center;
    display: grid;
    box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
-   border-radius: 6px;
+   border-radius: 50%;
    background-color: var(--rts-white);
 }
 
@@ -7499,12 +7499,11 @@ input::placeholder {
 }
 
 .rts__job__card .company__icon {
-   height: 60px;
-   width: 60px;
+   
+   width: 140px;
    display: grid;
    place-items: center;
    border-radius: 6px;
-   background-color: var(--rts-gray);
    transition: var(--transition);
 }
 
@@ -9483,8 +9482,8 @@ input::placeholder {
 
 .top__candidate__bg .rts__banner__shape .shape__one,
 .top__candidate__bg .rts__banner__shape .shape__two {
-   height: 68px;
-   width: 68px;
+   height: 80px;
+   width: 80px;
    border-radius: 50%;
    background: linear-gradient(180deg, #58D379 0%, #44B964 100%);
 }

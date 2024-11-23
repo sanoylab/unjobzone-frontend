@@ -1,5 +1,5 @@
 
-const OrganizationSlider = () => {
+const OrganizationLogoSlider = () => {
   return (
     <div className="rts__brand  wow animated fadeInUp  ">
         <div className="container">
@@ -125,4 +125,4 @@ const OrganizationSlider = () => {
   )
 }
 
-export default OrganizationSlider
+export default OrganizationLogoSlider
