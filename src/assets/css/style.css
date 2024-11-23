@@ -7393,15 +7393,19 @@ input::placeholder {
 }
 
 .single__cat.style__six:hover {
-   background: #0B0D28;
+   background: unset;
+   color: #000;
 }
 
 .single__cat.style__six:hover .single__cat__link a {
-   color: var(--rts-white);
+   background: unset;
+   color: #000;
+   text-decoration: underline;
 }
 
 .single__cat.style__six:hover span {
-   color: var(--rts-white);
+   background: unset;
+   color: #000;
 }
 
 .single__cat.style__two {
@@ -7783,12 +7787,12 @@ input::placeholder {
 }
 
 .rts__job__card.style__six:hover {
-   background-color: var(--rts-button-3);
-   color: var(--rts-white);
+   background-color: unset;
+   color: var(--rts-black);
 }
 
 .rts__job__card.style__six:hover .job__title {
-   color: var(--rts-white);
+   color: var(--rts-black);
 }
 
 .rts__single__employer.style__six {

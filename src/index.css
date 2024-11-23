@@ -11,3 +11,9 @@ a{
 .rts__job__card {
   min-height: 325px;
 }
+.job_title{
+  max-width: 850px;
+}
+.organization__logo{
+  width: 150px
+}

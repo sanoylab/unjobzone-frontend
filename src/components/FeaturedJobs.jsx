@@ -4,7 +4,7 @@ import { marked } from 'marked';
 import JobCategory from './JobCategory';
 import { getRecentJobListings } from '../Api'
 
-import Job from './Job';
+import ThumbnailJob from './ThumbnailJob';
 
 function FeaturedJobs() {
 
@@ -44,7 +44,7 @@ function FeaturedJobs() {
         <div className="row g-30">
 
           {jobListings.map((job) => (
-            <Job key = {job.id}           
+            <ThumbnailJob key = {job.id}           
             end_date = {job.end_date}
             duty_station = {job.duty_station}
             recruitment_type = {job.recruitment_type}
