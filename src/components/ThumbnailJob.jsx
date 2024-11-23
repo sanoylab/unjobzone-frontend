@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Job = ({ end_date,duty_station, recruitment_type,job_title, dept}) => {
+const ThumbnailJob = ({ end_date,duty_station, recruitment_type,job_title, dept}) => {
   return (
     <div className="col-lg-4 col-md-6" >
     <div className="rts__job__card style__six">
@@ -32,4 +32,4 @@ const Job = ({ end_date,duty_station, recruitment_type,job_title, dept}) => {
   )
 }
 
-export default Job
+export default ThumbnailJob

@@ -1,20 +1,19 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-function Header() {
+import { Link } from "react-router-dom";
+
+function HomeHeader() {
   return (
-    <header className="rts__section rts__header absolute__header">
+    <header className="rts__section rts__header relative__header">
     <div className="container-none">
-        <div className="rts__menu__background">
-            <div className="row">
-                <div className="d-flex align-items-center justify-content-between">
-                    <div className="rts__logo">
-                    <h5>
+      <div className="rts__menu__background">
+        <div className="row">
+          <div className="d-flex align-items-center justify-content-between">
+            <div className="rts__logo">
+              <h5>
                <Link to="/">UN JobZone</Link>
               </h5>
-                    </div>
-                    <div className="rts__menu d-flex gap-5 gap-lg-4 gap-xl-5 align-items-center">
-                        <div className="navigation d-none d-lg-block">
-                        <nav className="navigation__menu" id="offcanvas__menu">
+            </div>
+            <div className="navigation d-none d-lg-block">
+              <nav className="navigation__menu" id="offcanvas__menu">
                 <ul className="list-unstyled">
                   <li className="navigation__menu--item">
                     <Link to="/" className="navigation__menu--item__link">Home</Link>
@@ -37,18 +36,28 @@ function Header() {
                   </li>
                 </ul>
               </nav>
-</div>
-
-                        <div className="header__right__btn d-flex gap-3">
-                            <a href="#" className="small__btn d-none d-sm-flex no__fill__btn border-6 font-xs" aria-label="Login Button" data-bs-toggle="modal" data-bs-target="#loginModal"> <i className="rt-login"></i>Sign In</a>
-                                </div>
-                    </div>
-                </div>
             </div>
+
+            <div className="rts__menu d-flex gap-5 align-items-center">
+              <div className="header__right__btn d-flex gap-3">
+                <a
+                  href="#"
+                  className="small__btn he-3 d-none d-sm-flex no__fill__btn border-6 font-xs"
+                  aria-label="Login Button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#loginModal"
+                >
+                  Sign In
+                </a>
+                
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</header>
+  </header>
   )
 }
 
-export default Header
+export default HomeHeader

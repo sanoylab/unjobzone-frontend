@@ -1,8 +1,10 @@
 import React from 'react'
+import AllJobs from '../components/AllJobs'
+
 
 function JobsPage() {
   return (
-    <div>JobsPage</div>
+    <AllJobs />
   )
 }
 
