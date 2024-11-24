@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const ListJob = ({ end_date,duty_station, recruitment_type,job_title, dept}) => {
+const ListJob = ({ id, end_date,duty_station, recruitment_type,job_title, dept}) => {
   return (
 
 <div className="col-lg-12">
@@ -12,7 +13,7 @@ const ListJob = ({ end_date,duty_station, recruitment_type,job_title, dept}) => 
                                     </div>
                                     <div className="job__meta">
                                         <div className="d-flex align-items-center gap-3 job_title">
-                                            <a href="#" className="job__title h6">{job_title}</a>
+                                            <Link to={`/job-detail/${id}`} className="job__title h6">{job_title}</Link>
                                         </div>
                                         <div className="d-flex gap-3 flex-wrap gap-lg-4 fw-medium">
                                         <div className="d-flex gap-2 align-items-center">
