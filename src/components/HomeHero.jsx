@@ -89,7 +89,7 @@ function HomeHero() {
             <div>
               <img
                 className="rounded-full"
-                src="/src/assets/img/home-6/banner/banner-image-1.jpg"
+                src="../assets/img/home-6/banner/banner-image-1.jpg"
                 alt=""
               />
             </div>

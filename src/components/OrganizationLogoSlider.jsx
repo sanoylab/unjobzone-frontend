@@ -40,7 +40,7 @@ const OrganizationLogoSlider = () => {
                     <div className="brand__item">
                       <a href="#" className="brand__item__link" aria-label="brand">
                         <img
-                          src="/src/assets/img/home-1/brand/b51.svg"
+                          src="../assets/img/home-1/brand/b51.svg"
                           alt=""
                         />
                       </a>
@@ -50,7 +50,7 @@ const OrganizationLogoSlider = () => {
                     <div className="brand__item">
                       <a href="#" className="brand__item__link" aria-label="brand">
                         <img
-                          src="/src/assets/img/home-1/brand/image1.svg"
+                          src="../assets/img/home-1/brand/image1.svg"
                           alt=""
                         />
                       </a>
@@ -60,7 +60,7 @@ const OrganizationLogoSlider = () => {
                     <div className="brand__item">
                       <a href="#" className="brand__item__link" aria-label="brand">
                         <img
-                          src="/src/assets/img/home-1/brand/image2.svg"
+                          src="../assets/img/home-1/brand/image2.svg"
                           alt=""
                         />
                       </a>
@@ -70,7 +70,7 @@ const OrganizationLogoSlider = () => {
                     <div className="brand__item">
                       <a href="#" className="brand__item__link" aria-label="brand">
                         <img
-                          src="/src/assets/img/home-1/brand/image3.svg"
+                          src="../assets/img/home-1/brand/image3.svg"
                           alt=""
                         />
                       </a>
@@ -80,7 +80,7 @@ const OrganizationLogoSlider = () => {
                     <div className="brand__item">
                       <a href="#" className="brand__item__link" aria-label="brand">
                         <img
-                          src="/src/assets/img/home-1/brand/image4.svg"
+                          src="../assets/img/home-1/brand/image4.svg"
                           alt=""
                         />
                       </a>
@@ -90,7 +90,7 @@ const OrganizationLogoSlider = () => {
                     <div className="brand__item">
                       <a href="#" className="brand__item__link" aria-label="brand">
                         <img
-                          src="/src/assets/img/home-1/brand/image5.svg"
+                          src="../assets/img/home-1/brand/image5.svg"
                           alt=""
                         />
                       </a>
@@ -100,7 +100,7 @@ const OrganizationLogoSlider = () => {
                     <div className="brand__item">
                       <a href="#" className="brand__item__link" aria-label="brand">
                         <img
-                          src="/src/assets/img/home-1/brand/image1.svg"
+                          src="../assets/img/home-1/brand/image1.svg"
                           alt=""
                         />
                       </a>
@@ -110,7 +110,7 @@ const OrganizationLogoSlider = () => {
                     <div className="brand__item">
                       <a href="#" className="brand__item__link" aria-label="brand">
                         <img
-                          src="/src/assets/img/home-1/brand/linkedin-logo-png-20321.svg"
+                          src="../assets/img/home-1/brand/linkedin-logo-png-20321.svg"
                           alt=""
                         />
                       </a>
