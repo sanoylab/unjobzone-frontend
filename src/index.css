@@ -2,8 +2,9 @@ a{
   text-decoration: none;
   color: #000;
 }
+
 .rts__banner{
-  border: 1px solid #ebeff0;
+  border: 0px solid #ebeff0;
 }
 .single__cat.style__six{
   min-height: 150px;
@@ -16,4 +17,61 @@ a{
 }
 .organization__logo{
   width: 150px
+}
+.pagination a.active {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.pagination a.inactive {
+  pointer-events: none;
+  color: grey;
+}
+
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.not-found-title {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.not-found-message {
+  font-size: 1.5rem;
+  color: #6c757d;
+  margin: 20px 0;
+}
+
+.not-found-link {
+  font-size: 1.2rem;
+  color: #007bff;
+  text-decoration: none;
+  border: 2px solid #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.not-found-link:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+.rts__job__details h2{
+  font-size: 1rem !important;
+ 
+}
+.breadcrumb-title{
+  line-height: 85px !important;
+
 }

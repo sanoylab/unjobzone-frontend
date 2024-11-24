@@ -9,7 +9,7 @@ function Header() {
                 <div className="d-flex align-items-center justify-content-between">
                     <div className="rts__logo">
                     <h5>
-               <Link to="/">UN JobZone</Link>
+               <Link to="/"><img src='/src/assets/images/logo.png' style={{width: '200px'}} /></Link>
               </h5>
                     </div>
                         <div className="navigation d-none d-lg-block">

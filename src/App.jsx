@@ -6,6 +6,8 @@ import OrganizationPage from './pages/OrganizationPage';
 import DutyStationPage from './pages/DutyStationPage';
 import DailyBlogPage from './pages/DailyBlogPage';
 import JobCategoryPage from './pages/JobCategoryPage';
+import JobDetail from './pages/JobDetail';
+import NotFoundPage from './pages/NotFoundPage';
 
 
 const router = createBrowserRouter(
@@ -19,6 +21,9 @@ const router = createBrowserRouter(
     <Route path='/duty-stations' element={<DutyStationPage />} />
     <Route path='/daily-blog' element={<DailyBlogPage />} />
     <Route path='/job-categories' element={<JobCategoryPage />} />
+    <Route path='/job-detail/:id' element={<JobDetail />} />
+    <Route path='*' element={<NotFoundPage />} />
+
 
   </Route>
   </>

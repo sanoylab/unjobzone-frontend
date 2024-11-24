@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const ThumbnailJob = ({ end_date,duty_station, recruitment_type,job_title, dept}) => {
+const ThumbnailJob = ({ id, end_date,duty_station, recruitment_type,job_title, dept}) => {
   return (
     <div className="col-lg-4 col-md-6" >
     <div className="rts__job__card style__six">
@@ -21,9 +22,8 @@ const ThumbnailJob = ({ end_date,duty_station, recruitment_type,job_title, dept}
             </div>
         </div>
         <div className="font-20 fw-semibold job__title mt-3 mb-2">
-            <a href="job-details-3.html" aria-label="job" className="job__title">
-                {job_title}
-            </a>
+        <Link to={`/job-detail/${id}`} className="job__title">{job_title}</Link>
+           
         </div>
         <p className='font-sm'>{dept}</p>
         
