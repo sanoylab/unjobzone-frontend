@@ -7,7 +7,7 @@ const ThumbnailJob = ({ id, end_date,duty_station, recruitment_type,job_title, d
     <div className="rts__job__card style__six">
         <div className="d-flex align-items-center flex-wrap justify-content-between">
             <div className="company__icon">
-                <img src="/src/assets/images/unfpa.png" alt="" />
+                <img src="/src/assets/img/unfpa.png" alt="" />
             </div>
             <div className="featured__option">
                 <span>{new Date(end_date).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}</span>

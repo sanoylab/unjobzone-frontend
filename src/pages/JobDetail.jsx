@@ -68,7 +68,7 @@ function JobDetail() {
                <div className="col-lg-4 d-flex flex-column gap-40">
                     <div className="company__card">
                         <div className="img">
-                            <img src="/src/assets/images/unfpa.png" alt="" />
+                            <img src="/src/assets/img/unfpa.png" alt="" />
                         </div>
                         <h5 className="company__name mt-20">{job.dept}</h5>
                         <a href="#" className="company__link d-block mt-20" aria-label="Visit Website" target="_blank">Visit Website</a>
