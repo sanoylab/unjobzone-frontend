@@ -40,11 +40,11 @@ const Advertisment = () => {
             <div className="col-lg-6">
                 <div className="about__image__section position-relative flex-wrap flex-sm-nowrap d-flex justify-content-between gap-5">
                     <div className="shape__image d-none d-lg-block">
-                        <img src="/src/assets/img/home-6/about/shape.svg" alt="" />
+                        <img src="../assets/img/home-6/about/shape.svg" alt="" />
                     </div>
                     <div className="about__image__one align-self-end">
                         <figure>
-                            <img src="/src/assets/img/home-6/about/1.webp" alt="" />
+                            <img src="../assets/img/home-6/about/1.webp" alt="" />
                         </figure>
                     </div>
                     <div className="about__applicant">
@@ -52,16 +52,16 @@ const Advertisment = () => {
                             <span className="font-20 mb-3 d-block fw-medium">Applicants</span>
                             <div className="applicant__list">
                                 <div className="single__list">
-                                    <img src="/src/assets/img/author/1.svg" alt="" />
+                                    <img src="../assets/img/author/1.svg" alt="" />
                                 </div>
                                 <div className="single__list">
-                                    <img src="/src/assets/img/author/2.svg" alt="" />
+                                    <img src="../assets/img/author/2.svg" alt="" />
                                 </div>
                                 <div className="single__list">
-                                    <img src="/src/assets/img/author/3.svg" alt="" />
+                                    <img src="../assets/img/author/3.svg" alt="" />
                                 </div>
                                 <div className="single__list">
-                                    <img src="/src/assets/img/author/4.svg" alt="" />
+                                    <img src="../assets/img/author/4.svg" alt="" />
                                     <div className="icon-plus"><i className="fa-sharp fa-solid fa-plus"></i></div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ const Advertisment = () => {
                     </div>
                     <div className="about__image__two align-self-start">
                         <figure>
-                            <img src="/src/assets/img/home-6/about/2.webp" alt="" />
+                            <img src="../assets/img/home-6/about/2.webp" alt="" />
                         </figure>
                     </div>
                 </div>

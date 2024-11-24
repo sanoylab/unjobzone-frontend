@@ -50,7 +50,7 @@ function JobCategoryCards() {
         {jobCategories.map((category, index) => (
           <JobCategory key={index}
             title={category.jn}
-            image="/src/assets/img/home-6/icon/marketing.svg"
+            image="../assets/img/home-6/icon/marketing.svg"
             totalJobs={category.total}
           />
         ))}
