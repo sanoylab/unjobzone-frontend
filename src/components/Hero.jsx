@@ -7,7 +7,7 @@ function Hero({title}) {
         <div className="row">
             <div className="col-lg-12 position-relative d-flex justify-content-between align-items-center">
                 <div className="breadcrumb__area max-content breadcrumb__padding z-2">
-                    <h1 className="breadcrumb-title h3 mb-3">{title}</h1>
+                    <h3 className="breadcrumb-title h3 mb-3">{title}</h3>
                     <nav>
                         <ul className="breadcrumb m-0 lh-1">
                           <li className="breadcrumb-item"><Link to="/">Home</Link></li>
