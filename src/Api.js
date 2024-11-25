@@ -3,7 +3,7 @@ const token = import.meta.env.VITE_API_TOKEN;
 
 
 export const getJobCategories = async () => {
-  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/jobs/categories/list`, {
+  const response = await fetch(`/api/jobs/categories/list`, {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -37,7 +37,7 @@ export const getJobCategories = async () => {
 // };
 
 export const getJobs = async (page = 1, size = 10, isHome = false) => {
-  const apiUrl = isHome ? `https://unjobzone-api.onrender.com/api/v1/jobs?page=1&size=6` : `https://unjobzone-api.onrender.com/api/v1/jobs?page=${page}&size=${size}`;
+  const apiUrl = isHome ? `/api/jobs?page=1&size=6` : `/api/jobs?page=${page}&size=${size}`;
 
   const response = await fetch(apiUrl, {
     method: 'GET',
@@ -59,7 +59,7 @@ export const getJobs = async (page = 1, size = 10, isHome = false) => {
 
 export const getJobDetail = async (id) => {
   try {
-      const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/jobs/${id}`,{
+      const response = await fetch(`/api/jobs/${id}`,{
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
