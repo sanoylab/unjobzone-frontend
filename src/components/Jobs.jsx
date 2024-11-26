@@ -54,8 +54,9 @@ function Jobs({ isHome = false }) {
 
   const handlePageChange = (page) => {
     if (page > 0 && page <= totalPages) {
-      setCurrentPage(page);
-      navigate(`?page=${page}`);
+      const queryParams = new URLSearchParams(location.search);
+      queryParams.set("page", page);
+      navigate(`?${queryParams.toString()}`);
     }
   };
 
