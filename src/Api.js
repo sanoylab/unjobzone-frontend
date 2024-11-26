@@ -36,9 +36,34 @@ export const getJobCategories = async () => {
 //   return data.data;
 // };
 
-export const getJobs = async (page = 1, size = 10, isHome = false) => {
-  const apiUrl = isHome ? `https://unjobzone-api.onrender.com/api/v1/jobs?page=1&size=6` : `https://unjobzone-api.onrender.com/api/v1/jobs?page=${page}&size=${size}`;
+export const getJobs = async (page = 1, size = 10, isHome = false, duty_station, dept, recruitement_type, start_date, end_date, jn, jf, jc, jl) => {
+  // Helper function to construct query string
+  const constructQueryString = (params) => {
+    return Object.keys(params)
+      .filter(key => params[key] !== undefined && params[key] !== null)
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+      .join('&');
+  };
 
+  // Construct query parameters
+  const queryParams = constructQueryString({
+    page: isHome ? 1 : page,
+    size: isHome ? 6 : size,
+    duty_station,
+    dept,
+    recruitement_type,
+    start_date,
+    end_date,
+    jn,
+    jf,
+    jc,
+    jl
+  });
+
+  // Construct API URL
+  const apiUrl = `https://unjobzone-api.onrender.com/api/v1/jobs/filtered/{query}?${queryParams}`;
+
+  // Fetch data from API
   const response = await fetch(apiUrl, {
     method: 'GET',
     headers: {
@@ -47,13 +72,16 @@ export const getJobs = async (page = 1, size = 10, isHome = false) => {
     }
   });
 
+  // Handle response
   if (!response.ok) {
     throw new Error('Network response was not ok');
   }
 
-  const data = await response.json(); 
+  const data = await response.json();
   return data;
 };
+
+
 
 export const getJobOrganization = async () => {
   const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/jobs/organizations/list`, {
