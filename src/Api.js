@@ -3,7 +3,7 @@ const token = import.meta.env.VITE_API_TOKEN;
 
 
 export const getJobCategories = async () => {
-  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/jobs/categories/list`, {
+  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/jobs/organizations/list`, {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`,
@@ -55,7 +55,22 @@ export const getJobs = async (page = 1, size = 10, isHome = false) => {
   return data;
 };
 
+export const getJobOrganization = async () => {
+  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/jobs/organizations/list`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    }
+  });
 
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const data = await response.json();  
+  return data.data;
+};
 
 export const getJobDetail = async (id) => {
   try {
