@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const OrganizationCard = ({image, title, totalJobs}) => {
   return (
     <div className="col-xl-6 col-lg-6 col-md-6">
@@ -12,9 +12,9 @@ const OrganizationCard = ({image, title, totalJobs}) => {
         />
       </div>
       <div className="single__cat__link d-flex w-100 justify-content-between flex-wrap">
-      <a href={`/jobs?dept=${encodeURIComponent(title)}`} aria-label="cat__label">
+      <Link to={`/jobs?dept=${encodeURIComponent(title)}`} aria-label="cat__label">
         {title}
-      </a>
+      </Link>
         <span>{totalJobs}+ Jobs</span>
       </div>
     </div>
