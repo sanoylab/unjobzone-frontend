@@ -12,9 +12,9 @@ const OrganizationCard = ({image, title, totalJobs}) => {
         />
       </div>
       <div className="single__cat__link d-flex w-100 justify-content-between flex-wrap">
-        <a href="job-list-2.html" aria-label="cat__label">
-          {title}
-        </a>
+      <a href={`/jobs?dept=${encodeURIComponent(title)}`} aria-label="cat__label">
+        {title}
+      </a>
         <span>{totalJobs}+ Jobs</span>
       </div>
     </div>
