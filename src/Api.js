@@ -3,7 +3,7 @@ const token = import.meta.env.VITE_API_TOKEN;
 
 
 export const getJobCategories = async () => {
-  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/jobs/organizations/list`, {
+  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/jobs/categories/list`, {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`,
