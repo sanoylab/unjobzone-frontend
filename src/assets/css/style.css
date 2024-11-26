@@ -6550,7 +6550,7 @@ input::placeholder {
 
 .breadcrumb__background {
    background-image: url("../img/breadcrumb/breadcrumb.png");
-   min-height: 450px;
+   min-height: 250px;
 }
 
 @media screen and (max-width: 992px) {

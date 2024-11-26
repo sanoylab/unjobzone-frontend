@@ -31,13 +31,7 @@ const ListJob = ({ id, end_date,duty_station, recruitment_type,job_title, dept})
                                         </div>
                                     </div>
                                 </div>
-                                <div className="d-flex gap-4 flex-wrap align-items-center">
-                                  
-                                    <div className="d-flex gap-3 flex-wrap">
-                                        
-                                        <button className="apply__btn">Apply Now</button>
-                                    </div>
-                                </div>
+                             
                             </div>
                         </div>
 
