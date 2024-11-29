@@ -15,13 +15,13 @@ function RecentBlog() {
             <div className="col-lg-6">
                 <div className="rts__single__blog style__six">
                     <a href="blog-details.html">
-                        <img src="src/assets/img/home-6/blog.webp" alt="" className="rounded-2" />
+                        <img src="assets/img/home-6/blog.webp" alt="" className="rounded-2" />
                     </a>
                     <a href="#" className="mt-30 mb-4 d-block max-content cat__link">Job Opportunities</a>
                     <a href="blog-details.html" className="blog__title h5">6 Job Opportunities to Consider in the Freight and Logistics Industry</a>
                     <div className="blog__meta__info flex-wrap d-flex gap-3 gap-md-4 mt-4">
-                        <span className="d-flex gap-2 align-items-center"> <img className="svg" src="src/assets/img/icon/calender-black.svg" alt="" /> 20 March, 2022</span>
-                        <a href="#" className="d-flex gap-2 align-items-center"> <img className="svg" src="src/assets/img/icon/user-black.svg" alt="" /> Jon Adom</a>
+                        <span className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/calender-black.svg" alt="" /> 20 March, 2022</span>
+                        <a href="#" className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/user-black.svg" alt="" /> Jon Adom</a>
                     </div>
                 </div>
             </div>
@@ -31,8 +31,8 @@ function RecentBlog() {
                     <a href="#" className="mb-3 d-block max-content cat__link">Job Opportunities</a>
                     <a href="blog-details.html" className="blog__title h5">Navigating the New World: Exploring Modern Job Trends and Careers in the Digital Age</a>
                     <div className="blog__meta__info flex-wrap d-flex gap-3 gap-md-4 mt-4">
-                        <span className="d-flex gap-2 align-items-center"> <img className="svg" src="src/assets/img/icon/calender-black.svg" alt="" /> 20 March, 2022</span>
-                        <a href="#" className="d-flex gap-2 align-items-center"> <img className="svg" src="src/assets/img/icon/user-black.svg" alt="" /> Jon Adom</a>
+                        <span className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/calender-black.svg" alt="" /> 20 March, 2022</span>
+                        <a href="#" className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/user-black.svg" alt="" /> Jon Adom</a>
                     </div>
                 </div>
 
@@ -40,8 +40,8 @@ function RecentBlog() {
                     <a href="#" className="mb-3 d-block max-content cat__link">Job Opportunities</a>
                     <a href="blog-details.html" className="blog__title h5">Empowering Through Trust: Key Principles for Unlocking Employee Potential</a>
                     <div className="blog__meta__info flex-wrap d-flex gap-3 gap-md-4 mt-4">
-                        <span className="d-flex gap-2 align-items-center"> <img className="svg" src="src/assets/img/icon/calender-black.svg" alt="" /> 20 March, 2022</span>
-                        <a href="#" className="d-flex gap-2 align-items-center"> <img className="svg" src="src/assets/img/icon/user-black.svg" alt="" /> Jon Adom</a>
+                        <span className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/calender-black.svg" alt="" /> 20 March, 2022</span>
+                        <a href="#" className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/user-black.svg" alt="" /> Jon Adom</a>
                     </div>
                 </div>
             </div>
