@@ -1,3 +1,4 @@
+import Search from './Search'
 import unicef_logo from '../assets/images/unicef-logo.png'
 import itc_logo from '../assets/images/itc-logo.png'
 import un_logo from '../assets/images/un-logo.png'
@@ -41,49 +42,7 @@ function HomeHero() {
               Navigating the job market involves exploring <br /> various
               avenues, including online job boards.
             </p>
-            <div className="rts__job__search form-2 z-1 position-relative mx-auto max-content mb-5 mb-lg-0  wow animated fadeInUp">
-              <form
-                action="#"
-                className="d-flex align-items-center flex-wrap flex-md-nowrap  gap-4 justify-content-between"
-              >
-                <div className="input-group flex-md-nowrap d-flex gap-4">
-                  <div className="single__input d-flex flex-column">
-                    <input type="text" placeholder="Enter Type of job" />
-                    <div className="search__icon fa-light fa-magnifying-glass"></div>
-                  </div>
-                  <div className="single__input d-flex flex-column">
-                    <div className="nice-select" tabIndex="0">
-                      <span className="current">Select Location</span>
-                      <ul className="list">
-                        <li
-                          data-value="1"
-                          className="option selected focus"
-                        >
-                          Select Location
-                        </li>
-                        <li data-value="2" className="option">
-                          Dhaka
-                        </li>
-                        <li data-value="3" className="option">
-                          Barisal
-                        </li>
-                        <li data-value="4" className="option">
-                          Chittagong
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="fa-sharp fa-thin fa-location-dot location__icon"></div>
-                  </div>
-                </div>
-                <button
-                  type="submit"
-                  className="rts__btn he-3 fill__btn job__search "
-                  aria-label="Search"
-                >
-                  Search Job
-                </button>
-              </form>
-            </div>
+            <Search />
           </div>
           <div className="rts__banner__images d-flex justify-content-center justify-content-sm-between flex-wrap flex-sm-nowrap">
             <div>
