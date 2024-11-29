@@ -62,7 +62,7 @@ const handleSubmit = (e) => {
   if (jobTitle) params.append('job_title', jobTitle);
   if (selectedJobCategory) params.append('jn', selectedJobCategory);
   if (selectedDutyStation) params.append('duty_station', selectedDutyStation);
-  if (selectedOrg) params.append('org', selectedOrg);
+  if (selectedOrg) params.append('dept', selectedOrg);
   navigate(`/jobs?${params.toString()}`);
 };
 

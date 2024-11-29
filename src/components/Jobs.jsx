@@ -93,7 +93,13 @@ function Jobs({ isHome = false }) {
     </div>
   ) : (
     <>
-      
+       <div className="rts__pagination d-block mx-auto pt-60 max-content">
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
+      </div>
       <div className="row g-30">
         {loading ? (
           <Spinner loading={loading} />
