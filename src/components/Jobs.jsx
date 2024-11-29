@@ -27,6 +27,7 @@ function Jobs({ isHome = false }) {
     const queryParams = new URLSearchParams(location.search);
     const duty_station = queryParams.get("duty_station");
     const dept = queryParams.get("dept");
+    const job_title = queryParams.get("job_title");
     const recruitement_type = queryParams.get("recruitement_type");
     const start_date = queryParams.get("start_date");
     const end_date = queryParams.get("end_date");
@@ -35,13 +36,13 @@ function Jobs({ isHome = false }) {
     const jc = queryParams.get("jc");
     const jl = queryParams.get("jl");
 
-    fetchJobs(currentPage, duty_station, dept, recruitement_type, start_date, end_date, jn, jf, jc, jl);
+    fetchJobs(currentPage, job_title, duty_station, dept, recruitement_type, start_date, end_date, jn, jf, jc, jl);
   }, [currentPage, location.search]);
 
-  const fetchJobs = async (page, duty_station, dept, recruitement_type, start_date, end_date, jn, jf, jc, jl) => {
+  const fetchJobs = async (page, job_title, duty_station, dept, recruitement_type, start_date, end_date, jn, jf, jc, jl) => {
     try {
       setLoading(true);
-      const data = await getJobs(page, 10, isHome, duty_station, dept, recruitement_type, start_date, end_date, jn, jf, jc, jl);
+      const data = await getJobs(page, 10, isHome, job_title, duty_station, dept, recruitement_type, start_date, end_date, jn, jf, jc, jl);
       setJobs(data.data); // Adjust according to your API response structure
       const totalRecords = data.totalRecords;
       setTotalPages(Math.ceil(totalRecords / pageSize));
