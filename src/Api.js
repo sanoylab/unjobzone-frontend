@@ -36,7 +36,7 @@ export const getJobCategories = async () => {
 //   return data.data;
 // };
 
-export const getJobs = async (page = 1, size = 10, isHome = false, duty_station, dept, recruitement_type, start_date, end_date, jn, jf, jc, jl) => {
+export const getJobs = async (page = 1, size = 10, isHome = false, job_title, duty_station, dept, recruitement_type, start_date, end_date, jn, jf, jc, jl) => {
   // Helper function to construct query string
   const constructQueryString = (params) => {
     return Object.keys(params)
@@ -49,6 +49,7 @@ export const getJobs = async (page = 1, size = 10, isHome = false, duty_station,
   const queryParams = constructQueryString({
     page: isHome ? 1 : page,
     size: isHome ? 6 : size,
+    job_title,
     duty_station,
     dept,
     recruitement_type,

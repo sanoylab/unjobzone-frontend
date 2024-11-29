@@ -11,6 +11,7 @@ function AdvancedSearch() {
   const [selectedOrg, setSelectedOrg] = useState('');
   const [selectedJobCategory, setSelectedJobCategory] = useState('');
   const [selectedDutyStation, setSelectedDutyStation] = useState('');
+  const [jobTitle, setJobTitle] = useState('');
 
 
   const navigate = useNavigate();
@@ -53,12 +54,15 @@ function AdvancedSearch() {
     fetchJobCategories();
     fetchDutyStations();
 }, []);
+
+
 const handleSubmit = (e) => {
   e.preventDefault();
   const params = new URLSearchParams();
+  if (jobTitle) params.append('job_title', jobTitle);
   if (selectedJobCategory) params.append('jn', selectedJobCategory);
   if (selectedDutyStation) params.append('duty_station', selectedDutyStation);
-  if (selectedOrg) params.append('dept', selectedOrg);
+  if (selectedOrg) params.append('org', selectedOrg);
   navigate(`/jobs?${params.toString()}`);
 };
 
@@ -70,15 +74,15 @@ const handleSubmit = (e) => {
                 <form action="#" className="advance__search__form" onSubmit={handleSubmit}>
                     <div className="search__item">
                         <div className="position-relative">
-                            <input type="text" id="search" placeholder="Enter job title"  />
+                            <input type="text" name="job_title" placeholder="Enter job title" onChange={(e) => setJobTitle(e.target.value)} />
                             <i className="fa-light fa-magnifying-glass"></i>
                         </div>
                     </div>
                    
                     <div className="search__item">
                         <div className="position-relative d-flex">
-                            <i className="fa-light fa-location-dot"></i>
-                            <div className="nice-select" tabIndex="0">
+                        <i className="fa-light fa-briefcase"></i>
+                        <div className="nice-select" tabIndex="0">
                                 <select id="organization" name="dept" className="dropdown" onChange={(e) => setSelectedOrg(e.target.value)}>
                                         <option value="">Select Organization</option>
                                         {organizations.map((org, index) => (
@@ -106,8 +110,8 @@ const handleSubmit = (e) => {
                    
                     <div className="search__item">
                         <div className="position-relative d-flex">
-                            <i className="fa-light fa-clock"></i>
-                            <div className="nice-select" tabIndex="0">
+                        <i className="fa-light fa-location-dot"></i>
+                        <div className="nice-select" tabIndex="0">
                             <select id="organization" name="duty_station" className="dropdown" onChange={(e) => setSelectedDutyStation(e.target.value)}>
                                         <option value="">Select Duty Station</option>
                                         {dutyStations.map((duty, index) => (
