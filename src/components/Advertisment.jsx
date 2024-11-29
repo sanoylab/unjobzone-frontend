@@ -52,16 +52,16 @@ const Advertisment = () => {
                             <span className="font-20 mb-3 d-block fw-medium">Applicants</span>
                             <div className="applicant__list">
                                 <div className="single__list">
-                                    <img src="../assets/img/author/1.svg" alt="" />
+                                    <img src="assets/img/author/1.svg" alt="" />
                                 </div>
                                 <div className="single__list">
-                                    <img src="../assets/img/author/2.svg" alt="" />
+                                    <img src="assets/img/author/2.svg" alt="" />
                                 </div>
                                 <div className="single__list">
-                                    <img src="../assets/img/author/3.svg" alt="" />
+                                    <img src="assets/img/author/3.svg" alt="" />
                                 </div>
                                 <div className="single__list">
-                                    <img src="../assets/img/author/4.svg" alt="" />
+                                    <img src="assets/img/author/4.svg" alt="" />
                                     <div className="icon-plus"><i className="fa-sharp fa-solid fa-plus"></i></div>
                                 </div>
                             </div>
