@@ -19,12 +19,8 @@ function HomeHero() {
           {/* <div className="shape__two shape" style={{ borderRadius: '50%' }}>
                         <img src={itc_logo} alt="" />
           </div> */}
-          <div className="shape__three shape">
-            <img src={unhcr_logo} alt="" />
-          </div>
-          <div className="shape__four shape">
-            <img src={who_logo} alt="" />
-          </div>
+          
+          
           <div className="shape__five shape">
             <img src={un_logo} alt="" />
           </div>
@@ -45,26 +41,7 @@ function HomeHero() {
             <Search />
           </div>
           <div className="rts__banner__images d-flex justify-content-center justify-content-sm-between flex-wrap flex-sm-nowrap">
-            <div>
-              <img
-                className="rounded-full"
-                src="../assets/img/home-6/banner/banner-image-1.jpg"
-                alt=""
-              />
-            </div>
-            <div className="shape d-none d-lg-block">
-              <img
-                src={hero_banner}
-                alt=""
-              />
-            </div>
-            <div>
-              <img style={{ width: '310px' }}
-                className="rounded-2"
-                src={sdg}
-                alt=""
-              />
-            </div>
+          
           </div>
         </div>
       </div>
