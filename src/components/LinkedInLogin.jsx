@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import LinkedInLoginIcon from '../assets/linkedinlogin.png'
 
 const LinkedInLogin = () => {
   const LINKEDIN_CLIENT_ID = import.meta.env.VITE_LINKEDIN_CLIENT_ID;
@@ -59,7 +60,7 @@ const LinkedInLogin = () => {
         <button onClick={handleLogout}>Logout</button>
       ) : (
         <img
-          src="/linkedin.png"
+          src={LinkedInLoginIcon}
           alt="Log in with Linked In"
           onClick={handleLogin}
           style={{ maxWidth: '180px', cursor: 'pointer' }}
