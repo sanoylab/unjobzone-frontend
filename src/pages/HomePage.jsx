@@ -6,6 +6,7 @@ import Jobs from "../components/Jobs";
 import Advertisment from "../components/Advertisment";
 import RecentBlog from "../components/RecentBlog";
 import HomeHeader from "../components/HomeHeader";
+import Footer from "../components/Footer";
 
 function HomePage() {
   return (
@@ -17,7 +18,8 @@ function HomePage() {
       <Jobs isHome={true} />
       <Advertisment />
       <RecentBlog />
-     
+      <Footer />
+      
     </div>
   );
 }
