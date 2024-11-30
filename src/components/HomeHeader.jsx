@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import  LinkedInLogin  from "./LinkedInLogin";
 function HomeHeader() {
   return (
     <header className="rts__section rts__header relative__header">
@@ -41,7 +41,7 @@ function HomeHeader() {
 
             <div className="rts__menu d-flex gap-5 align-items-center">
             <div className="header__right__btn d-flex gap-3">
-                            <a href="#" className="small__btn d-none d-sm-flex no__fill__btn border-6 font-xs" aria-label="Login Button" data-bs-toggle="modal" data-bs-target="#loginModal"> <i className="rt-login"></i>Sign In</a>
+             <LinkedInLogin />
                                 </div>
             </div>
           </div>
