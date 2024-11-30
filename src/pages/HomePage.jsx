@@ -12,7 +12,7 @@ function HomePage() {
     <div>
       <HomeHeader />
       <HomeHero />
-      <OrganizationLogoSlider />
+      {/* <OrganizationLogoSlider /> */}
       <JobCategoryCards />
       <Jobs isHome={true} />
       <Advertisment />
