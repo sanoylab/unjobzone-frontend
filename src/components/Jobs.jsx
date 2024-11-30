@@ -16,6 +16,7 @@ function Jobs({ isHome = false }) {
 
   const location = useLocation();
   const navigate = useNavigate();
+  const APP_URL = import.meta.env.VITE_APP_URI;
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -86,6 +87,8 @@ function Jobs({ isHome = false }) {
               recruitment_type={job.recruitment_type}
               job_title={job.job_title}
               dept={job.dept}
+              logo={`${APP_URL}/assets/logo/${job.logo}`}
+
             />
           ))}
         </div>
@@ -114,6 +117,7 @@ function Jobs({ isHome = false }) {
                 recruitment_type={job.recruitment_type}
                 job_title={job.job_title}
                 dept={job.dept}
+                logo={`${APP_URL}/assets/logo/${job.logo}`}
               />
             ))}
           </>
