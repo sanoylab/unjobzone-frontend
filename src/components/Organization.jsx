@@ -7,6 +7,7 @@ import Spinner from "./Spinner";
 function Organization() {
   const [jobCategories, setJobCategories] = useState([]);
 const [loading, setLoading] = useState(true);
+const APP_URL = import.meta.env.VITE_APP_URI;
 
   useEffect(() => {
     async function fetchJobCategories() {
@@ -41,7 +42,7 @@ const [loading, setLoading] = useState(true);
                 <OrganizationCard
                   key={index}
                   title={category.dept}
-                  image="../assets/img/home-6/icon/marketing.svg"
+                  image={`${APP_URL}/assets/logo/${category.logo}`}
                   totalJobs={category.total}
                 />
               ))}
