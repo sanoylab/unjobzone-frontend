@@ -2,23 +2,35 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 const OrganizationCard = ({image, title, totalJobs}) => {
   return (
-    <div className="col-xl-6 col-lg-6 col-md-6">
-    <div className="single__cat style__six align-items-center d-flex gap-4">
-      <div className="single__cat__icon">
-        <img
-          className="rounded-2"
-          src={image}
-          alt=""
-        />
-      </div>
-      <div className="single__cat__link d-flex w-100 justify-content-between flex-wrap">
-      <Link to={`/jobs?dept=${encodeURIComponent(title)}`} aria-label="cat__label">
-        {title}
-      </Link>
-        <span>{totalJobs}+ Jobs</span>
-      </div>
+
+<div className="col-xl-4 col-lg-4 col-md-6" >
+      <div class="rts__job__card rounded-2 style__four" style={{ height: '390px' }}>
+        <div class="mx-auto rounded-0">
+            <img src={image} alt="" style={{height: '130px'}} />
+        </div>
+        <div class="h6 job__title mt-3 mb-2">
+            <Link to={`/jobs?dept=${encodeURIComponent(title)}`} aria-label="job">
+            {title}
+            </Link>
+        </div>
+       
+        
+        <Link to={`/jobs?dept=${encodeURIComponent(title)}`} class="rts__btn fill__btn rounded-2">open Job {totalJobs}</Link>
     </div>
-  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
   )
 }
 
