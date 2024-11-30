@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import LinkedInLogin from './LinkedInLogin'
 function Header() {
   return (
     <header className="rts__section rts__header absolute__header">
@@ -40,8 +41,7 @@ function Header() {
 </div>
 
 <div className="header__right__btn d-flex gap-3">
-                            <a href="#" className="small__btn d-none d-sm-flex no__fill__btn border-6 font-xs" aria-label="Login Button" data-bs-toggle="modal" data-bs-target="#loginModal"> <i className="rt-login"></i>Sign In</a>
-                                </div>
+<LinkedInLogin />                                </div>
                    
                 </div>
             </div>

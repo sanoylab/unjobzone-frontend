@@ -59,7 +59,7 @@ const LinkedInLogin = () => {
       {isLoggedIn ? (
         <button onClick={handleLogout}>Logout</button>
       ) : (
-        <a  onClick={handleLogin} className="small__btn d-none d-sm-flex no__fill__btn border-6 font-xs" aria-label="Login Button" data-bs-toggle="modal" data-bs-target="#loginModal"> <i className="rt-login"></i>Login with LinkedIn</a>
+        <a  onClick={handleLogin} className="small__btn d-none d-sm-flex no__fill__btn border-6 font-xs" aria-label="Login Button" data-bs-toggle="modal" data-bs-target="#loginModal"> <i className="fab fa-3x fa-linkedin"></i> Sign in with LinkedIn</a>
 
         
       )}
