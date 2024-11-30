@@ -9,11 +9,13 @@ function JobDetail() {
   const { id } = useParams();
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
+  const APP_URL = import.meta.env.VITE_APP_URI;
 
   useEffect(() => {
     const fetchJobDetail = async () => {
       try {
         const data = await getJobDetail(id);
+        console.log(data);
         setJob(data.data[0]);
       } catch (error) {
         console.error("Error fetching job detail:", error);
@@ -56,7 +58,7 @@ function JobDetail() {
             <div className="col-lg-4 d-flex flex-column gap-40">
               <div className="company__card">
                 <div className="img">
-                  <img src="../assets/img/unfpa.png" alt="" />
+                  <img src={`${APP_URL}/assets/logo/${job.logo}`} alt="" />
                 </div>
                 <h5 className="company__name mt-20">{job.dept}</h5>
                 <a href="#" className="company__link d-block mt-20" aria-label="Visit Website" target="_blank">Visit Website</a>

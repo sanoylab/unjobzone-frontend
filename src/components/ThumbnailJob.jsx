@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const ThumbnailJob = ({ id, end_date,duty_station, recruitment_type,job_title, dept}) => {
+const ThumbnailJob = ({ id, end_date,duty_station, recruitment_type,job_title, dept, logo}) => {
   return (
     <div className="col-lg-4 col-md-6" >
     <div className="rts__job__card style__six">
         <div className="d-flex align-items-center flex-wrap justify-content-between">
             <div className="company__icon">
-                <img src="./assets/img/unfpa.png" alt="" />
+                <img src={logo} alt="" />
             </div>
             <div className="featured__option">
                 <span>{new Date(end_date).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}</span>

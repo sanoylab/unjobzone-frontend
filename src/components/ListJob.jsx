@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const ListJob = ({ id, end_date,duty_station, recruitment_type,job_title, dept}) => {
+const ListJob = ({ id, end_date,duty_station, recruitment_type,job_title, dept, logo}) => {
   return (
 
 <div className="col-lg-12">
@@ -9,7 +9,7 @@ const ListJob = ({ id, end_date,duty_station, recruitment_type,job_title, dept})
                             flex-wrap d-flex justify-content-between align-items-center gap-3">
                                 <div className="d-flex gap-3 flex-column flex-md-row mb-3 mb-md-0 justify-content-start align-items-center">
                                     <div className="organization__logo mr-5">
-                                        <img src="./assets/img/unfpa.png" alt={dept} />
+                                        <img src={logo} alt={dept} />
                                     </div>
                                     <div className="job__meta">
                                         <div className="d-flex align-items-center gap-3 job_title">
