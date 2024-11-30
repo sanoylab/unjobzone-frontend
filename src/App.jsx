@@ -1,4 +1,5 @@
 import  {Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom';
+
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import JobsPage from './pages/JobsPage';
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
     <Route path='/job-categories' element={<JobCategoryPage />} />
     <Route path='/job-detail/:id' element={<JobDetail />} />
     <Route path='*' element={<NotFoundPage />} />
+
 
 
   </Route>
