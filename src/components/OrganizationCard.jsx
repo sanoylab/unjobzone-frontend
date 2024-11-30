@@ -15,7 +15,7 @@ const OrganizationCard = ({image, title, totalJobs}) => {
         </div>
        
         
-        <Link to={`/jobs?dept=${encodeURIComponent(title)}`} class="rts__btn fill__btn rounded-2">open Job {totalJobs}</Link>
+        <Link to={`/jobs?dept=${encodeURIComponent(title)}`} class="rts__btn fill__btn rounded-2">{totalJobs} open jobs </Link>
     </div>
 </div>
 
