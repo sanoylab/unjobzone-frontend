@@ -59,12 +59,9 @@ const LinkedInLogin = () => {
       {isLoggedIn ? (
         <button onClick={handleLogout}>Logout</button>
       ) : (
-        <img
-          src={LinkedInLoginIcon}
-          alt="Log in with Linked In"
-          onClick={handleLogin}
-          style={{ maxWidth: '180px', cursor: 'pointer' }}
-        />
+        <a  onClick={handleLogin} className="small__btn d-none d-sm-flex no__fill__btn border-6 font-xs" aria-label="Login Button" data-bs-toggle="modal" data-bs-target="#loginModal"> <i className="rt-login"></i>Login with LinkedIn</a>
+
+        
       )}
     </div>
   );
