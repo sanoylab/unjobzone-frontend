@@ -3,19 +3,8 @@ function Footer() {
   return (
    
     <footer className="rts__section pt-80 footer__home__six">
-    <div className="container">
-        <div className="rts__footer__newsletter d-flex flex-wrap flex-lg-nowrap gap-5 justify-content-center justify-content-lg-between align-items-center pb-60">
-            <div className="text-center text-lg-start mb-md-0">
-                <h3 className=" mb-2 wow animated fadeInUp">Subscribe To Get Our  Newsletter</h3>
-                <p className=" wow animated fadeInUp">Looking for your next career opportunity. Look no further</p>
-            </div>
-            <div className="footer__newsletter__three  wow animated fadeIn">
-                <form action="#" method="post" className="d-flex">
-                    <input type="email" name="semail" id="semail" placeholder="Enter your email" required="" />
-                    <button type="submit" className="rts__btn fill__btn he-3 newsletter__btn">Subscribe</button>
-                </form>
-            </div>
-        </div>
+    {/* <div className="container">
+        
         <div className="row">
             <div className="footer__wrapper d-flex flex-wrap gap-3 gap-md-5 justify-content-between pb-60">
                 
@@ -71,7 +60,7 @@ function Footer() {
 
             </div>
         </div>
-    </div>
+    </div> */}
     <div className="footer__bottom footer__six__copy border-top py-4 text-white">
         <div className="container">
             <div className="row g-30 align-items-center">
@@ -100,7 +89,7 @@ function Footer() {
     </a>
 </div>
 
-                        <p>Copyright &copy; 2024 All Rights Reserved by jobpath</p>
+                        <p>Copyright &copy; 2025 All Rights Reserved by UNJobZone</p>
                     </div>
                 </div>
             </div>
