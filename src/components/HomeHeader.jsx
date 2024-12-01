@@ -42,6 +42,8 @@ function HomeHeader() {
             <div className="rts__menu d-flex gap-5 align-items-center">
             <div className="header__right__btn d-flex gap-3">
              <LinkedInLogin />
+             <button className="d-md-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"><i className="fa-sharp fa-regular fa-bars"></i></button>
+
                                 </div>
             </div>
           </div>
