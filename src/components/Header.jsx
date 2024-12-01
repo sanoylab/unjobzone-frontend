@@ -9,16 +9,18 @@ function Header() {
           <div className="row">
             <div className="d-flex align-items-center justify-content-between">
               <div className="rts__logo">
-                <h5>
-                  <Link to="/">
+                <h4>
+                <Link to="/"><span style={{color: '#1791FF', fontWeight: 'bold'}}>UN</span> JobZone</Link>
+
+                  {/* <Link to="/">
                     {" "}
                     <img
                       src="/assets/images/logo.png"
                       alt="UN JobZone"
                       style={{ width: "200px" }}
                     />
-                  </Link>
-                </h5>
+                  </Link> */}
+                </h4>
               </div>
               <div className="navigation d-none d-lg-block">
                 <nav className="navigation__menu" id="offcanvas__menu">

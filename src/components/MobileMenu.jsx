@@ -9,9 +9,8 @@ function MobileMenu() {
     aria-labelledby="offcanvasLabel"
   >
     <div className="offcanvas-header p-0 mb-5 mt-4">
-      <a href="index.html" className="offcanvas-title" id="offcanvasLabel">
-        <img src="assets/img/logo.png" alt="logo" />
-      </a>
+    <h5><Link to="/"><span style={{color: '#1791FF', fontWeight: 'bold'}}>UN</span> JobZone</Link></h5>
+
       <button
         type="button"
         className="btn-close"
