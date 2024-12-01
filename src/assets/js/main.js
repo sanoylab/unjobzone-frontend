@@ -204,7 +204,7 @@
                   show: false,
                 },
               },
-              colors: ['#34A853'],
+              colors: ['#1791FF'],
               grid: {
                 show: true,
                 borderColor: "#7D8087",
@@ -339,7 +339,7 @@
                   show: false,
                 },
               },
-              colors: ['#34A853'],
+              colors: ['#1791FF'],
               grid: {
                 show: true,
                 borderColor: "#7D8087",
@@ -474,7 +474,7 @@
                   show: false,
                 },
               },
-              colors: ['#34A853'],
+              colors: ['#1791FF'],
               grid: {
                 show: true,
                 borderColor: "#7D8087",
