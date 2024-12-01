@@ -15,6 +15,7 @@ const ListJob = ({
       <div
         className="rts__job__card__big style__gradient__two 
                             flex-wrap d-flex justify-content-between align-items-center gap-3"
+                            style={{ minHeight: "180px" }}
       >
         <div className="d-flex gap-3 flex-column flex-md-row mb-3 mb-md-0 justify-content-start align-items-center">
           <div className="organization__logo mr-5">
@@ -23,7 +24,7 @@ const ListJob = ({
           <div className="job__meta">
             <div className="d-flex align-items-center gap-3 job_title">
               <Link to={`/job-detail/${id}`} className="job__title h6">
-                {job_title}
+              {job_title.length > 100 ? `${job_title.substring(0, 100)}...` : job_title}
               </Link>
             </div>
             <div className="d-flex gap-3 flex-wrap gap-lg-4 fw-medium">
