@@ -11,7 +11,7 @@ const DutyStationCard = ({title, totalJobs}) => {
                                     
                                     <div className="job__meta">
                                         <div className="d-flex align-items-center gap-3 job_title">
-                                            <Link to={`/jobs?dept=${encodeURIComponent(title)}`} className="job__title h6">{title}</Link>
+                                            <Link to={`/jobs?duty_station=${encodeURIComponent(title)}`} className="job__title h6">{title}</Link>
                                         </div>
                                         <span>{totalJobs} Open Jobs</span>
                                     </div>
