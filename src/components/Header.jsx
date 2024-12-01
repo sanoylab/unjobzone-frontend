@@ -1,54 +1,77 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import LinkedInLogin from './LinkedInLogin'
+import React from "react";
+import { Link } from "react-router-dom";
+import LinkedInLogin from "./LinkedInLogin";
 function Header() {
   return (
     <header className="rts__section rts__header absolute__header">
-    <div className="container-none">
+      <div className="container-none">
         <div className="rts__menu__background">
-            <div className="row">
-                <div className="d-flex align-items-center justify-content-between">
-                    <div className="rts__logo">
-                    <h5>
-               <Link to="/">                    <img src="/assets/images/logo.png" alt="UN JobZone" style={{ width: '200px' }} />
-               </Link>
-              </h5>
-                    </div>
-                        <div className="navigation d-none d-lg-block">
-                        <nav className="navigation__menu" id="offcanvas__menu">
-                <ul className="list-unstyled">
-                  <li className="navigation__menu--item">
-                    <Link to="/" className="navigation__menu--item__link">Home</Link>
-                    
-                  </li>
-                  <li className="navigation__menu--item">
-                    <Link to="/jobs" className="navigation__menu--item__link">Browse Jobs</Link>
-                    
-                  </li>
-                  <li className="navigation__menu--item">
-                    <Link to="/organizations" className="navigation__menu--item__link">Organizations</Link>
-                    
-                  </li>
-                  <li className="navigation__menu--item">
-                    <Link to="/duty-stations" className="navigation__menu--item__link">Duty Stations</Link>
-                   
-                  </li>
-                  <li className="navigation__menu--item">
-                    <Link to="/daily-blog" className="navigation__menu--item__link">Daily Blog</Link>                    
-                  </li>
-                </ul>
-              </nav>
-</div>
+          <div className="row">
+            <div className="d-flex align-items-center justify-content-between">
+              <div className="rts__logo">
+                <h5>
+                  <Link to="/">
+                    {" "}
+                    <img
+                      src="/assets/images/logo.png"
+                      alt="UN JobZone"
+                      style={{ width: "200px" }}
+                    />
+                  </Link>
+                </h5>
+              </div>
+              <div className="navigation d-none d-lg-block">
+                <nav className="navigation__menu" id="offcanvas__menu">
+                  <ul className="list-unstyled">
+                    <li className="navigation__menu--item">
+                      <Link to="/" className="navigation__menu--item__link">
+                        Home
+                      </Link>
+                    </li>
+                    <li className="navigation__menu--item">
+                      <Link to="/jobs" className="navigation__menu--item__link">
+                        Browse Jobs
+                      </Link>
+                    </li>
+                    <li className="navigation__menu--item">
+                      <Link
+                        to="/organizations"
+                        className="navigation__menu--item__link"
+                      >
+                        Organizations
+                      </Link>
+                    </li>
+                    <li className="navigation__menu--item">
+                      <Link
+                        to="/duty-stations"
+                        className="navigation__menu--item__link"
+                      >
+                        Duty Stations
+                      </Link>
+                    </li>
+                    <li className="navigation__menu--item">
+                      <Link
+                        to="/daily-blog"
+                        className="navigation__menu--item__link"
+                      >
+                        Daily Blog
+                      </Link>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
 
-<div className="header__right__btn d-flex gap-3">
-<LinkedInLogin />                                </div>
-                   
-                </div>
+              <div className="header__right__btn d-flex gap-3">
+                <LinkedInLogin />{" "}
+                <button className="d-md-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"><i className="fa-sharp fa-regular fa-bars"></i></button>
+
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</header>
-  )
+      </div>
+    </header>
+  );
 }
 
-export default Header
+export default Header;

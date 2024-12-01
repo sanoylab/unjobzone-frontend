@@ -7,6 +7,7 @@ import Advertisment from "../components/Advertisment";
 import RecentBlog from "../components/RecentBlog";
 import HomeHeader from "../components/HomeHeader";
 import Footer from "../components/Footer";
+import MobileMenu from '../components/MobileMenu';
 
 function HomePage() {
   return (
@@ -19,6 +20,7 @@ function HomePage() {
       <Advertisment />
       <RecentBlog />
       <Footer />
+      <MobileMenu />
       
     </div>
   );
