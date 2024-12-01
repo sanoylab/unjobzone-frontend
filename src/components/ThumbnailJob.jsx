@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const ThumbnailJob = ({ id, end_date,duty_station, recruitment_type,job_title, dept, logo}) => {
   return (
     <div className="col-lg-4 col-md-6" >
-    <div className="rts__job__card style__six">
+    <div className="rts__job__card style__six" style={{minHeight: '370px'}}>
         <div className="d-flex align-items-center flex-wrap justify-content-between">
             <div className="company__icon">
                 <img src={logo} alt="" />
@@ -22,8 +22,9 @@ const ThumbnailJob = ({ id, end_date,duty_station, recruitment_type,job_title, d
             </div>
         </div>
         <div className="font-20 fw-semibold job__title mt-3 mb-2">
-        <Link to={`/job-detail/${id}`} className="job__title">{job_title}</Link>
-           
+        <Link to={`/job-detail/${id}`} className="job__title">
+  {job_title.length > 100 ? `${job_title.substring(0, 100)}...` : job_title}
+</Link>           
         </div>
         <p className='font-sm'>{dept}</p>
         
