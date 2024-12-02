@@ -11,7 +11,7 @@ const ListJob = ({
   logo,
 }) => {
   return (
-    <div className="col-lg-12">
+    <div className="col-lg-12" style={{paddingRight: '0px'}}>
       <div
         className="rts__job__card__big style__gradient__two 
                             flex-wrap d-flex justify-content-between align-items-center gap-3"

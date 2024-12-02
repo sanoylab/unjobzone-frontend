@@ -103,7 +103,7 @@ function Jobs({ isHome = false }) {
           onPageChange={handlePageChange}
         />
       </div>
-      <div className="row g-30">
+      <div className="row g-30" style={{paddingRight: "0px"}}>
         {loading ? (
           <Spinner loading={loading} />
         ) : (
