@@ -1,5 +1,32 @@
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { getJobOrganization } from "../Api";
+import Spinner from "./Spinner";
 
 const OrganizationLogoSlider = () => {
+  const [organizations, setOrganizations] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const APP_URL = import.meta.env.VITE_APP_URI;
+  
+  useEffect(() => {
+    async function fetchOrganizations() {
+      try {
+        const organizations = await getJobOrganization();
+        if (Array.isArray(organizations)) {
+          setOrganizations(organizations);
+        } else {
+          console.error("Expected an array but got:", organizations);
+        }
+      } catch (error) {
+        console.error("Error fetching job categories:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchOrganizations();
+  }, []);
+  
   return (
     <div className="rts__brand  wow animated fadeInUp  ">
         <div className="container">
@@ -36,86 +63,20 @@ const OrganizationLogoSlider = () => {
                         }'
               >
                 <div className="swiper-wrapper">
-                  <div className="swiper-slide">
+
+                {organizations.map((org, index) => (
+                  <div className="swiper-slide" key={index} style={{height: '50px'}}>
                     <div className="brand__item">
-                      <a href="#" className="brand__item__link" aria-label="brand">
+
+                      <Link to={`/jobs?dept=${encodeURIComponent(org.dept)}`} className="brand__item__link" aria-label="brand">
                         <img
-                          src="../assets/img/home-1/brand/b51.svg"
+                          src={`${APP_URL}/assets/logo/${org.logo}`}
                           alt=""
                         />
-                      </a>
+                      </Link>
                     </div>
                   </div>
-                  <div className="swiper-slide">
-                    <div className="brand__item">
-                      <a href="#" className="brand__item__link" aria-label="brand">
-                        <img
-                          src="../assets/img/home-1/brand/image1.svg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="swiper-slide">
-                    <div className="brand__item">
-                      <a href="#" className="brand__item__link" aria-label="brand">
-                        <img
-                          src="../assets/img/home-1/brand/image2.svg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="swiper-slide">
-                    <div className="brand__item">
-                      <a href="#" className="brand__item__link" aria-label="brand">
-                        <img
-                          src="../assets/img/home-1/brand/image3.svg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="swiper-slide">
-                    <div className="brand__item">
-                      <a href="#" className="brand__item__link" aria-label="brand">
-                        <img
-                          src="../assets/img/home-1/brand/image4.svg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="swiper-slide">
-                    <div className="brand__item">
-                      <a href="#" className="brand__item__link" aria-label="brand">
-                        <img
-                          src="../assets/img/home-1/brand/image5.svg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="swiper-slide">
-                    <div className="brand__item">
-                      <a href="#" className="brand__item__link" aria-label="brand">
-                        <img
-                          src="../assets/img/home-1/brand/image1.svg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                  </div>
-                  <div className="swiper-slide">
-                    <div className="brand__item">
-                      <a href="#" className="brand__item__link" aria-label="brand">
-                        <img
-                          src="../assets/img/home-1/brand/linkedin-logo-png-20321.svg"
-                          alt=""
-                        />
-                      </a>
-                    </div>
-                  </div>
+                ))}
                 </div>
               </div>
             </div>
