@@ -32,7 +32,7 @@ const OrganizationLogoSlider = () => {
       loop: true,
       speed: 1000,
       autoplay: {
-        delay: 7000,
+        delay: 3000,
       },
       breakpoints: {
         0: {
