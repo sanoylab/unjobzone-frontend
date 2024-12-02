@@ -72,6 +72,7 @@ const OrganizationLogoSlider = () => {
                         <img
                           src={`${APP_URL}/assets/logo/${org.logo}`}
                           alt=""
+                          style={{height: '50px'}}
                         />
                       </Link>
                     </div>
