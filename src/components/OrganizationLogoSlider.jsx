@@ -66,13 +66,13 @@ const OrganizationLogoSlider = () => {
             <div className="rts__brand__slider overflow-hidden swiper-data">
               <div className="swiper-wrapper">
                 {organizations.map((org, index) => (
-                  <div className="swiper-slide" key={index} style={{ height: '50px', width:'120px' }}>
+                  <div className="swiper-slide" key={index} style={{ height: '70px', width:'120px' }}>
                     <div className="brand__item">
                       <Link to={`/jobs?dept=${encodeURIComponent(org.dept)}`} className="brand__item__link" aria-label="brand">
                         <img
                           src={`${APP_URL}/assets/logo/${org.logo}`}
                           alt=""
-                          style={{ height: '50px' }}
+                          style={{ height: '70px' }}
                         />
                       </Link>
                     </div>
