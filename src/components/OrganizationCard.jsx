@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 const OrganizationCard = ({image, title, totalJobs}) => {
   return (
 
-    <div class="col-xl-4 col-lg-4 col-md-6">
-    <div class="rts__job__card rounded-2 style__four">
+    <div class="col-xl-3 col-lg-3 col-md-6">
+    <div class="rts__job__card rounded-2 style__four" style={{height: '450px'}}>
         <div class="company__icon mx-auto rounded-0">
             <img src={image} alt="" />
         </div>
