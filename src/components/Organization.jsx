@@ -3,11 +3,19 @@ import { Link } from "react-router-dom";
 import OrganizationCard from "./OrganizationCard";
 import { getJobOrganization } from "../Api";
 import Spinner from "./Spinner";
+import Masonry from 'react-masonry-css';
 
 function Organization() {
   const [jobCategories, setJobCategories] = useState([]);
 const [loading, setLoading] = useState(true);
 const APP_URL = import.meta.env.VITE_APP_URI;
+
+const breakpointColumnsObj = {
+  default: 4,
+  1100: 3,
+  700: 2,
+  500: 1
+};
 
   useEffect(() => {
     async function fetchJobCategories() {
@@ -37,7 +45,11 @@ const APP_URL = import.meta.env.VITE_APP_URI;
               <Spinner loading={loading} />
             </>
           ) : (
-            <>              
+            <Masonry
+            breakpointCols={breakpointColumnsObj}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >              
               {jobCategories.map((category, index) => (
                 <OrganizationCard
                   key={index}
@@ -46,7 +58,7 @@ const APP_URL = import.meta.env.VITE_APP_URI;
                   totalJobs={category.total}
                 />
               ))}
-            </>
+            </Masonry>
           )}
         </div>
       </div>
