@@ -7488,10 +7488,11 @@ input::placeholder {
 
 .rts__job__card:hover {
    border-color: transparent;
+   cursor: pointer;
 }
 
 .rts__job__card:hover .company__icon {
-   background-color: var(--rts-white);
+   cursor: pointer;
 }
 
 .rts__job__card:hover .featured__option span {

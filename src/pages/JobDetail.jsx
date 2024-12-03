@@ -37,10 +37,8 @@ function JobDetail() {
   return (
     <div>
 <JobDetailHero 
-  title={job.job_title} 
-  duty_station={job.duty_station} 
-  jn={job.jn} 
-  logo={`${APP_URL}/assets/logo/${job.logo}`} 
+  job = {job}
+
 />
 
       <div className="rts__section section__padding">
@@ -89,7 +87,7 @@ function JobDetail() {
                         <ul>
                     <li className="d-flex flex-wrap gap-3 gap-sm-0 align-items-center justify-content-between">
                       
-                      <span className="left-text"> {job.job_code_title}</span>
+                      <span className="left-text"><strong>{job.dept}</strong></span>
                     </li>
                     <li className="d-flex flex-wrap gap-0 gap-sm-0 ">
                       <span className="left-text">  Type</span>
