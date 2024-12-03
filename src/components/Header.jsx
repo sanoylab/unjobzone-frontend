@@ -56,7 +56,7 @@ function Header() {
                         to="/blog"
                         className="navigation__menu--item__link"
                       >
-                        Daily Blog
+                        Blog
                       </Link>
                     </li>
                   </ul>
