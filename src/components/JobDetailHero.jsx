@@ -36,6 +36,16 @@ function JobDetailHero({ job }) {
                           <i className="fa-light rt-briefcase"></i> {job.jc}
                         </div>
                       )}
+                       {job.job_level && (
+                        <div>
+                          <i className="fa-light rt-briefcase"></i> {job.job_level}
+                        </div>
+                      )}
+                       {job.job_code_title && (
+                        <div>
+                          <i className="fa-light rt-briefcase"></i> {job.job_code_title}
+                        </div>
+                      )}
                        {job.jl && (
                         <div>
                           <i className="fa-light rt-briefcase"></i> {job.jl}
