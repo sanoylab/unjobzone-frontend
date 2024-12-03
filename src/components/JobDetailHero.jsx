@@ -16,7 +16,7 @@ function JobDetailHero({ job }) {
                       className=""
                       src={`${APP_URL}/assets/logo/${job.logo}`}
                       alt=""
-                      style={{ width: "350px", height: "auto" }}
+                      style={{ width: "150px", height: "auto" }}
                     />
                   </div>
                   <div
