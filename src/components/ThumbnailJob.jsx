@@ -13,7 +13,7 @@ const ThumbnailJob = ({
 }) => {
   return (
     <div className="col-lg-4 col-md-6">
-      <div className="rts__job__card style__six" style={{ minHeight: "370px" }}>
+      <div className="rts__job__card style__six" style={{ minHeight: "420px" }}>
         <div className="d-flex align-items-center flex-wrap justify-content-between">
           <div className="company__icon">
             <img src={logo} alt="" />
