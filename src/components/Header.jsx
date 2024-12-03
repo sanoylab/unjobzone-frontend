@@ -53,7 +53,7 @@ function Header() {
                     </li>
                     <li className="navigation__menu--item">
                       <Link
-                        to="/daily-blog"
+                        to="/blog"
                         className="navigation__menu--item__link"
                       >
                         Daily Blog

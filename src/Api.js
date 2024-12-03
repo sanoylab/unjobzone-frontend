@@ -135,3 +135,58 @@ export const getJobDetail = async (id) => {
       throw error;
   }
 };
+
+
+export const getBlogs = async () => {
+  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/blogs`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const data = await response.json();  
+  return data.data;
+};
+
+
+export const getBlogDetail = async (id) => {
+  try {
+      const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/blogs/${id}`,{
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      console.log('response', response);  
+      const data = await response.json();
+      return data;
+  } catch (error) {
+      console.error("Error fetching blog detail:", error);
+      throw error;
+  }
+};
+
+
+export const getFeaturedBlog = async () => {
+  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/blogs/featured/list`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const data = await response.json();  
+  return data.data;
+};

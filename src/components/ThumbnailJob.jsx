@@ -38,7 +38,7 @@ const ThumbnailJob = ({
           </div>
         </div>
         <div className="font-20 fw-semibold job__title mt-3 mb-2">
-          <Link to={`/job-detail/${id}`} className="job__title">
+          <Link to={`/job/${id}`} className="job__title">
             {job_title.length > 100
               ? `${job_title.substring(0, 100)}...`
               : job_title}

@@ -33,7 +33,7 @@ function HomeHeader() {
                    
                   </li>
                   <li className="navigation__menu--item">
-                    <Link to="/daily-blog" className="navigation__menu--item__link">Daily Blog</Link>                    
+                    <Link to="/blog" className="navigation__menu--item__link">Blog</Link>                    
                   </li>
                 </ul>
               </nav>

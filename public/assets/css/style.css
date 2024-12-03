@@ -846,7 +846,7 @@ h5,
 h6,
 .h6 {
    color: var(--rts-heading);
-   font-weight: 700 !important;
+   font-weight: 700;
 }
 
 p {
@@ -6550,7 +6550,6 @@ input::placeholder {
 
 .breadcrumb__background {
    background-image: url("../img/breadcrumb/breadcrumb.png");
-   min-height: 450px;
 }
 
 @media screen and (max-width: 992px) {
