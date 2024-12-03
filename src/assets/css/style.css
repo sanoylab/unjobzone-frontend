@@ -846,7 +846,7 @@ h5,
 h6,
 .h6 {
    color: var(--rts-heading);
-   font-weight: 700 !important;
+   font-weight: 700 ;
 }
 
 p {

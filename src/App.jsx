@@ -5,9 +5,10 @@ import HomePage from './pages/HomePage';
 import JobsPage from './pages/JobsPage';
 import OrganizationPage from './pages/OrganizationPage';
 import DutyStationPage from './pages/DutyStationPage';
-import DailyBlogPage from './pages/DailyBlogPage';
+import BlogPage from './pages/BlogPage';
 import JobCategoryPage from './pages/JobCategoryPage';
 import JobDetail from './pages/JobDetail';
+import BlogDetail from './pages/BlogDetail';
 import NotFoundPage from './pages/NotFoundPage';
 
 
@@ -20,9 +21,11 @@ const router = createBrowserRouter(
     <Route path='/jobs' element={<JobsPage />} />
     <Route path='/organizations' element={<OrganizationPage />} />
     <Route path='/duty-stations' element={<DutyStationPage />} />
-    <Route path='/daily-blog' element={<DailyBlogPage />} />
+    <Route path='/blog' element={<BlogPage />} />
     <Route path='/job-categories' element={<JobCategoryPage />} />
-    <Route path='/job-detail/:id' element={<JobDetail />} />
+    <Route path='/job/:id' element={<JobDetail />} />
+    <Route path='/blog/:id' element={<BlogDetail />} />
+
     <Route path='*' element={<NotFoundPage />} />
 
 

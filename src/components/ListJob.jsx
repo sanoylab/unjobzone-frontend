@@ -24,7 +24,7 @@ const ListJob = ({
           </div>
           <div className="job__meta">
             <div className="d-flex align-items-center gap-3 job_title">
-              <Link to={`/job-detail/${id}`} className="job__title h6">
+              <Link to={`/job/${id}`} className="job__title h6">
               {job_title.length > 100 ? `${job_title.substring(0, 100)}...` : job_title}
               </Link>
             </div>
