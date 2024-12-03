@@ -7,6 +7,7 @@ const ListJob = ({
   duty_station,
   recruitment_type,
   job_title,
+  jl,
   dept,
   logo,
 }) => {
@@ -34,6 +35,11 @@ const ListJob = ({
               <div className="d-flex gap-2 align-items-center">
                 <i className="fa-light fa-location-dot"></i> {duty_station}
               </div>
+              {jl && (
+                        <div>
+                          <i className="fa-light rt-briefcase"></i> {jl}
+                        </div>
+                      )}
               {/* <div className="d-flex gap-2 align-items-center">
                                                 <i className="fa-light rt-briefcase"></i> {recruitment_type}
                                             </div> */}

@@ -87,6 +87,7 @@ function Jobs({ isHome = false }) {
               recruitment_type={job.recruitment_type}
               job_title={job.job_title}
               dept={job.dept}
+              jl={job.jl}
               logo={`${APP_URL}/assets/logo/${job.logo}`}
 
             />
@@ -117,6 +118,7 @@ function Jobs({ isHome = false }) {
                 recruitment_type={job.recruitment_type}
                 job_title={job.job_title}
                 dept={job.dept}
+                jl={job.jl}
                 logo={`${APP_URL}/assets/logo/${job.logo}`}
               />
             ))}
