@@ -1,3 +1,4 @@
+import LatestBlog from "./LatestBlog"
 
 function RecentBlog() {
   return (
@@ -12,39 +13,7 @@ function RecentBlog() {
 </div>
         </div>
         <div className="row g-30 align-items-center">
-            <div className="col-lg-6">
-                <div className="rts__single__blog style__six">
-                    <a href="#">
-                        <img src="assets/img/home-6/blog.webp" alt="" className="rounded-2" />
-                    </a>
-                    <a href="#" className="mt-30 mb-4 d-block max-content cat__link">Job Opportunities</a>
-                    <a href="#" className="blog__title h5">6 Job Opportunities to Consider in the Freight and Logistics Industry</a>
-                    <div className="blog__meta__info flex-wrap d-flex gap-3 gap-md-4 mt-4">
-                        <span className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/calender-black.svg" alt="" /> 20 March, 2022</span>
-                        <a href="#" className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/user-black.svg" alt="" /> Jon Adom</a>
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-6 ">
-                
-                <div className="rts__single__blog mb-30 style__six">
-                    <a href="#" className="mb-3 d-block max-content cat__link">Job Opportunities</a>
-                    <a href="#" className="blog__title h5">Navigating the New World: Exploring Modern Job Trends and Careers in the Digital Age</a>
-                    <div className="blog__meta__info flex-wrap d-flex gap-3 gap-md-4 mt-4">
-                        <span className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/calender-black.svg" alt="" /> 20 March, 2022</span>
-                        <a href="#" className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/user-black.svg" alt="" /> Jon Adom</a>
-                    </div>
-                </div>
-
-                <div className="rts__single__blog style__six">
-                    <a href="#" className="mb-3 d-block max-content cat__link">Job Opportunities</a>
-                    <a href="#" className="blog__title h5">Empowering Through Trust: Key Principles for Unlocking Employee Potential</a>
-                    <div className="blog__meta__info flex-wrap d-flex gap-3 gap-md-4 mt-4">
-                        <span className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/calender-black.svg" alt="" /> 20 March, 2022</span>
-                        <a href="#" className="d-flex gap-2 align-items-center"> <img className="svg" src="assets/img/icon/user-black.svg" alt="" /> Jon Adom</a>
-                    </div>
-                </div>
-            </div>
+            <LatestBlog />
         </div>
     </div>
 </section>
