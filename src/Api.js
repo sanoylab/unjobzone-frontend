@@ -155,7 +155,7 @@ export const getBlogs = async () => {
 };
 
 export const getLatestBlogs = async () => {
-  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/blogs?page=1&size=2`, {
+  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/blogs?page=1&size=3`, {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`,
