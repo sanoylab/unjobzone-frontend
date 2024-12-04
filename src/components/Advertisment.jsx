@@ -34,7 +34,6 @@ const Advertisment = () => {
                             <span>Competitive benefits and compensation</span>
                         </div>
                     </div>
-                    <a href="contact-2.html" className="rts__btn common__btn he-3 fill__btn mt-50">Read More <i className="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
             <div className="col-lg-6">
