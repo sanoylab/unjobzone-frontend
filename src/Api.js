@@ -154,6 +154,22 @@ export const getBlogs = async () => {
   return data.data;
 };
 
+export const getLatestBlogs = async () => {
+  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/blogs?page=1&size=2`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const data = await response.json();  
+  return data.data;
+};
 
 export const getBlogDetail = async (id) => {
   try {
