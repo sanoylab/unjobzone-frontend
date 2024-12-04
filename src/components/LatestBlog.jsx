@@ -38,11 +38,11 @@ function LatestBlog() {
       ) : (
         <>
           {latestBlogs.map((blog, index) => (
-            <div className="col-lg-6">
+            <div className="col-lg-4">
               <div className="rts__single__blog style__six" >
                 <Link to={`/blog/${blog.id}`} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
                   <img
-                    style={{ height: "400px" }}
+                    
                     src={`${APP_URL}/assets/blog/${blog.thumbnail}`}
                     alt=""
                     className="rounded-2"
