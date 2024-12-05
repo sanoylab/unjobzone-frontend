@@ -9,7 +9,7 @@ function Header() {
           <div className="row">
             <div className="d-flex align-items-center justify-content-between">
               <div className="rts__logo">
-                <h4>
+                <h5>
                 <Link to="/"><span style={{color: '#1791FF', fontWeight: 'bold'}}>UN</span>JOBZONE</Link>
 
                   {/* <Link to="/">
@@ -20,7 +20,7 @@ function Header() {
                       style={{ width: "200px" }}
                     />
                   </Link> */}
-                </h4>
+                </h5>
               </div>
               <div className="navigation d-none d-lg-block">
                 <nav className="navigation__menu" id="offcanvas__menu">
