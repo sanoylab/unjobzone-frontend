@@ -8,10 +8,10 @@ function HomeHeader() {
         <div className="row">
           <div className="d-flex align-items-center justify-content-between">
             <div className="rts__logo">
-              <h4>
+              <h5>
               <Link to="/"><span style={{color: '#1791FF', fontWeight: 'bold'}}>UN</span>JOBZONE</Link>
 
-              </h4>
+              </h5>
             </div>
             <div className="navigation d-none d-lg-block">
               <nav className="navigation__menu">
