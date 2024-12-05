@@ -6,8 +6,8 @@ import linkedin from 'react-linkedin-login-oauth2/assets/linkedin.png';
 
 function LinkedInPage() {
   const { linkedInLogin } = useLinkedIn({
-    clientId: `${import.meta.env.VITE_LINKEDIN_CLIENT_ID}`,
-    redirectUri: `${window.location.origin}/linkedin`, // for Next.js, you can use `${typeof window === 'object' && window.location.origin}/linkedin`
+    clientId: '78lg6hcbemud94',
+    redirectUri: 'http://localhost:5173/linkedin', // for Next.js, you can use `${typeof window === 'object' && window.location.origin}/linkedin`
     onSuccess: (code) => {
       console.log(code);
     },
@@ -25,5 +25,4 @@ function LinkedInPage() {
     />
   );
 }
-
 export default LinkedInPage;

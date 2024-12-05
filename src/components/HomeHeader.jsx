@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Link } from "react-router-dom";
-import LinkedInSignUpButton from './LinkedInPage';
+import LinkedInPage from "./LinkedInPage";
 
 function HomeHeader() {
   const [user, setUser] = useState(null);
@@ -54,7 +54,7 @@ function HomeHeader() {
 
             <div className="rts__menu d-flex gap-5 align-items-center">
             <div className="header__right__btn d-flex gap-3">
-            <LinkedInSignUpButton />
+            <LinkedInPage />
              <button className="d-md-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"><i className="fa-sharp fa-regular fa-bars"></i></button>
 
                                 </div>
