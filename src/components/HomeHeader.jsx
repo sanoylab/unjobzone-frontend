@@ -1,6 +1,18 @@
+import React, { useState } from 'react';
+
 import { Link } from "react-router-dom";
-import  LinkedInLogin  from "./LinkedInLogin";
+import LinkedInSignUpButton from './LinkedInPage';
+
 function HomeHeader() {
+  const [user, setUser] = useState(null);
+
+  const handleLogin = (profile) => {
+    setUser(profile);
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+  };
   return (
     <header className="rts__section rts__header relative__header">
     <div className="container-none">
@@ -42,7 +54,7 @@ function HomeHeader() {
 
             <div className="rts__menu d-flex gap-5 align-items-center">
             <div className="header__right__btn d-flex gap-3">
-             <LinkedInLogin />
+            <LinkedInSignUpButton />
              <button className="d-md-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"><i className="fa-sharp fa-regular fa-bars"></i></button>
 
                                 </div>
