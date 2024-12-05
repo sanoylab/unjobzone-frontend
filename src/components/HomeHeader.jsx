@@ -22,7 +22,7 @@ function HomeHeader() {
                     
                   </li>
                   <li className="navigation__menu--item">
-                    <Link to="/job-categories" className="navigation__menu--item__link">Categories</Link>
+                    <Link to="/job-categories" className="navigation__menu--item__link">Job Category</Link>
                     
                   </li>
                   <li className="navigation__menu--item">
