@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LinkedInLogin from "./LinkedInPage";
+import LinkedInPage from "./LinkedInPage";
+
 function Header() {
   return (
     <header className="rts__section rts__header absolute__header">
@@ -64,7 +65,7 @@ function Header() {
               </div>
 
               <div className="header__right__btn d-flex gap-3">
-                <LinkedInLogin />{" "}
+                <LinkedInPage />
                 <button className="d-md-block d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas"><i className="fa-sharp fa-regular fa-bars"></i></button>
 
               </div>
