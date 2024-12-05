@@ -81,14 +81,15 @@ function JobDetail() {
             
                </div>
                <div className="col-lg-5 col-xl-4 d-flex flex-column gap-40">
+                   <div class="company__card">                        
+                        <h5 class="company__name mt-20">{job.dept}</h5>
+                        <a href={job.apply_link} target="_blank" class="rts__btn apply__btn mt-40">Apply This Possition</a>
+                    </div>
                     <div className="job__overview">
                         <h6 className="fw-semibold mb-20">Job Overview</h6>
                         <div className="job__overview__content">
                         <ul>
-                    <li className="d-flex flex-wrap gap-3 gap-sm-0 align-items-center justify-content-between">
-                      
-                      <span className="left-text"><strong>{job.dept}</strong></span>
-                    </li>
+                   
                     <li className="d-flex flex-wrap gap-0 gap-sm-0 ">
                       <span className="left-text">  Type</span>
                       <span className="left-text">: {job.recruitment_type}</span>
