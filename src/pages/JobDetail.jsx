@@ -54,8 +54,8 @@ function JobDetail() {
                   
                     
                   
-                    <div className="d-flex flex-wrap gap-4 mt-40 mb-30">
-                        
+                    <div className="d-flex flex-wrap gap-4 mt-40 mb-60">
+                    <a href={job.apply_link} target="_blank" class="rts__btn apply__btn fw-bold">Apply This Possition</a>
                         <div className="d-flex gap-3 align-items-center">
                             <span className="h6 fw-semibold">Share</span>
                             <div className="rts__social d-flex gap-3">
