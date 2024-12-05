@@ -84,7 +84,13 @@ function JobDetail() {
                    <div class="company__card">                        
                         <h5 class="company__name mt-20">{job.dept}</h5>
                         <a href={job.apply_link} target="_blank" class="rts__btn apply__btn mt-40">Apply This Position</a>
-                        <a href="#"  class="rts__btn apply__btn mt-20">Get a Cover Letter</a>
+                       
+
+                    </div>
+                    <div class="company__card">                        
+                    <p>
+      Sign in with your LinkedIn account <i className="fab fa-linkedin"></i> to get an automatically generated cover letter for this job.
+    </p>                                          <a href="#"  class="rts__btn apply__btn mt-20">Get a Cover Letter</a>
 
                     </div>
                     <div className="job__overview">
