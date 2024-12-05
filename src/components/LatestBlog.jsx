@@ -38,7 +38,7 @@ function LatestBlog() {
       ) : (
         <>
           {latestBlogs.map((blog, index) => (
-            <div className="col-lg-4">
+            <div className="col-lg-4" key={index}>
               <div className="rts__single__blog style__six" >
                 <Link to={`/blog/${blog.id}`} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
                   <img

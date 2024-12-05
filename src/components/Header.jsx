@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import LinkedInLogin from "./LinkedInLogin";
+import LinkedInLogin from "./LinkedInPage";
 function Header() {
   return (
     <header className="rts__section rts__header absolute__header">

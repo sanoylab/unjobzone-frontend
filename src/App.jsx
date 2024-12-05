@@ -10,6 +10,7 @@ import JobCategoryPage from './pages/JobCategoryPage';
 import JobDetail from './pages/JobDetail';
 import BlogDetail from './pages/BlogDetail';
 import NotFoundPage from './pages/NotFoundPage';
+import { LinkedInCallback } from "react-linkedin-login-oauth2";
 
 
 const router = createBrowserRouter(
@@ -25,6 +26,9 @@ const router = createBrowserRouter(
     <Route path='/job-categories' element={<JobCategoryPage />} />
     <Route path='/job/:id' element={<JobDetail />} />
     <Route path='/blog/:id' element={<BlogDetail />} />
+
+    <Route exact path="/linkedin" component={LinkedInCallback} />
+
 
     <Route path='*' element={<NotFoundPage />} />
 
