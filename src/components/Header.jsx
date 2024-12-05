@@ -25,16 +25,16 @@ function Header() {
               <div className="navigation d-none d-lg-block">
                 <nav className="navigation__menu" id="offcanvas__menu">
                   <ul className="list-unstyled">
-                    <li className="navigation__menu--item">
-                      <Link to="/" className="navigation__menu--item__link">
-                        Home
-                      </Link>
-                    </li>
+                   
                     <li className="navigation__menu--item">
                       <Link to="/jobs" className="navigation__menu--item__link">
                         Browse Jobs
                       </Link>
                     </li>
+                    <li className="navigation__menu--item">
+                    <Link to="/job-categories" className="navigation__menu--item__link">Categories</Link>
+                    
+                  </li>
                     <li className="navigation__menu--item">
                       <Link
                         to="/organizations"

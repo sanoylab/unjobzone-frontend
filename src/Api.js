@@ -19,22 +19,22 @@ export const getJobCategories = async () => {
   return data.data;
 };
 
-// export const getRecentJobListings = async () => {
-//   const response = await fetch(`${API_JOB_LISTING_URI}`, {
-//     method: 'GET',
-//     headers: {
-//       'Authorization': `Bearer ${token}`,
-//       'Content-Type': 'application/json'
-//     }
-//   });
+export const getJobFunctionCategories = async () => {
+  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/jobs/categories/job_function/list`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    }
+  });
 
-//   if (!response.ok) {
-//     throw new Error('Network response was not ok');
-//   }
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
 
-//   const data = await response.json(); 
-//   return data.data;
-// };
+  const data = await response.json();  
+  return data.data;
+};
 
 export const getJobs = async (page = 1, size = 10, isHome = false, job_title, duty_station, dept, recruitement_type, start_date, end_date, jn, jf, jc, jl) => {
   // Helper function to construct query string
