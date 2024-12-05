@@ -89,11 +89,10 @@ function JobDetail() {
                     </div>
                     <div class="company__card">                        
                     <p>
-      Sign In with your LinkedIn account <i className="fab fa-linkedin"></i> to get an automatically generated cover letter for this job.
+      Sign in with your LinkedIn account <i className="fab fa-linkedin"></i> to get an automatically generated cover letter for this job.
     </p>                                         
-    <a href="#" className="rts__btn apply__btn mt-20">
-  Get a Cover Letter <i className="fas fa-file-word word-icon"></i>
-</a>
+     <a href="#"  class="rts__btn apply__btn mt-20">Get a Cover Letter</a>
+
                     </div>
                     <div className="job__overview">
                         <h6 className="fw-semibold mb-20">Job Overview</h6>
