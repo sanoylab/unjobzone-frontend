@@ -11,7 +11,7 @@ function Header() {
             <div className="d-flex align-items-center justify-content-between">
               <div className="rts__logo">
                 <h5>
-                <Link to="/"><span style={{color: '#1791FF', fontWeight: 'bold'}}>UN</span>JOBZONE</Link>
+                <Link to="/"><span style={{color: '#1791FF', fontWeight: 'bold'}}>un</span>jobzone</Link>
 
                   {/* <Link to="/">
                     {" "}
