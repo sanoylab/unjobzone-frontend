@@ -1,28 +1,32 @@
 import React, { useState } from 'react';
-
-import { useLinkedIn } from 'react-linkedin-login-oauth2';
-// You can use provided image shipped by this package or using your own
+import { LinkedIn } from 'react-linkedin-login-oauth2';
 import linkedin from 'react-linkedin-login-oauth2/assets/linkedin.png';
 
 function LinkedInPage() {
-  const { linkedInLogin } = useLinkedIn({
-    clientId: '78lg6hcbemud94',
-    redirectUri: 'https://www.unjobzone.com/linkedin', // for Next.js, you can use `${typeof window === 'object' && window.location.origin}/linkedin`
-    onSuccess: (code) => {
-      console.log(code);
-    },
-    onError: (error) => {
-      console.log(error);
-    },
-  });
-
   return (
-    <img
-      onClick={linkedInLogin}
-      src={linkedin}
-      alt="Sign in with Linked In"
-      style={{ maxWidth: '180px', cursor: 'pointer' }}
-    />
+    <LinkedIn
+      clientId="78lg6hcbemud94"
+      redirectUri={`${window.location.origin}/linkedin`}
+      scope="email profile"
+      onSuccess={(code) => {
+        console.log('Login successful, code:', code);
+        window.close(); // Close the popup after successful login
+      }}
+      
+      onError={(error) => {
+        console.error('Login error:', error);
+      }}
+    >
+      {({ linkedInLogin }) => (
+        <img
+          onClick={linkedInLogin}
+          src={linkedin}
+          alt="Sign in with Linked In"
+          style={{ maxWidth: '180px', cursor: 'pointer' }}
+        />
+      )}
+    </LinkedIn>
   );
 }
+
 export default LinkedInPage;
