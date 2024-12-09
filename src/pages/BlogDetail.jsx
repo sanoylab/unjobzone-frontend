@@ -44,7 +44,7 @@ function BlogDetail() {
       <div class="rts__section section__padding">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="rts__blog__details">
                         <img src={`${APP_URL}/assets/blog/${blog.thumbnail}`} alt="" class="rounded-3 mb-30 mb-md-5" style={{width: '100%'}} />
                         <div
