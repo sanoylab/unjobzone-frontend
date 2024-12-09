@@ -7504,7 +7504,7 @@ input::placeholder {
 
 .rts__job__card .company__icon {
    
-   width: 130px;
+   width: 100px;
    display: grid;
    place-items: center;
    border-radius: 6px;
