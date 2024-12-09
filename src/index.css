@@ -146,4 +146,12 @@ a{
   text-align: center;
 }
 
+.fixed-height {
+  max-height: 750px; /* Adjust the height as needed */
+  overflow: hidden;
+}
+.center-button {
+  display: block;
+  margin: 20px auto 0; /* Adjust the margin-top value as needed */
+}
 
