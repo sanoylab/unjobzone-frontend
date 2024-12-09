@@ -9,7 +9,7 @@ import hero_banner from '../assets/img/home-6/banner/banner-shape.svg'
 import sdg from '../assets/images/sdg.png'
 function HomeHero() {
   return (
-    <section className="rts__banner position-relative home__six__banner">
+    <section className="rts__banner position-relative home__six__banner" style={{borderRadius:'30px' }}>
     <div className="container">
       <div className="row justify-content-between">
         <div className="rts__banner__shape d-none d-lg-block">
