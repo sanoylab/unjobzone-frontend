@@ -7,6 +7,7 @@ import who_logo from '../assets/images/who-logo.png'
 import unhcr_logo from '../assets/images/unhcr-logo.png'
 import hero_banner from '../assets/img/home-6/banner/banner-shape.svg'
 import sdg from '../assets/images/sdg.png'
+import big_un from '../assets/img/home-6/banner/banner-image-2.jpg'
 function HomeHero() {
   return (
     <section className="rts__banner position-relative home__six__banner">
@@ -52,7 +53,7 @@ function HomeHero() {
                                 <img src="assets/img/home-6/banner/banner-shape.svg" alt="" />
                             </div>
                             <div>
-                                <img className="rounded-2" src="assets/img/home-6/banner/banner-image-2.jpg" alt="" />
+                                <img className="rounded-2" src={big_un} alt="" />
                             </div>
           </div>
         </div>
