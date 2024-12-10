@@ -102,6 +102,27 @@ export const getJobOrganization = async () => {
 };
 
 
+
+
+export const getLogoJobOrganization = async () => {
+  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/jobs/organizations/logo/list`, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  const data = await response.json();  
+  return data.data;
+};
+
+
+
 export const getDutyStation = async () => {
   const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/jobs/duty_station/list`, {
     method: 'GET',
