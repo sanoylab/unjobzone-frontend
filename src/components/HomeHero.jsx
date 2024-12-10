@@ -9,7 +9,7 @@ import hero_banner from '../assets/img/home-6/banner/banner-shape.svg'
 import sdg from '../assets/images/sdg.png'
 function HomeHero() {
   return (
-    <section className="rts__banner position-relative home__six__banner" style={{borderRadius:'30px' }}>
+    <section className="rts__banner position-relative home__six__banner">
     <div className="container">
       <div className="row justify-content-between">
         <div className="rts__banner__shape d-none d-lg-block">
@@ -20,7 +20,12 @@ function HomeHero() {
                         <img src={itc_logo} alt="" />
           </div> */}
           
-          
+          <div className="shape__three shape">
+                            <img src="assets/img/icon/microsoft.svg" alt="" />
+                        </div>
+                        <div className="shape__four shape">
+                            <img src="assets/img/icon/apple.svg" alt="" />
+                        </div>
           <div className="shape__five shape">
             <img src={un_logo} alt="" />
           </div>
@@ -40,7 +45,15 @@ function HomeHero() {
             <Search />
           </div>
           <div className="rts__banner__images d-flex justify-content-center justify-content-sm-between flex-wrap flex-sm-nowrap">
-          
+          <div>
+                                <img className="rounded-full" src="assets/img/home-6/banner/banner-image-1.jpg" alt="" />
+                            </div>
+                            <div className="shape d-none d-lg-block">
+                                <img src="assets/img/home-6/banner/banner-shape.svg" alt="" />
+                            </div>
+                            <div>
+                                <img className="rounded-2" src="assets/img/home-6/banner/banner-image-2.jpg" alt="" />
+                            </div>
           </div>
         </div>
       </div>

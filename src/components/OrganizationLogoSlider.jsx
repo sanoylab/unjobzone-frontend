@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getJobOrganization } from "../Api";
+import { getLogoJobOrganization } from "../Api";
 // Update the import path to match where Swiper is located in your project
 import Spinner from "./Spinner";
 
@@ -12,7 +12,7 @@ const OrganizationLogoSlider = () => {
   useEffect(() => {
     async function fetchOrganizations() {
       try {
-        const organizations = await getJobOrganization();
+        const organizations = await getLogoJobOrganization();
         if (Array.isArray(organizations)) {
           setOrganizations(organizations);
         } else {
