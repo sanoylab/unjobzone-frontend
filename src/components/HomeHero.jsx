@@ -1,13 +1,13 @@
 import Search from './Search'
 import unicef_logo from '../assets/images/unicef-logo.png'
-import itc_logo from '../assets/images/itc-logo.png'
+import unfpa_logo from '../assets/images/unfpa.png'
 import un_logo from '../assets/images/un-logo.png'
 import unaids_logo from '../assets/images/unaids-logo.png'
 import who_logo from '../assets/images/who-logo.png'
 import unhcr_logo from '../assets/images/unhcr-logo.png'
 import hero_banner from '../assets/img/home-6/banner/banner-shape.svg'
 import sdg from '../assets/images/sdg.png'
-import big_un from '../assets/img/home-6/banner/banner-image-2.jpg'
+import big_un from '../assets/img/home-6/banner/banner-image-2.png'
 function HomeHero() {
   return (
     <section className="rts__banner position-relative home__six__banner">
@@ -22,13 +22,13 @@ function HomeHero() {
           </div> */}
           
           <div className="shape__three shape">
-                            <img src="assets/img/icon/microsoft.svg" alt="" />
+                            <img src={who_logo} alt="" />
                         </div>
                         <div className="shape__four shape">
-                            <img src="assets/img/icon/apple.svg" alt="" />
+                            <img src={unhcr_logo} alt="" />
                         </div>
           <div className="shape__five shape">
-            <img src={un_logo} alt="" />
+            <img src={unfpa_logo} alt="" />
           </div>
           <div className="shape__six shape">
             <img src={unaids_logo} alt="" />
@@ -47,13 +47,13 @@ function HomeHero() {
           </div>
           <div className="rts__banner__images d-flex justify-content-center justify-content-sm-between flex-wrap flex-sm-nowrap">
           <div>
-                                <img className="rounded-full" src="assets/img/home-6/banner/banner-image-1.jpg" alt="" />
+                                <img className="rounded-full" src="assets/img/home-6/banner/banner-image-1.png" alt="" />
                             </div>
                             <div className="shape d-none d-lg-block">
-                                <img src="assets/img/home-6/banner/banner-shape.svg" alt="" />
+                                <img src="assets/img/home-6/banner/banner-shape.svg" alt=""  />
                             </div>
                             <div>
-                                <img className="rounded-2" src={big_un} alt="" />
+                                <img className="rounded-2" src={big_un} alt="" style={{paddingTop: '45px'}}/>
                             </div>
           </div>
         </div>
