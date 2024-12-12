@@ -1,4 +1,4 @@
-
+import SocialShare from "./SocialShare"
 function Footer() {
   return (
    
@@ -72,21 +72,8 @@ function Footer() {
                 <div className="col-lg-8 col-md-8">
                     <div className="d-flex justify-content-between flex-wrap flex-lg-nowrap gap-4 align-items-center">
                         <div className="rts__social d-flex gap-3 social__default">
-    <a href="https://facebook.com"  aria-label="facebook">
-        <i className="fa-brands fa-facebook"></i>
-    </a>
-    <a href="https://instagram.com"  aria-label="instagram">
-        <i className="fa-brands fa-instagram"></i>
-    </a>
-    <a href="https://linkedin.com"  aria-label="linkedin">
-        <i className="fa-brands fa-linkedin"></i>
-    </a>
-    <a href="https://pinterest.com"  aria-label="pinterest">
-        <i className="fa-brands fa-pinterest"></i>
-    </a>
-    <a href="https://youtube.com"  aria-label="youtube">
-        <i className="fa-brands fa-youtube"></i>
-    </a>
+                            <SocialShare />
+   
 </div>
 
                         <p>Copyright &copy; 2025 All Rights Reserved by UNJobZone</p>

@@ -4,7 +4,7 @@ import JobDetailHero from "../components/JobDetailHero";
 import Spinner from "../components/Spinner";
 import { useParams } from "react-router-dom";
 import { marked } from "marked";
-
+import SocialShare from "../components/SocialShare";
 function JobDetail() {
   const { id } = useParams();
   const [job, setJob] = useState(null);
@@ -63,21 +63,7 @@ function JobDetail() {
                   <div className="d-flex gap-3 align-items-center">
                     <span className="h6 fw-semibold">Share</span>
                     <div className="rts__social d-flex gap-3">
-                      <a href="https://facebook.com" aria-label="facebook">
-                        <i className="fa-brands fa-facebook"></i>
-                      </a>
-                      <a href="https://instagram.com" aria-label="instagram">
-                        <i className="fa-brands fa-instagram"></i>
-                      </a>
-                      <a href="https://linkedin.com" aria-label="linkedin">
-                        <i className="fa-brands fa-linkedin"></i>
-                      </a>
-                      <a href="https://pinterest.com" aria-label="pinterest">
-                        <i className="fa-brands fa-pinterest"></i>
-                      </a>
-                      <a href="https://youtube.com" aria-label="youtube">
-                        <i className="fa-brands fa-youtube"></i>
-                      </a>
+                      <SocialShare />                       
                     </div>
                   </div>
                 </div>
