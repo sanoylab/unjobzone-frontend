@@ -8,7 +8,7 @@ const ThumbnailJob = ({
   recruitment_type,
   job_title,
   dept,
-    jl,
+  jl,
   logo,
 }) => {
   return (
@@ -19,13 +19,13 @@ const ThumbnailJob = ({
             <img src={logo} alt="" />
           </div>
           <div className="featured__option">
-          <span style={{ color: new Date(end_date).toDateString() === new Date().toDateString() ? 'red' : 'inherit' }}>
-  {new Date(end_date).toLocaleDateString("en-US", {
-    month: "short",
-    day: "2-digit",
-    year: "numeric",
-  })}
-</span>
+            <span style={{ color: new Date(end_date).toDateString() === new Date().toDateString() ? 'red' : 'inherit' }}>
+              {new Date(end_date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "2-digit",
+                year: "numeric",
+              })}
+            </span>
           </div>
         </div>
         <div className="d-flex gap-3 mt-4 flex-wrap">
@@ -45,10 +45,10 @@ const ThumbnailJob = ({
           </Link>
         </div>
         {jl && (
-                        <div>
-                          <i className="fa-light rt-briefcase"></i> {jl}
-                        </div>
-                      )}
+          <div>
+            <i className="fa-light rt-briefcase"></i> {jl}
+          </div>
+        )}
         <p className="font-sm">{dept}</p>
       </div>
     </div>
