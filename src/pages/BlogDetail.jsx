@@ -46,7 +46,7 @@ function BlogDetail() {
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="rts__blog__details">
-                        <img src={`${APP_URL}/assets/blog/${blog.thumbnail}`} alt="" class="rounded-3 mb-30 mb-md-5" style={{width: '100%'}} />
+                        {/* <img src={`${APP_URL}/assets/blog/${blog.thumbnail}`} alt="" class="rounded-3 mb-30 mb-md-5" style={{width: '100%'}} /> */}
                         <div
                     dangerouslySetInnerHTML={{ __html: marked(blog.content) }}
                   />{" "}    
