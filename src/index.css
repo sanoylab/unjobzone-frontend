@@ -155,3 +155,15 @@ a{
   margin: 20px auto 0; /* Adjust the margin-top value as needed */
 }
 
+
+@media (max-width: 767px) {
+  #banner-image {
+    display: none !important;
+  }
+  .rts__brand{
+    display: none;
+  }
+  .home__six__banner{
+    padding-bottom: 0px;
+  }
+}
