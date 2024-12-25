@@ -800,7 +800,11 @@ h5,
    font-size:32px !important;
    line-height: 42px;
 }
-
+@media screen and (max-width: 576px) {
+   #banner-image {
+     display: none;
+   }
+ }
 @media screen and (max-width: 992px) {
 
    h5,
