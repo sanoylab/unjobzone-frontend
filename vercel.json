@@ -1,26 +1,24 @@
 {
+    "routes": [
+        {
+            "src": "/[^.]+",
+            "dest": "/",
+            "status": 200
+        }
+    ],
     "rewrites": [
         {
-            "source": "/((?!.*\\.(js|css|png|jpg|jpeg|gif|svg|ico)).*)",
+            "source": "/(.*)",
             "destination": "/index.html"
         }
     ],
     "headers": [
         {
-            "source": "/(.*).js",
+            "source": "/(.*)",
             "headers": [
                 {
-                    "key": "Content-Type",
-                    "value": "application/javascript"
-                }
-            ]
-        },
-        {
-            "source": "/(.*).css",
-            "headers": [
-                {
-                    "key": "Content-Type",
-                    "value": "text/css"
+                    "key": "Cache-Control",
+                    "value": "public, max-age=0, must-revalidate"
                 }
             ]
         }
