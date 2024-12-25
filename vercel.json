@@ -1,1 +1,24 @@
-{ "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }] }
+{
+    "routes": [
+        {
+            "src": "/[^.]+",
+            "dest": "/",
+            "status": 200
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
+        }
+    ], 
+    "builds": [
+        {
+          "src": "package.json",
+          "use": "@vercel/static-build",
+          "config": {
+            "distDir": "build"
+          }
+        }
+      ]
+}
