@@ -43,7 +43,7 @@ function LatestBlog() {
                 <Link to={`/blog/${blog.id}`} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
                   <img
                     
-                    src={`${APP_URL}/assets/blog/${blog.thumbnail}`}
+                    src={`${blog.thumbnail}`}
                     alt=""
                     className="rounded-2"
                   />
