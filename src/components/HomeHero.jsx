@@ -35,8 +35,8 @@ function HomeHero() {
           </div>
         </div>
         <div className="rts__banner__wrapper position-relative z-3 text-center">
-          <div className="rts__banner__content">
-            <h1 className="rts__banner__title mb-4  wow animated fadeInUp">
+          <div className="rts__banner__content" style={{ color: 'white' }}> 
+            <h1 className="rts__banner__title mb-4  wow animated fadeInUp"  style={{ color: 'white' }}>
               Explore UN Jobs
             </h1>
             <p className="mb-40 br-lg-none  wow animated fadeInUp">
