@@ -159,7 +159,7 @@ export const getJobDetail = async (id) => {
 
 
 export const getBlogs = async () => {
-  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/blogs`, {
+  const response = await fetch(`https://unjobzone-api.onrender.com/api/v1/blogs?page=1&size=100`, {
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${token}`,
