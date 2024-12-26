@@ -4,19 +4,19 @@ const APP_URL = import.meta.env.VITE_APP_URI;
 
 function JobDetailHero({ job }) {
   return (
-    <div className="rts__section breadcrumb__background">
+    <div className="rts__section breadcrumb__background" style={{opacity: "0.9"}}>
       <div className="container">
         <div className="row">
           <div className="col-lg-12 position-relative d-flex justify-content-between align-items-center">
             <div className="breadcrumb__area max-content breadcrumb__padding">
               <div className="rts__job__card__big bg-transparent p-0 position-relative z-1 flex-wrap justify-content-between d-flex gap-4 align-items-center">
                 <div className="d-flex gap-4 align-items-center flex-md-row flex-column mx-auto mx-md-0">
-                  <div className=" rounded-2">
+                  <div className=" rounded-2" >
                     <img
                       className=""
                       src={`${APP_URL}/assets/logo/${job.logo}`}
                       alt=""
-                      style={{ width: "150px", height: "auto" }}
+                      style={{ width: "150px", height: "auto",  }}
                     />
                   </div>
                   <div
@@ -24,9 +24,9 @@ function JobDetailHero({ job }) {
                     
                   >
                     <div className="">
-                      <h3 className="job__title h3 mb-0">{job.job_title}</h3>
+                      <h3 className="job__title h3 mb-0" style={{ color: "white", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}>{job.job_title}</h3>
                     </div>
-                    <div className="d-flex gap-3 justify-content-center justify-content-md-start flex-wrap mb-3 mt-2">
+                    <div className="d-flex gap-3 justify-content-center justify-content-md-start flex-wrap mb-3 mt-2" style={{color: "white"}}>
                       <div className="d-flex gap-2 align-items-center">
                         <i className="fa-light fa-location-dot"></i>{" "}
                         {job.duty_station}
@@ -51,11 +51,11 @@ function JobDetailHero({ job }) {
                           <i className="fa-light rt-briefcase"></i> {job.jl}
                         </div>
                       )}
-                      {job.jn && (
+                      {/* {job.jn && (
                         <div>
                           <i className="fa-light rt-briefcase"></i> {job.jn}
                         </div>
-                      )}
+                      )} */}
                     </div>
                   </div>
                 </div>

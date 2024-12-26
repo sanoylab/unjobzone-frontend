@@ -7,7 +7,7 @@ function Hero({title}) {
         <div className="row">
             <div className="col-lg-12 position-relative d-flex justify-content-between align-items-center">
                 <div className="breadcrumb__area max-content breadcrumb__padding z-2">
-                    <h5 className="breadcrumb-title h3 mb-3">{title}</h5>
+                    <h5 className="breadcrumb-title h3 mb-3" style={{color: "white", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)"}}>{title}</h5>
                                    
                 </div>
                 <div className="breadcrumb__area__shape d-flex gap-4 justify-content-end align-items-center">
