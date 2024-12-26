@@ -46,13 +46,13 @@ function HomeHero() {
             <Search />
           </div>
           <div id='banner-image' className="rts__banner__images d-flex justify-content-center justify-content-sm-between flex-wrap flex-sm-nowrap">          <div>
-                                <img className="rounded-full" src="assets/img/home-6/banner/banner-image-1.png" alt="" />
+                                <img className="rounded-full" src="assets/img/home-6/banner/banner-image-1.png" alt="" style={{width: '280px'}} />
                             </div>
                             <div className="shape d-none d-lg-block">
                                 <img src="assets/img/home-6/banner/banner-shape.svg" alt=""  />
                             </div>
                             <div>
-                                <img className="rounded-2" src={big_un} alt="" style={{paddingTop: '45px'}}/>
+                                <img className="rounded-2" src={big_un} alt="" style={{paddingTop: '45px', }}/>
                             </div>
           </div>
         </div>
