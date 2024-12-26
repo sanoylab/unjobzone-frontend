@@ -53,7 +53,7 @@ const breakpointColumnsObj = {
                   id={blog.id}
                   key={index}
                   title={blog.title}
-                  thumbnail={`${APP_URL}/assets/blog/${blog.thumbnail}`}                  
+                  thumbnail={`${blog.thumbnail}`}                  
                 />
               ))}
             </Masonry>

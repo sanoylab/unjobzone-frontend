@@ -45,7 +45,7 @@ const APP_URL = import.meta.env.VITE_APP_URI;
 <div className="blog__content d-flex flex-wrap flex-xl-nowrap gap-5 align-items-center">
     <div className="blog__thumb">
         <Link to={`/blog/${blog.id}`}  className="blog__thumbnail">
-        <img className="rounded-2 w-50" src={`${APP_URL}/assets/blog/${blog.thumbnail}`} alt="" /> 
+        <img className="rounded-2 w-50" src={`${blog.thumbnail}`} alt="" /> 
         </Link>
     </div>
     <div className="blog__content__meta">
