@@ -35,6 +35,14 @@ function MobileMenu() {
                 </li>
                 <li className="navigation__menu--item-mobile">
                   <Link
+                    to="/job-categories"
+                    className="navigation__menu--item-mobile__link"
+                  >
+                    Job Category
+                  </Link>
+                </li>
+                <li className="navigation__menu--item-mobile">
+                  <Link
                     to="/organizations"
                     className="navigation__menu--item-mobile__link"
                   >
