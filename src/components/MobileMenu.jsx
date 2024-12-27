@@ -62,7 +62,7 @@ function MobileMenu() {
                     to="/blog"
                     className="navigation__menu--item-mobile__link"
                   >
-                    Daily Blog
+                    Blog
                   </Link>
                 </li>
               </ul>
