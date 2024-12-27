@@ -2,6 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { getJobFunctionCategories} from '../Api'
 import JobCategory from '../components/JobCategory';
 import Hero from '../components/Hero';
+
+const images = [
+  "/assets/img/home-6/icon/marketing.svg",
+  "/assets/img/home-6/icon/data.svg",
+  "/assets/img/home-6/icon/design.svg",
+  "/assets/img/home-6/icon/development.svg",
+  "/assets/img/home-6/icon/icon.svg"
+];
+
+const getRandomImage = () => {
+  return images[Math.floor(Math.random() * images.length)];
+};
+
+
+
 function JobCategoryPage() {
   const [jobCategories, setJobCategories] = useState([]);
   useEffect(() => {
@@ -32,7 +47,7 @@ function JobCategoryPage() {
           <JobCategory key={index}
             title={category.jf}
             link={`/jobs?jf=${encodeURIComponent(category.jf)}`}
-            image="/assets/img/home-6/icon/marketing.svg"
+            image={getRandomImage()}
             totalJobs={category.total}
           />
         ))}
