@@ -51,7 +51,7 @@ function MobileMenu() {
                 </li>
                 <li className="navigation__menu--item-mobile">
                   <Link
-                    to="/daily-blog"
+                    to="/blog"
                     className="navigation__menu--item-mobile__link"
                   >
                     Daily Blog
