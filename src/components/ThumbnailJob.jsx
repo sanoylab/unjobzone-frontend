@@ -19,7 +19,10 @@ const ThumbnailJob = ({
             <img src={logo} alt="" />
           </div>
           <div className="featured__option">
+            
             <span style={{ color: new Date(end_date).toDateString() === new Date().toDateString() ? 'red' : 'inherit' }}>
+            <i className="fa-light fa-clock"></i>{" "}&nbsp;
+
               {new Date(end_date).toLocaleDateString("en-US", {
                 month: "short",
                 day: "2-digit",

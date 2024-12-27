@@ -44,12 +44,14 @@ const ListJob = ({
                                                 <i className="fa-light rt-briefcase"></i> {recruitment_type}
                                             </div> */}
               <div className="d-flex gap-2 align-items-center">
-                <i className="fa-light fa-clock"></i>{" "}
-                {new Date(end_date).toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "2-digit",
-                  year: "numeric",
-                })}
+                <span style={{ color: new Date(end_date).toDateString() === new Date().toDateString() ? 'red' : 'inherit' }}>
+                <i className="fa-light fa-clock"></i>{" "}&nbsp;
+              {new Date(end_date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "2-digit",
+                year: "numeric",
+              })}
+            </span>
               </div>
             </div>
           </div>
