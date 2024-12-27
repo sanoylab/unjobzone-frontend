@@ -3,6 +3,19 @@ import { Link } from "react-router-dom";
 import JobCategory from "./JobCategory";
 import { getJobCategories } from "../Api";
 
+const images = [
+  "/assets/img/home-6/icon/marketing.svg",
+  "/assets/img/home-6/icon/data.svg",
+  "/assets/img/home-6/icon/design.svg",
+  "/assets/img/home-6/icon/development.svg",
+  "/assets/img/home-6/icon/icon.svg"
+];
+
+const getRandomImage = () => {
+  return images[Math.floor(Math.random() * images.length)];
+};
+
+
 function JobCategoryCards() {
   const [jobCategories, setJobCategories] = useState([]);
   const [isExpanded, setIsExpanded] = useState(false);
@@ -62,7 +75,7 @@ function JobCategoryCards() {
                 key={index}
                 title={category.jn}
                 link={`/jobs?jn=${encodeURIComponent(category.jn)}`}
-                image="/assets/img/home-6/icon/marketing.svg"
+                image={getRandomImage()}
                 totalJobs={category.total}
               />
             ))}
