@@ -11,7 +11,7 @@ const [loading, setLoading] = useState(true);
 const APP_URL = import.meta.env.VITE_APP_URI;
 
 const breakpointColumnsObj = {
-  default: 4,
+  default: 3,
   1100: 3,
   700: 2,
   500: 1
@@ -54,6 +54,7 @@ const breakpointColumnsObj = {
                 <OrganizationCard
                   key={index}
                   title={category.dept}
+                  description = {category.description}
                   image={`${APP_URL}/assets/logo/${category.logo}`}
                   totalJobs={category.total}
                 />
