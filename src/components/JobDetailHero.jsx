@@ -24,7 +24,7 @@ function JobDetailHero({ job }) {
                     
                   >
                     <div className="">
-                      <h3 className="job__title h3 mb-0" style={{ color: "white", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}>{job.job_title}</h3>
+                      <h3 className="job__title h3 mb-0" style={{ color: "white" }}>{job.job_title}</h3>
                     </div>
                     <div className="d-flex gap-3 justify-content-center justify-content-md-start flex-wrap mb-3 mt-2" style={{color: "white"}}>
                       <div className="d-flex gap-2 align-items-center">
