@@ -129,10 +129,10 @@ function JobDetail() {
                     <li className="d-flex flex-wrap gap-3 gap-sm-0 ">
                       <span className="left-text"> {job.duty_station}</span>
                     </li>
-                    <li className="d-flex flex-wrap gap-3 gap-sm-0 ">
+                    {/* <li className="d-flex flex-wrap gap-3 gap-sm-0 ">
                       <span className="left-text"> Language: &nbsp;</span>
                       <span className="left-text">{job.language}</span>
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>
