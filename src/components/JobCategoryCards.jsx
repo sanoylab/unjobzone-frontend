@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import JobCategory from "./JobCategory";
 import { getJobCategories } from "../Api";
@@ -10,6 +10,9 @@ function JobCategoryCards() {
 
   const initialLoadCount = 6;
   const loadMoreCount = 6;
+
+  // Ref for scrolling
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     async function fetchJobCategories() {
@@ -33,6 +36,12 @@ function JobCategoryCards() {
     if (isExpanded) {
       setVisibleCategories(initialLoadCount);
       setIsExpanded(false);
+      // Scroll to section top when collapsing
+      setTimeout(() => {
+        if (sectionRef.current) {
+          sectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
     } else {
       setVisibleCategories(jobCategories.length);
       setIsExpanded(true);
@@ -42,7 +51,7 @@ function JobCategoryCards() {
   const displayedCategories = jobCategories.slice(0, visibleCategories);
 
   return (
-    <div className="job-categories-section" style={{
+    <div ref={sectionRef} className="job-categories-section" style={{
       background: 'transparent',
       padding: '5rem 0',
       position: 'relative',

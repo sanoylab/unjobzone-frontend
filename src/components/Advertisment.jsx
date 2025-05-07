@@ -1,10 +1,10 @@
 import React from "react";
 
 const features = [
-  { icon: "fa-globe", text: "Make a global impact", color: "#1B8EF2" },
-  { icon: "fa-users", text: "Work with diverse teams", color: "#F59E42" },
-  { icon: "fa-graduation-cap", text: "Access to continuous learning", color: "#34C759" },
-  { icon: "fa-medal", text: "Competitive benefits and compensation", color: "#FF5E5B" },
+  { icon: "fa-globe", text: "Work with a Global Mission", color: "#1B8EF2" },
+  { icon: "fa-users", text: "Join Diverse Teams", color: "#F59E42" },
+  { icon: "fa-lightbulb", text: "Innovate for Impact", color: "#34C759" },
+  { icon: "fa-medal", text: "Grow & Succeed", color: "#FF5E5B" },
 ];
 
 const sdgIcons = [
@@ -15,213 +15,302 @@ const Advertisment = () => {
   return (
     <section style={{
       width: '100%',
-      padding: 0,
-      background: 'linear-gradient(120deg, #EAF2FA 0%, #B3D8FF 40%, #1B8EF2 100%)',
+      minHeight: '520px',
+      background: 'linear-gradient(120deg, #EAF2FA 0%, #B3D8FF 60%, #F5F8FF 100%)',
       position: 'relative',
       overflow: 'hidden',
-      minHeight: '600px',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
       zIndex: 1,
+      flexDirection: 'column',
+      padding: '64px 0',
     }}>
-      {/* Layered SVG waves */}
-     
-      {/* Animated blobs */}
-      <div style={{ position: 'absolute', left: '-10%', top: '10%', width: '340px', height: '340px', background: 'radial-gradient(circle at 40% 40%, #1B8EF2 0%, #F59E42 100%)', opacity: 0.22, filter: 'blur(60px)', zIndex: 0, animation: 'floatBlobA 14s ease-in-out infinite alternate' }} />
-      <div style={{ position: 'absolute', right: '-12%', top: '40%', width: '260px', height: '260px', background: 'radial-gradient(circle at 60% 60%, #FF5E5B 0%, #34C759 100%)', opacity: 0.18, filter: 'blur(60px)', zIndex: 0, animation: 'floatBlobB 18s ease-in-out infinite alternate' }} />
-      <div style={{ position: 'absolute', left: '45%', bottom: '-18%', width: '320px', height: '320px', background: 'radial-gradient(circle at 60% 60%, #1B8EF2 0%, #1B4B82 100%)', opacity: 0.15, filter: 'blur(60px)', zIndex: 0, animation: 'floatBlobC 16s ease-in-out infinite alternate' }} />
-      <div className="container" style={{ position: 'relative', zIndex: 2, padding: 0 }}>
-        <div className="row align-items-center justify-content-center" style={{ minHeight: '600px', padding: '4.5rem 0' }}>
-          {/* Single full-width column */}
-          <div className="col-lg-12 d-flex align-items-center justify-content-center position-relative" style={{ minHeight: '600px' }}>
-            <div style={{
-              background: 'rgba(255,255,255,0.92)',
-              borderRadius: '2.7rem',
-              boxShadow: '0 12px 48px 0 rgba(27, 75, 130, 0.13)',
-              padding: '3.2rem 2.7rem 2.7rem 2.7rem',
-              maxWidth: '1100px',
-              width: '100%',
-              backdropFilter: 'blur(14px) saturate(160%)',
-              border: '2px solid rgba(27, 75, 130, 0.13)',
-              position: 'relative',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              overflow: 'visible',
-            }}>
-              {/* Confetti/floating icons inside the card */}
-              {Array.from({ length: 12 }).map((_, i) => (
-                <i key={i} className={`fa-solid ${sdgIcons[i % sdgIcons.length]}`} style={{
-                  position: 'absolute',
-                  left: `${8 + Math.random() * 84}%`,
-                  top: `${8 + Math.random() * 84}%`,
-                  fontSize: `${1.2 + Math.random() * 2.2}rem`,
-                  color: ["#1B8EF2", "#F59E42", "#34C759", "#FF5E5B"][i % 4],
-                  opacity: 0.13 + Math.random() * 0.18,
-                  zIndex: 3,
-                  pointerEvents: 'none',
-                  animation: `floatIcon${i % 3} ${8 + Math.random() * 8}s ease-in-out infinite alternate`,
-                }} />
-              ))}
-              {/* Left: Content */}
-              <div style={{ flex: 1, minWidth: 0, zIndex: 4 }}>
-                <h2 style={{
-                  fontSize: '2.7rem',
-                  fontWeight: 900,
-                  background: 'linear-gradient(90deg, #1B8EF2 0%, #F59E42 30%, #34C759 60%, #FF5E5B 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  marginBottom: '1.2rem',
-                  letterSpacing: '-1.5px',
-                  lineHeight: 1.13,
-                  animation: 'gradientMove 6s linear infinite',
-                  backgroundSize: '200% 200%',
+      {/* Animated background gradient blob */}
+      <div style={{
+        position: 'absolute',
+        left: '60%',
+        top: '40%',
+        width: '600px',
+        height: '600px',
+        background: 'radial-gradient(circle at 60% 40%, #1B8EF2 0%, #1B4B82 100%)',
+        opacity: 0.10,
+        filter: 'blur(120px)',
+        zIndex: 0,
+        animation: 'floatAdvertBlob 18s ease-in-out infinite alternate',
+      }} />
+      {/* Faint UN globe watermark */}
+      <div style={{
+        position: 'absolute',
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        fontSize: '16rem',
+        color: '#1B8EF2',
+        opacity: 0.07,
+        zIndex: 0,
+        pointerEvents: 'none',
+        animation: 'spinAdvertGlobe 40s linear infinite',
+      }}>
+        <i className="fas fa-globe-africa"></i>
+      </div>
+      {/* Floating accent shape */}
+      <div style={{
+        position: 'absolute',
+        right: '8%',
+        top: '18%',
+        width: '90px',
+        height: '90px',
+        background: 'linear-gradient(135deg, #F59E42 0%, #FF5E5B 100%)',
+        opacity: 0.13,
+        borderRadius: '50%',
+        filter: 'blur(8px)',
+        zIndex: 1,
+        animation: 'floatAccent 7s ease-in-out infinite alternate',
+      }} />
+      <div style={{
+        position: 'relative',
+        zIndex: 2,
+        width: '100%',
+        maxWidth: '1200px',
+        margin: '0 auto',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '520px',
+        padding: '0 1.2rem',
+        gap: '3.5rem',
+      }}>
+        {/* Left: Content */}
+        <div style={{
+          flex: 1,
+          minWidth: 0,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          justifyContent: 'center',
+        }}>
+          <h2 style={{
+            fontSize: '2.7rem',
+            fontWeight: 900,
+            background: 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+            marginBottom: '1.1rem',
+            letterSpacing: '-1.5px',
+            lineHeight: 1.12,
+            fontFamily: 'Inter, Segoe UI, Arial, sans-serif',
+            textAlign: 'left',
+          }}>
+            Make Your Mark on the World
+          </h2>
+          <p style={{
+            fontSize: '1.18rem',
+            color: '#334E68',
+            marginBottom: '2.2rem',
+            fontWeight: 500,
+            lineHeight: 1.7,
+            fontFamily: 'Inter, Segoe UI, Arial, sans-serif',
+            maxWidth: '600px',
+            marginLeft: 0,
+            marginRight: 0,
+            textAlign: 'left',
+          }}>
+            Join the United Nations and help shape a better future. Work with passionate people, drive real change, and grow your career on a global stage.
+          </p>
+          {/* Features */}
+          <ul style={{
+            listStyle: 'none',
+            padding: 0,
+            margin: 0,
+            marginBottom: '2.5rem',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '1.2rem 2.2rem',
+            justifyContent: 'flex-start',
+          }}>
+            {features.map((f, i) => (
+              <li key={i} style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1.1rem',
+                minWidth: '210px',
+                marginBottom: 0,
+                justifyContent: 'flex-start',
+                background: 'rgba(255,255,255,0.65)',
+                borderRadius: '2rem',
+                padding: '0.7rem 1.3rem',
+                boxShadow: `0 2px 12px ${f.color}11`,
+                border: `1.5px solid ${f.color}22`,
+                backdropFilter: 'blur(4px)',
+              }}>
+                <span style={{
+                  width: '2.7rem', height: '2.7rem', borderRadius: '50%',
+                  background: f.color + '22', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '1.45rem', color: f.color, fontWeight: 700, boxShadow: `0 2px 12px ${f.color}33`,
+                  border: `2.5px solid ${f.color}33`,
+                  filter: 'drop-shadow(0 0 8px ' + f.color + '22)',
+                  transition: 'box-shadow 0.2s',
                 }}>
-                  🌍 UN Careers: Where the World Comes Together
-                </h2>
-                <p style={{
-                  fontSize: '1.22rem',
-                  color: '#334E68',
-                  marginBottom: '2.3rem',
-                  fontWeight: 600,
-                  lineHeight: 1.7,
-                  textShadow: '0 2px 8px #fff8',
-                }}>
-                  Join a global celebration of opportunity, diversity, and impact. The United Nations is your stage to shine, grow, and change the world—one mission at a time.
-                </p>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, marginBottom: '2.5rem' }}>
-                  {features.map((f, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '1.1rem', marginBottom: '1.2rem', animation: `fadeInUp 0.7s ${0.2 + i * 0.13}s both` }}>
-                      <span style={{
-                        width: '2.7rem', height: '2.7rem', borderRadius: '50%',
-                        background: f.color + '22', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontSize: '1.45rem', color: f.color, fontWeight: 700, boxShadow: `0 2px 12px ${f.color}22`,
-                        animation: `pulseIcon 2.5s ${0.2 + i * 0.2}s infinite alternate`,
-                      }}>
-                        <i className={`fa-solid ${f.icon}`}></i>
-                      </span>
-                      <span style={{ fontWeight: 700, color: '#1B4B82', fontSize: '1.13rem', letterSpacing: '-0.5px' }}>{f.text}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a href="#" style={{
-                  display: 'inline-block',
-                  background: 'linear-gradient(90deg, #1B8EF2 0%, #F59E42 30%, #34C759 60%, #FF5E5B 100%)',
-                  color: '#fff',
-                  padding: '1.25rem 3.2rem',
-                  borderRadius: '2.7rem',
-                  fontSize: '1.22rem',
-                  fontWeight: 900,
-                  textDecoration: 'none',
-                  boxShadow: '0 12px 48px rgba(27, 75, 130, 0.18)',
-                  transition: 'transform 0.2s, box-shadow 0.2s, background 0.2s',
-                  letterSpacing: '-0.7px',
-                  animation: 'pulseBtn 2.2s infinite alternate',
-                }}
-                  onMouseOver={e => {
-                    e.currentTarget.style.transform = 'translateY(-4px) scale(1.06)';
-                    e.currentTarget.style.background = 'linear-gradient(90deg, #FF5E5B 0%, #34C759 30%, #F59E42 60%, #1B8EF2 100%)';
-                    e.currentTarget.style.boxShadow = '0 20px 60px rgba(27, 75, 130, 0.22)';
-                  }}
-                  onMouseOut={e => {
-                    e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                    e.currentTarget.style.background = 'linear-gradient(90deg, #1B8EF2 0%, #F59E42 30%, #34C759 60%, #FF5E5B 100%)';
-                    e.currentTarget.style.boxShadow = '0 12px 48px rgba(27, 75, 130, 0.18)';
-                  }}
-                >
-                  Celebrate Your UN Journey
-                </a>
-              </div>
-              {/* Right: Colorful UN/People Illustration + SDG icons */}
-              <div style={{ position: 'relative', width: '370px', height: '370px', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 4 }}>
-                {/* Neon border blob */}
-                <div style={{
-                  position: 'absolute',
-                  top: 0, left: 0, width: '100%', height: '100%',
-                  borderRadius: '50%',
-                  background: 'conic-gradient(from 90deg, #1B8EF2 0%, #F59E42 40%, #34C759 70%, #FF5E5B 100%)',
-                  opacity: 0.22,
-                  filter: 'blur(12px)',
-                  zIndex: 1,
-                  animation: 'spinBlob 12s linear infinite',
-                }} />
-                {/* Main illustration */}
-                <img src="/assets/img/hom-4/banner/Illustration.png" alt="UN Community" style={{
-                  width: '260px', height: '260px', borderRadius: '50%', objectFit: 'cover',
-                  border: '8px solid #fff', boxShadow: '0 12px 48px rgba(27, 75, 130, 0.18)', position: 'relative', zIndex: 2
-                }} />
-                {/* Foreground floating SDG icons */}
-                {sdgIcons.map((icon, i) => (
-                  <div key={icon} style={{
-                    position: 'absolute',
-                    left: `${18 + 60 * Math.cos((i / sdgIcons.length) * 2 * Math.PI)}%`,
-                    top: `${18 + 60 * Math.sin((i / sdgIcons.length) * 2 * Math.PI)}%`,
-                    width: '54px', height: '54px', borderRadius: '50%',
-                    background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    boxShadow: `0 4px 16px ${features[i % features.length].color}33`, zIndex: 3,
-                    animation: `floatSDG${i % 2} 4s ${i * 0.5}s infinite alternate`,
-                    border: `2.5px solid ${features[i % features.length].color}`,
-                  }}>
-                    <i className={`fa-solid ${icon}`} style={{ color: features[i % features.length].color, fontSize: '2rem' }}></i>
-                  </div>
-                ))}
-              </div>
-            </div>
+                  <i className={`fa-solid ${f.icon}`}></i>
+                </span>
+                <span style={{ fontWeight: 700, color: '#1B4B82', fontSize: '1.13rem', fontFamily: 'Inter, Segoe UI, Arial, sans-serif' }}>{f.text}</span>
+              </li>
+            ))}
+          </ul>
+          {/* CTA Button */}
+          <a href="#" style={{
+            display: 'inline-block',
+            background: 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
+            color: '#fff',
+            padding: '1.18rem 3.1rem',
+            borderRadius: '2.8rem',
+            fontSize: '1.18rem',
+            fontWeight: 900,
+            textDecoration: 'none',
+            boxShadow: '0 12px 48px rgba(27, 75, 130, 0.18)',
+            letterSpacing: '-0.5px',
+            position: 'relative',
+            overflow: 'hidden',
+            border: 'none',
+            transition: 'transform 0.22s cubic-bezier(.23,1.01,.32,1), box-shadow 0.22s, background 0.22s',
+            animation: 'fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) 0.3s both',
+          }}
+            onMouseOver={e => {
+              e.currentTarget.style.transform = 'translateY(-4px) scale(1.045)';
+              e.currentTarget.style.background = 'linear-gradient(90deg, #1B4B82 0%, #1B8EF2 100%)';
+              e.currentTarget.style.boxShadow = '0 20px 64px rgba(27, 75, 130, 0.22)';
+            }}
+            onMouseOut={e => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+              e.currentTarget.style.background = 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)';
+              e.currentTarget.style.boxShadow = '0 12px 48px rgba(27, 75, 130, 0.18)';
+            }}
+          >
+            <span style={{ position: 'relative', zIndex: 2 }}>Explore UN Jobs</span>
+            {/* Glowing animated ring */}
+            <span style={{
+              position: 'absolute',
+              left: '50%',
+              top: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: '120%',
+              height: '120%',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle, #1B8EF2 0%, #1B4B82 100%)',
+              opacity: 0.13,
+              filter: 'blur(18px)',
+              zIndex: 1,
+              pointerEvents: 'none',
+              animation: 'pulseAdvertBtn 2.8s infinite alternate',
+            }} />
+          </a>
+        </div>
+        {/* Right: Illustration */}
+        <div style={{
+          flex: 1,
+          minWidth: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+          {/* Custom SVG Illustration */}
+          <div style={{
+            width: '340px',
+            height: '340px',
+            maxWidth: '100%',
+            borderRadius: '50%',
+            background: '#EAF2FA',
+            boxShadow: '0 8px 40px 0 rgba(27, 75, 130, 0.13)',
+            border: '7px solid #fff',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'transform 0.3s',
+            animation: 'fadeInUp 1.2s cubic-bezier(.23,1.01,.32,1) 0.2s both',
+          }}
+            onMouseOver={e => {
+              e.currentTarget.style.transform = 'scale(1.04)';
+            }}
+            onMouseOut={e => {
+              e.currentTarget.style.transform = 'scale(1)';
+            }}
+          >
+            <svg width="210" height="210" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
+              <circle cx="105" cy="105" r="100" fill="#EAF2FA" />
+              <circle cx="105" cy="105" r="90" fill="#B3D8FF" opacity="0.18" />
+              {/* Globe grid */}
+              <ellipse cx="105" cy="105" rx="70" ry="70" stroke="#1B8EF2" strokeWidth="2.5" fill="none" />
+              <ellipse cx="105" cy="105" rx="70" ry="30" stroke="#1B8EF2" strokeWidth="2" fill="none" opacity="0.5" />
+              <ellipse cx="105" cy="105" rx="30" ry="70" stroke="#1B8EF2" strokeWidth="2" fill="none" opacity="0.5" />
+              {/* Meridians */}
+              <path d="M35 105 Q105 35 175 105" stroke="#1B8EF2" strokeWidth="1.5" fill="none" opacity="0.4" />
+              <path d="M35 105 Q105 175 175 105" stroke="#1B8EF2" strokeWidth="1.5" fill="none" opacity="0.4" />
+              {/* Abstract people icons */}
+              <circle cx="105" cy="35" r="10" fill="#1B8EF2" />
+              <circle cx="175" cy="105" r="10" fill="#F59E42" />
+              <circle cx="105" cy="175" r="10" fill="#34C759" />
+              <circle cx="35" cy="105" r="10" fill="#FF5E5B" />
+              {/* Connection lines */}
+              <line x1="105" y1="35" x2="175" y2="105" stroke="#1B8EF2" strokeWidth="2" opacity="0.5" />
+              <line x1="175" y1="105" x2="105" y2="175" stroke="#1B8EF2" strokeWidth="2" opacity="0.5" />
+              <line x1="105" y1="175" x2="35" y2="105" stroke="#1B8EF2" strokeWidth="2" opacity="0.5" />
+              <line x1="35" y1="105" x2="105" y2="35" stroke="#1B8EF2" strokeWidth="2" opacity="0.5" />
+              {/* Central dot */}
+              <circle cx="105" cy="105" r="7" fill="#1B4B82" />
+            </svg>
           </div>
         </div>
       </div>
       <style>{`
-        @keyframes floatBlobA {
+        @keyframes floatAdvertBlob {
           0% { transform: translateY(0px) scale(1); }
           100% { transform: translateY(-30px) scale(1.07); }
         }
-        @keyframes floatBlobB {
+        @keyframes spinAdvertGlobe {
+          0% { transform: translate(-50%, -50%) rotate(0deg); }
+          100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        @keyframes floatAccent {
           0% { transform: translateY(0px) scale(1); }
-          100% { transform: translateY(25px) scale(1.04); }
-        }
-        @keyframes floatBlobC {
-          0% { transform: translateY(0px) scale(1); }
-          100% { transform: translateY(-18px) scale(1.06); }
-        }
-        @keyframes spinBlob {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        @keyframes gradientMove {
-          0% { background-position: 0% 50%; }
-          100% { background-position: 100% 50%; }
-        }
-        @keyframes pulseBtn {
-          0% { box-shadow: 0 0 0 0 #1B8EF244; }
-          100% { box-shadow: 0 0 32px 8px #F59E4244; }
-        }
-        @keyframes pulseIcon {
-          0% { box-shadow: 0 0 0 0 #1B8EF244; }
-          100% { box-shadow: 0 0 16px 4px #F59E4244; }
+          100% { transform: translateY(-18px) scale(1.08); }
         }
         @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
+          0% { opacity: 0; transform: translateY(40px); }
+          100% { opacity: 1; transform: translateY(0); }
         }
-        @keyframes floatIcon0 {
-          0% { transform: translateY(0px); }
-          100% { transform: translateY(-18px); }
+        @keyframes pulseAdvertBtn {
+          0% { opacity: 0.13; transform: scale(1); }
+          100% { opacity: 0.22; transform: scale(1.08); }
         }
-        @keyframes floatIcon1 {
-          0% { transform: translateY(0px); }
-          100% { transform: translateY(12px); }
+        @media (max-width: 900px) {
+          div[style*='maxWidth: 1200px'] {
+            flex-direction: column !important;
+            gap: 2.2rem !important;
+          }
+          ul[style*='flexWrap: wrap'] {
+            flex-direction: column !important;
+            gap: 1.2rem 0 !important;
+          }
+          div[style*='alignItems: center'][style*='justifyContent: center'] > img {
+            margin-top: 1.5rem !important;
+            margin-bottom: 0 !important;
+          }
         }
-        @keyframes floatIcon2 {
-          0% { transform: translateY(0px); }
-          100% { transform: translateY(-8px); }
-        }
-        @keyframes floatSDG0 {
-          0% { transform: translateY(0px) scale(1); }
-          100% { transform: translateY(-12px) scale(1.08); }
-        }
-        @keyframes floatSDG1 {
-          0% { transform: translateY(0px) scale(1); }
-          100% { transform: translateY(10px) scale(0.96); }
+        @media (max-width: 600px) {
+          h2[style*='fontSize: 2.7rem'] {
+            font-size: 1.45rem !important;
+          }
+          section[style*='padding: 64px 0'] {
+            padding: 32px 0 !important;
+          }
+          div[style*='alignItems: center'][style*='justifyContent: center'] > img {
+            width: 180px !important;
+            height: 180px !important;
+            border-width: 4px !important;
+          }
         }
       `}</style>
     </section>

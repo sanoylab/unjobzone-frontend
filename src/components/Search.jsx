@@ -37,14 +37,16 @@ function Search() {
       background: '#FFFFFF',
       borderRadius: '2.5rem',
       boxShadow: '0 5px 15px rgba(30, 64, 175, 0.06)',
-      padding: '0.5rem 0.75rem', // Adjusted for more balanced horizontal padding
-      gap: '0.5rem', // Slightly increased gap for better visual separation
+      padding: '0.5rem 0.75rem',
+      gap: '0.5rem',
       width: '100%',
       minHeight: '52px',
-      border: '1px solid #E5E9F2'
+      border: '1px solid #E5E9F2',
+      flexWrap: 'wrap',
+      justifyContent: 'space-between',
     }}>
       {/* Job Title Input Group */}
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0, maxWidth: '200px' }}>
         <span className="fa-light fa-magnifying-glass" style={{ color: '#6B7280', fontSize: '0.95rem', marginLeft: '0.25rem' }}></span>
         <input
           type="text"
@@ -59,7 +61,8 @@ function Search() {
             fontSize: '0.95rem',
             flex: 1,
             padding: '0.65rem 0.1rem',
-            minWidth: '80px'
+            minWidth: '80px',
+            maxWidth: '160px',
           }}
         />
       </div>
@@ -69,11 +72,11 @@ function Search() {
         width: '1px',
         height: '20px',
         background: '#E5E9F2',
-        margin: '0 0.25rem' // Adjusted margin for separator
+        margin: '0 0.25rem'
       }}></div>
 
       {/* Duty Station Select Group */}
-      <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+      <div style={{ flex: 1, display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0, maxWidth: '200px' }}>
         <span className="fa-sharp fa-thin fa-location-dot" style={{ color: '#6B7280', fontSize: '0.95rem', marginLeft: '0.25rem' }}></span>
         <select
           id="duty_station_select"
@@ -90,6 +93,7 @@ function Search() {
             flex: 1,
             padding: '0.65rem 2rem 0.65rem 0.1rem',
             minWidth: '100px',
+            maxWidth: '160px',
             cursor: 'pointer',
             appearance: 'none',
             WebkitAppearance: 'none',
@@ -112,18 +116,17 @@ function Search() {
           color: '#FFFFFF',
           border: 'none',
           borderRadius: '2rem',
-          padding: '0.55rem 1rem', // Adjusted padding for a slightly more compact button
+          padding: '0.55rem 1.2rem',
           fontWeight: 500,
-          fontSize: '0.9rem',
+          fontSize: '0.95rem',
           cursor: 'pointer',
           transition: 'background-color 0.2s ease, box-shadow 0.2s ease',
-          // marginLeft: '0.4rem', // Removed: Rely on parent form's gap
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           whiteSpace: 'nowrap',
           boxShadow: '0 2px 6px rgba(27, 75, 130, 0.1)',
-          alignSelf: 'stretch' // Ensures button stretches to fill cell height if needed
+          minWidth: '100px',
         }}
         onMouseOver={e => {
           e.currentTarget.style.background = '#2962FF';
