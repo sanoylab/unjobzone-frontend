@@ -1,11 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 
 import Pagination from "./Pagination";
 import { getJobs } from "../Api";
 import ListJob from "./ListJob";
 import ThumbnailJob from "./ThumbnailJob";
 import Spinner from "./Spinner";
+
+// Placeholder for a large UN emblem or abstract graphic if chosen
+const StatsGraphic = () => {
+  return (
+    <div style={{
+      fontSize: '12rem', // Example size
+      color: 'rgba(27, 75, 130, 0.05)', // Very faint UN Blue
+      textAlign: 'center',
+      lineHeight: 1,
+      userSelect: 'none',
+      // In a real scenario, use an SVG or a specific character
+    }}>
+      <i className="fas fa-globe-americas"></i> {/* Example Font Awesome icon */}
+    </div>
+  );
+};
 
 function Jobs({ isHome = false }) {
   const [jobs, setJobs] = useState([]);
@@ -68,39 +84,115 @@ function Jobs({ isHome = false }) {
   const endRecord = Math.min(currentPage * pageSize, totalRecords);
   const formattedTotalRecords = totalRecords.toLocaleString();
 
-  return isHome ? (
-    <div className="rts__section pb-120 overflow-hidden">
-      <div className="container">
-        <div className="row justify-content-center mb-50 position-relative mtn-1">
-          <div className="col-lg-6">
-            <div className="rts__section__content wow animated fadeInUp text-center">
-              <h3 className="rts__section__title mb-3">
-                There Are More Then 1000+ Jobs in UN JobZone
-              </h3>
-              <p className="rts__section__desc">
-                From entry-level positions to senior roles browse through.
-              </p>
-            </div>
+  if (isHome) {
+    return (
+      <section style={{
+        background: 'transparent',
+        padding: '6rem 0 4rem 0',
+        overflow: 'hidden',
+        position: 'relative',
+        minHeight: '420px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        {/* Faint animated UN globe in the background */}
+        <div style={{
+          position: 'absolute',
+          left: '50%',
+          top: '0',
+          transform: 'translateX(-50%)',
+          zIndex: 0,
+          opacity: 0.07,
+          fontSize: '16rem',
+          pointerEvents: 'none',
+          width: '100%',
+          textAlign: 'center',
+          animation: 'floatSectionBlob 18s ease-in-out infinite',
+        }}>
+          <i className="fas fa-globe-africa"></i>
+        </div>
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div style={{
+            textAlign: 'center',
+            marginBottom: '2.5rem',
+          }}>
+            <h2 style={{
+              fontSize: '2.3rem',
+              fontWeight: 800,
+              color: '#1B4B82',
+              marginBottom: '0.5rem',
+              letterSpacing: '-1px',
+              background: 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}>
+              Featured UN Jobs
+            </h2>
+            <p style={{
+              fontSize: '1.13rem',
+              color: '#334E68',
+              margin: '0 auto',
+              maxWidth: '540px',
+              fontWeight: 500,
+            }}>
+              Explore a selection of the latest and most impactful opportunities from across the United Nations system.
+            </p>
+          </div>
+          <div className="row g-4 justify-content-center">
+            {jobs.slice(0, 6).map((job) => (
+              <ThumbnailJob
+                key={job.id}
+                id={job.id}
+                end_date={job.end_date}
+                duty_station={job.duty_station}
+                recruitment_type={job.recruitement_type}
+                job_title={job.job_title}
+                dept={job.dept}
+                jl={job.jl}
+                logo={`${APP_URL}/assets/logo/${job.logo}`}
+              />
+            ))}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '2.8rem' }}>
+            <Link to="/jobs" style={{
+              display: 'inline-block',
+              background: 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
+              color: '#fff',
+              padding: '1.15rem 3.2rem',
+              borderRadius: '2.5rem',
+              fontSize: '1.18rem',
+              fontWeight: 800,
+              textDecoration: 'none',
+              boxShadow: '0 8px 32px rgba(27, 75, 130, 0.13)',
+              transition: 'transform 0.2s, box-shadow 0.2s',
+              letterSpacing: '-0.5px',
+            }}
+            onMouseOver={e => {
+              e.currentTarget.style.transform = 'translateY(-3px) scale(1.04)';
+              e.currentTarget.style.boxShadow = '0 16px 48px rgba(27, 75, 130, 0.18)';
+            }}
+            onMouseOut={e => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)';
+              e.currentTarget.style.boxShadow = '0 8px 32px rgba(27, 75, 130, 0.13)';
+            }}
+            >
+              Browse All Jobs
+            </Link>
           </div>
         </div>
-        <div className="row g-30">
-          {jobs.map((job) => (
-            <ThumbnailJob
-              key={job.id}
-              id={job.id}
-              end_date={job.end_date}
-              duty_station={job.duty_station}
-              recruitment_type={job.recruitement_type}
-              job_title={job.job_title}
-              dept={job.dept}
-              jl={job.jl}
-              logo={`${APP_URL}/assets/logo/${job.logo}`}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  ) : (
+        <style>{`
+          @keyframes floatSectionBlob {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.08); }
+          }
+        `}</style>
+      </section>
+    );
+  }
+
+  return (
     <>
       <div className="row g-30" style={{ paddingRight: "0px" }}>
         <div className="top__query mb-40 d-flex flex-wrap gap-4 gap-xl-0 justify-content-between align-items-center">
