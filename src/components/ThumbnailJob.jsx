@@ -87,7 +87,7 @@ const ThumbnailJob = ({
           }}>
             <i className="fa-light fa-location-dot"></i> {duty_station}
           </span>
-          <span style={{
+          {/* <span style={{
             display: 'inline-flex',
             alignItems: 'center',
             background: 'rgba(27, 75, 130, 0.10)',
@@ -99,7 +99,7 @@ const ThumbnailJob = ({
             gap: '0.4rem',
           }}>
             <i className="fa-light fa-briefcase"></i> {recruitment_type}
-          </span>
+          </span> */}
         </div>
         <div style={{
           fontSize: '1.18rem',
