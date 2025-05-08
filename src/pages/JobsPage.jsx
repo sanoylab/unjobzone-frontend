@@ -6,8 +6,13 @@ import AdvancedSearch from "../components/AdvancedSearch";
 function JobsPage({ duty_station, dept, recruitement_type, start_date, end_date, jn, jf, jc, jl }) {
   return (
     <div>
-      <Hero title="Browse Jobs" />
-      <AdvancedSearch />
+      
+      {/* Hero and AdvancedSearch wrapper */}
+      <div style={{ position: 'relative' }}>
+        <Hero title="Browse Jobs" />
+        <AdvancedSearch />
+      </div>
+      
       <div className="rts__section mb-40">
         <div className="container">
           <div className="row g-30">
