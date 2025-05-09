@@ -88,7 +88,7 @@ function JobDetailHero({ job }) {
           gap: '10px'
         }}>
           <h2 style={{
-            fontSize: '1.8rem',
+            fontSize: '1.1rem',
             fontWeight: 700,
             fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
             color: '#1B4B82',

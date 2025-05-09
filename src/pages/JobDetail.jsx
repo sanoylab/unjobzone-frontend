@@ -78,7 +78,7 @@ function JobDetail() {
                 {/* Job Description */}
                 <div style={{ marginBottom: '30px' }}>
                   <h2 style={{ 
-                    fontSize: '1.05rem',
+                    fontSize: '1.2rem',
                     fontWeight: '600',
                     color: '#2D3748',
                     marginBottom: '20px',
@@ -238,7 +238,7 @@ function JobDetail() {
                 border: '1px solid rgba(226, 232, 240, 0.6)',
               }}>
                 <h2 style={{ 
-                  fontSize: '1.05rem',
+                  fontSize: '1.2rem',
                   fontWeight: '600',
                   color: '#2D3748',
                   marginBottom: '20px',
