@@ -208,6 +208,7 @@
   margin-bottom: 60px;
 }
 
+/* Redesigned Station Cards (without images) */
 .station-card {
   background: white;
   border-radius: 12px;
@@ -215,83 +216,99 @@
   transition: all 0.3s ease;
   height: 100%;
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   animation: fadeInUp 0.5s ease-out forwards;
   opacity: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .station-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  border-color: transparent;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
-.station-card .card-icon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(49, 130, 206, 0.1);
+.station-card .card-top {
+  padding: 16px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #3182ce;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.station-card .station-image {
-  height: 120px;
-  overflow: hidden;
-}
-
-.station-card .station-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: all 0.5s ease;
-}
-
-.station-card:hover .station-image img {
-  transform: scale(1.1);
-}
-
-.station-card .station-name {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0;
-  color: #2d3748;
-}
-
-.station-card .station-region {
-  color: #718096;
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-
-.station-card .job-count {
-  color: #3182ce;
+.station-card .region-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
   font-weight: 500;
-  margin-top: auto;
+  color: #4a5568;
+}
+
+.station-card .job-count-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7fafc;
+  border-radius: 8px;
+  padding: 6px 12px;
+  text-align: center;
+  min-width: 60px;
+}
+
+.station-card .job-count-badge span {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3182ce;
+  line-height: 1.2;
+}
+
+.station-card .job-count-badge small {
+  font-size: 11px;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .station-card .card-content {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  height: calc(100% - 120px);
+  flex: 1;
+}
+
+.station-card .station-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  color: #2d3748;
+  line-height: 1.3;
+}
+
+.station-card .station-meta {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.station-card .meta-item {
+  font-size: 14px;
+  color: #718096;
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
 }
 
 .station-card .action-button {
-  margin-top: 15px;
+  margin-top: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(45deg, #3182ce, #4299e1);
   color: white;
   border: none;
-  border-radius: 50px;
-  padding: 8px 20px;
+  border-radius: 8px;
+  padding: 10px 20px;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
@@ -299,12 +316,11 @@
 }
 
 .station-card .action-button:hover {
-  box-shadow: 0 5px 15px rgba(66, 153, 225, 0.4);
-  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.05);
 }
 
 .station-card .action-button i {
-  margin-left: 8px;
   transition: transform 0.3s ease;
 }
 
@@ -327,87 +343,16 @@
 @keyframes pulse {
   0% {
     transform: scale(1);
+    opacity: 0.8;
   }
   50% {
-    transform: scale(1.05);
+    transform: scale(1.5);
+    opacity: 0.4;
   }
   100% {
     transform: scale(1);
+    opacity: 0.8;
   }
-}
-
-/* Globe dots (locations) */
-.location-dot {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background-color: #3182ce;
-  border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(49, 130, 206, 0.3);
-  animation: pulse 2s infinite;
-  z-index: 3;
-}
-
-/* Custom dots for different regions */
-.location-dot.africa {
-  left: 50%;
-  top: 55%;
-  animation-delay: 0.2s;
-}
-
-.location-dot.europe {
-  left: 48%;
-  top: 35%;
-  animation-delay: 0.4s;
-}
-
-.location-dot.asia {
-  left: 70%;
-  top: 40%;
-  animation-delay: 0.6s;
-}
-
-.location-dot.americas {
-  left: 25%;
-  top: 45%;
-  animation-delay: 0.8s;
-}
-
-.location-dot.middle-east {
-  left: 58%;
-  top: 45%;
-  animation-delay: 1s;
-}
-
-.duty-stats {
-  display: flex;
-  gap: 30px;
-  color: white;
-  text-align: center;
-}
-
-.stat-item {
-  padding: 20px;
-  border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  width: 180px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.stat-item h2 {
-  font-size: 36px;
-  margin-bottom: 5px;
-  font-weight: 700;
-  color: #3182ce;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.stat-item p {
-  font-size: 14px;
-  margin: 0;
-  color: #2d3748;
 }
 
 /* No results styling */
@@ -494,4 +439,35 @@
   width: 1.5rem;
   height: 1.5rem;
   border-width: 0.15em;
+}
+
+.duty-stats {
+  display: flex;
+  gap: 30px;
+  color: white;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  width: 180px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-item h2 {
+  font-size: 36px;
+  margin-bottom: 5px;
+  font-weight: 700;
+  color: #3182ce;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item p {
+  font-size: 14px;
+  margin: 0;
+  color: #2d3748;
 } 
