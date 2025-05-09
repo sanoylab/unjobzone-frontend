@@ -117,7 +117,7 @@ const BlogCard = ({id, thumbnail, title}) => {
         }
         
         .card-title {
-          font-size: 13px;
+          font-size: 18px;
           font-weight: 600;
           line-height: 1.4;
           color: #2D3748;
@@ -131,6 +131,7 @@ const BlogCard = ({id, thumbnail, title}) => {
           background-repeat: no-repeat;
           background-size: 0 2px;
           transition: background-size 0.3s ease;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
         }
         
         .card-meta {
@@ -138,7 +139,8 @@ const BlogCard = ({id, thumbnail, title}) => {
           align-items: center;
           gap: 6px;
           color: #718096;
-          font-size: 10px;
+          font-size: 13px;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
         }
         
         .meta-item {
@@ -149,7 +151,7 @@ const BlogCard = ({id, thumbnail, title}) => {
         
         .meta-item i {
           color: #1B8EF2;
-          font-size: 10px;
+          font-size: 13px;
         }
         
         .meta-dot {
