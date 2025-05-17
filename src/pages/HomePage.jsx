@@ -1,6 +1,5 @@
 import React from 'react'
 import HomeHero from "../components/HomeHero";
-import OrganizationLogoSlider from "../components/OrganizationLogoSlider";
 import JobCategoryCards from "../components/JobCategoryCards";
 import Jobs from "../components/Jobs";
 import Advertisment from "../components/Advertisment";
@@ -14,14 +13,12 @@ function HomePage() {
     <div>
       <HomeHeader />
       <HomeHero />
-       <OrganizationLogoSlider /> 
       <JobCategoryCards />
       <Jobs isHome={true} />
       <Advertisment />
       <RecentBlog />
       <Footer />
       <MobileMenu />
-      
     </div>
   );
 }

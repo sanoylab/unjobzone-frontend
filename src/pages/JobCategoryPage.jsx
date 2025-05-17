@@ -2,23 +2,71 @@ import React, { useEffect, useState } from 'react';
 import { getJobFunctionCategories} from '../Api'
 import JobCategory from '../components/JobCategory';
 import Hero from '../components/Hero';
+import HomeHeader from '../components/HomeHeader';
 
-const images = [
-  "/assets/img/home-6/icon/marketing.svg",
-  "/assets/img/home-6/icon/data.svg",
-  "/assets/img/home-6/icon/design.svg",
-  "/assets/img/home-6/icon/development.svg",
-  "/assets/img/home-6/icon/icon.svg"
-];
-
-const getRandomImage = () => {
-  return images[Math.floor(Math.random() * images.length)];
+// Define icon mapping for common UN job categories
+const categoryIconMap = {
+  // Administrative categories
+  "ADMINISTRATION": "building",
+  "MANAGEMENT": "tasks",
+  "EXECUTIVE": "user-tie",
+  "ADMINISTRATIVE": "clipboard",
+  
+  // Program/technical categories
+  "PROGRAMME": "project-diagram",
+  "ECONOMIC": "chart-line",
+  "SOCIAL": "users",
+  "POLITICAL": "landmark",
+  "HUMANITARIAN": "hands-helping",
+  "HUMAN RIGHTS": "balance-scale",
+  
+  // Specialized fields
+  "INFORMATION": "info-circle",
+  "LEGAL": "gavel",
+  "FINANCE": "money-bill-wave",
+  "SECURITY": "shield-alt",
+  "LOGISTICS": "truck",
+  "MEDICAL": "stethoscope",
+  "PUBLIC HEALTH": "heartbeat",
+  "ENGINEERING": "drafting-compass",
+  "SCIENCE": "flask",
+  "ENVIRONMENT": "leaf",
+  "EDUCATION": "graduation-cap",
+  "COMMUNICATIONS": "bullhorn",
+  "HUMAN RESOURCES": "user-friends",
+  "STATISTICS": "chart-bar",
+  "INFORMATION TECHNOLOGY": "laptop-code",
+  "CONFERENCE": "users-class",
+  
+  // Default icon for any unmatched categories
+  "DEFAULT": "briefcase"
 };
 
-
+// Function to find the most appropriate icon for a job category
+const findCategoryIcon = (categoryName) => {
+  if (!categoryName) return "briefcase"; // Default icon
+  
+  const upperCaseName = categoryName.toUpperCase();
+  
+  // Try to find a direct match first
+  if (categoryIconMap[upperCaseName]) {
+    return categoryIconMap[upperCaseName];
+  }
+  
+  // Try to find a partial match
+  for (const [key, icon] of Object.entries(categoryIconMap)) {
+    if (upperCaseName.includes(key)) {
+      return icon;
+    }
+  }
+  
+  // Return default if no match found
+  return categoryIconMap.DEFAULT;
+};
 
 function JobCategoryPage() {
   const [jobCategories, setJobCategories] = useState([]);
+  
   useEffect(() => {
     async function fetchJobCategories() {
       try {
@@ -35,32 +83,31 @@ function JobCategoryPage() {
 
     fetchJobCategories();
   }, []);
+  
   return (
-
     <div>
-    <Hero title="Job Categories" />
-    <div className="rts__section section__padding overflow-hidden">
-    <div className="container">
-      
-      <div className="row g-30">
-        {jobCategories.map((category, index) => (
-          <JobCategory key={index}
-            title={category.jf}
-            link={`/jobs?jf=${encodeURIComponent(category.jf)}`}
-            image={getRandomImage()}
-            totalJobs={category.total}
-          />
-        ))}
-        
-       
+      <Hero title="Job Categories" />
+      <div className="rts__section section__padding overflow-hidden">
+        <div className="container">
+          <div className="row g-30">
+            {jobCategories.map((category, index) => {
+              const icon = findCategoryIcon(category.jf);
+              return (
+                <JobCategory 
+                  key={index}
+                  title={category.jf}
+                  link={`/jobs?jf=${encodeURIComponent(category.jf)}`}
+                  iconIndex={index}
+                  iconName={icon}
+                  totalJobs={category.total}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
-
-
-  
-  )
+  );
 }
 
-export default JobCategoryPage
+export default JobCategoryPage;
