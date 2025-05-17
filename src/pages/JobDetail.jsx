@@ -77,7 +77,7 @@ function JobDetail() {
               }}>
                 {/* Job Description */}
                 <div style={{ marginBottom: '30px' }}>
-                  <h2 style={{ 
+                  <h4 style={{ 
                     fontSize: '1.2rem',
                     fontWeight: '600',
                     color: '#2D3748',
@@ -86,7 +86,7 @@ function JobDetail() {
                     borderBottom: '1px solid #EDF2F7' 
                   }}>
                     Job Description
-                  </h2>
+                  </h4>
                   <div 
                     style={{
                       fontSize: '15px',
@@ -237,7 +237,7 @@ function JobDetail() {
                 padding: '24px',
                 border: '1px solid rgba(226, 232, 240, 0.6)',
               }}>
-                <h2 style={{ 
+                <h4 style={{ 
                   fontSize: '1.2rem',
                   fontWeight: '600',
                   color: '#2D3748',
@@ -246,7 +246,7 @@ function JobDetail() {
                   borderBottom: '1px solid #EDF2F7' 
                 }}>
                   Job Overview
-                </h2>
+                </h4>
                 <div>
                   <ul style={{ 
                     listStyle: 'none', 
