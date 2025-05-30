@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { getJobDetail } from "../Api";
 import JobDetailHero from "../components/JobDetailHero";
 import Spinner from "../components/Spinner";
 import { useParams } from "react-router-dom";
 import { marked } from "marked";
 import SocialShare from "../components/SocialShare";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function JobDetail() {
   const { id } = useParams();
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
   const APP_URL = import.meta.env.VITE_APP_URI;
+  const { darkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     const fetchJobDetail = async () => {
@@ -39,10 +41,11 @@ function JobDetail() {
         height: '70vh',
         flexDirection: 'column',
         gap: '16px',
-        color: '#4A5568'
+        color: darkMode ? '#b0b0b0' : '#4A5568',
+        background: darkMode ? '#121212' : '#F8FAFC'
       }}>
-        <i className="fa-light fa-file-circle-question" style={{ fontSize: '48px', color: '#3182CE' }}></i>
-        <h3>No job detail available</h3>
+        <i className="fa-light fa-file-circle-question" style={{ fontSize: '48px', color: darkMode ? '#4b90d6' : '#3182CE' }}></i>
+        <h3 style={{ color: darkMode ? '#e4e4e4' : 'inherit' }}>No job detail available</h3>
         <p>The job you're looking for could not be found.</p>
       </div>
     );
@@ -56,7 +59,7 @@ function JobDetail() {
   const hasExpired = daysRemaining < 0;
 
   return (
-    <div style={{ background: '#F8FAFC' }}>
+    <div style={{ background: darkMode ? '#121212' : '#F8FAFC' }}>
       <JobDetailHero job={job} />
 
       <div style={{ 
@@ -68,22 +71,22 @@ function JobDetail() {
             {/* Main content area */}
             <div className="col-lg-7 col-xl-8">
               <div style={{ 
-                backgroundColor: 'white',
+                backgroundColor: darkMode ? '#1f1f1f' : 'white',
                 borderRadius: '12px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                boxShadow: darkMode ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.05)',
                 padding: '28px 32px',
                 marginBottom: '24px',
-                border: '1px solid rgba(226, 232, 240, 0.6)',
+                border: darkMode ? '1px solid rgba(80, 80, 80, 0.3)' : '1px solid rgba(226, 232, 240, 0.6)',
               }}>
                 {/* Job Description */}
                 <div style={{ marginBottom: '30px' }}>
                   <h4 style={{ 
                     fontSize: '1.2rem',
                     fontWeight: '600',
-                    color: '#2D3748',
+                    color: darkMode ? '#e4e4e4' : '#2D3748',
                     marginBottom: '20px',
                     paddingBottom: '12px',
-                    borderBottom: '1px solid #EDF2F7' 
+                    borderBottom: darkMode ? '1px solid #333' : '1px solid #EDF2F7' 
                   }}>
                     Job Description
                   </h4>
@@ -91,7 +94,7 @@ function JobDetail() {
                     style={{
                       fontSize: '15px',
                       lineHeight: '1.7',
-                      color: '#4A5568'
+                      color: darkMode ? '#b0b0b0' : '#4A5568'
                     }}
                     dangerouslySetInnerHTML={{
                       __html: marked(job.job_description),
@@ -108,7 +111,7 @@ function JobDetail() {
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   padding: '16px 0 0',
-                  borderTop: '1px solid #EDF2F7'
+                  borderTop: darkMode ? '1px solid #333' : '1px solid #EDF2F7'
                 }}>
                   <a
                     href={job.apply_link}
@@ -118,14 +121,18 @@ function JobDetail() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       padding: '12px 24px',
-                      backgroundColor: hasExpired ? '#A0AEC0' : isEndingSoon ? '#DD6B20' : '#3182CE',
+                      backgroundColor: hasExpired 
+                        ? darkMode ? '#4a5568' : '#A0AEC0'
+                        : isEndingSoon 
+                          ? darkMode ? '#c05621' : '#DD6B20'
+                          : darkMode ? '#1f3a60' : '#3182CE',
                       color: 'white',
                       borderRadius: '8px',
                       fontWeight: '600',
                       fontSize: '0.95rem',
                       textDecoration: 'none',
                       transition: 'all 0.2s ease',
-                      boxShadow: '0 2px 4px rgba(0,0,0,0.08)',
+                      boxShadow: darkMode ? '0 2px 4px rgba(0,0,0,0.2)' : '0 2px 4px rgba(0,0,0,0.08)',
                       cursor: hasExpired ? 'not-allowed' : 'pointer',
                       gap: '8px'
                     }}
@@ -151,7 +158,7 @@ function JobDetail() {
                     <span style={{ 
                       fontSize: '0.95rem',
                       fontWeight: '600',
-                      color: '#4A5568'
+                      color: darkMode ? '#b0b0b0' : '#4A5568'
                     }}>Share:</span>
                     <div style={{ display: 'flex', gap: '12px' }}>
                       <SocialShare />
@@ -165,12 +172,12 @@ function JobDetail() {
             <div className="col-lg-5 col-xl-4">
               {/* Organization card */}
               <div style={{
-                backgroundColor: 'white',
+                backgroundColor: darkMode ? '#1f1f1f' : 'white',
                 borderRadius: '12px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                boxShadow: darkMode ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.05)',
                 padding: '24px',
                 marginBottom: '24px',
-                border: '1px solid rgba(226, 232, 240, 0.6)',
+                border: darkMode ? '1px solid rgba(80, 80, 80, 0.3)' : '1px solid rgba(226, 232, 240, 0.6)',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -184,6 +191,9 @@ function JobDetail() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '16px',
+                  background: darkMode ? 'rgba(255, 255, 255, 0.05)' : 'transparent',
+                  borderRadius: '8px',
+                  padding: '12px',
                 }}>
                   <img 
                     src={`${APP_URL}/assets/logo/${job.logo}`}
@@ -192,6 +202,7 @@ function JobDetail() {
                       maxWidth: '100%',
                       maxHeight: '100%',
                       objectFit: 'contain',
+                      filter: darkMode ? 'brightness(0.9)' : 'none',
                     }}
                   />
                 </div>
@@ -199,7 +210,7 @@ function JobDetail() {
                   fontSize: '1.1rem',
                   fontWeight: '600',
                   textAlign: 'center',
-                  color: '#2D3748',
+                  color: darkMode ? '#e4e4e4' : '#2D3748',
                   margin: '0 0 20px 0',
                 }}>{job.dept}</h3>
                 
@@ -213,7 +224,9 @@ function JobDetail() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       padding: '12px 16px',
-                      backgroundColor: isEndingSoon ? '#DD6B20' : '#3182CE',
+                      backgroundColor: isEndingSoon 
+                        ? darkMode ? '#c05621' : '#DD6B20'
+                        : darkMode ? '#1f3a60' : '#3182CE',
                       color: 'white',
                       borderRadius: '8px',
                       fontWeight: '600',
@@ -231,19 +244,19 @@ function JobDetail() {
               
               {/* Job Overview */}
               <div style={{
-                backgroundColor: 'white',
+                backgroundColor: darkMode ? '#1f1f1f' : 'white',
                 borderRadius: '12px',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                boxShadow: darkMode ? '0 1px 3px rgba(0,0,0,0.2)' : '0 1px 3px rgba(0,0,0,0.05)',
                 padding: '24px',
-                border: '1px solid rgba(226, 232, 240, 0.6)',
+                border: darkMode ? '1px solid rgba(80, 80, 80, 0.3)' : '1px solid rgba(226, 232, 240, 0.6)',
               }}>
                 <h4 style={{ 
                   fontSize: '1.2rem',
                   fontWeight: '600',
-                  color: '#2D3748',
+                  color: darkMode ? '#e4e4e4' : '#2D3748',
                   marginBottom: '20px',
                   paddingBottom: '12px',
-                  borderBottom: '1px solid #EDF2F7' 
+                  borderBottom: darkMode ? '1px solid #333' : '1px solid #EDF2F7' 
                 }}>
                   Job Overview
                 </h4>
@@ -260,11 +273,11 @@ function JobDetail() {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '12px',
-                      color: '#4A5568',
+                      color: darkMode ? '#b0b0b0' : '#4A5568',
                       fontSize: '0.95rem'
                     }}>
                       <i className="fa-light fa-briefcase" style={{ 
-                        color: '#3182CE',
+                        color: darkMode ? '#4b90d6' : '#3182CE',
                         fontSize: '16px',
                         width: '20px',
                         textAlign: 'center'
@@ -278,11 +291,11 @@ function JobDetail() {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '12px',
-                      color: '#4A5568',
+                      color: darkMode ? '#b0b0b0' : '#4A5568',
                       fontSize: '0.95rem'
                     }}>
                       <i className="fa-light fa-calendar-plus" style={{ 
-                        color: '#3182CE',
+                        color: darkMode ? '#4b90d6' : '#3182CE',
                         fontSize: '16px',
                         width: '20px',
                         textAlign: 'center'
@@ -302,11 +315,19 @@ function JobDetail() {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '12px',
-                      color: hasExpired ? '#E53E3E' : isEndingSoon ? '#DD6B20' : '#4A5568',
+                      color: hasExpired 
+                        ? darkMode ? '#fc8181' : '#E53E3E'
+                        : isEndingSoon 
+                          ? darkMode ? '#ed8936' : '#DD6B20'
+                          : darkMode ? '#b0b0b0' : '#4A5568',
                       fontSize: '0.95rem'
                     }}>
                       <i className="fa-light fa-calendar-clock" style={{ 
-                        color: hasExpired ? '#E53E3E' : isEndingSoon ? '#DD6B20' : '#3182CE',
+                        color: hasExpired 
+                          ? darkMode ? '#fc8181' : '#E53E3E'
+                          : isEndingSoon 
+                            ? darkMode ? '#ed8936' : '#DD6B20'
+                            : darkMode ? '#4b90d6' : '#3182CE',
                         fontSize: '16px',
                         width: '20px',
                         textAlign: 'center'
@@ -321,22 +342,22 @@ function JobDetail() {
                           })}
                           {hasExpired ? (
                             <span style={{ 
-                              backgroundColor: 'rgba(229, 62, 62, 0.08)',
+                              backgroundColor: darkMode ? 'rgba(252, 129, 129, 0.15)' : 'rgba(229, 62, 62, 0.08)',
                               fontSize: '0.75rem',
                               padding: '2px 8px',
                               borderRadius: '12px',
                               marginLeft: '8px',
-                              color: '#E53E3E',
+                              color: darkMode ? '#fc8181' : '#E53E3E',
                               fontWeight: 500
                             }}>Expired</span>
                           ) : isEndingSoon ? (
                             <span style={{ 
-                              backgroundColor: 'rgba(221, 107, 32, 0.08)',
+                              backgroundColor: darkMode ? 'rgba(237, 137, 54, 0.15)' : 'rgba(221, 107, 32, 0.08)',
                               fontSize: '0.75rem',
                               padding: '2px 8px',
                               borderRadius: '12px',
                               marginLeft: '8px',
-                              color: '#DD6B20',
+                              color: darkMode ? '#ed8936' : '#DD6B20',
                               fontWeight: 500
                             }}>Ending Soon</span>
                           ) : null}
@@ -347,11 +368,11 @@ function JobDetail() {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '12px',
-                      color: '#4A5568',
+                      color: darkMode ? '#b0b0b0' : '#4A5568',
                       fontSize: '0.95rem'
                     }}>
                       <i className="fa-light fa-folder" style={{ 
-                        color: '#3182CE',
+                        color: darkMode ? '#4b90d6' : '#3182CE',
                         fontSize: '16px',
                         width: '20px',
                         textAlign: 'center'
@@ -365,11 +386,11 @@ function JobDetail() {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '12px',
-                      color: '#4A5568',
+                      color: darkMode ? '#b0b0b0' : '#4A5568',
                       fontSize: '0.95rem'
                     }}>
                       <i className="fa-light fa-location-dot" style={{ 
-                        color: '#3182CE',
+                        color: darkMode ? '#4b90d6' : '#3182CE',
                         fontSize: '16px',
                         width: '20px',
                         textAlign: 'center'

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { ThemeContext } from "../contexts/ThemeContext";
 
 // Helper function to determine region based on city name
 const getRegionInfo = (locationName) => {
@@ -60,6 +61,7 @@ const getRegionColor = (regionName) => {
 };
 
 const DutyStationCard = ({ title, totalJobs, index = 0 }) => {
+  const { darkMode } = useContext(ThemeContext);
   // Create a delay for staggered animation effect
   const animationDelay = `${(index % 12) * 0.1}s`;
   
@@ -72,7 +74,10 @@ const DutyStationCard = ({ title, totalJobs, index = 0 }) => {
         className="station-card" 
         style={{ 
           animationDelay,
-          borderTop: `4px solid ${region.color}`
+          borderTop: `4px solid ${region.color}`,
+          backgroundColor: darkMode ? '#1f1f1f' : 'white',
+          borderColor: darkMode ? 'rgba(80, 80, 80, 0.3)' : '',
+          color: darkMode ? '#e4e4e4' : ''
         }}
       >
         <div className="card-top">
@@ -88,14 +93,14 @@ const DutyStationCard = ({ title, totalJobs, index = 0 }) => {
         </div>
         
         <div className="card-content">
-          <h3 className="station-name">{title}</h3>
+          <h3 className="station-name" style={{ color: darkMode ? '#e4e4e4' : '' }}>{title}</h3>
           
           <div className="station-meta">
-            <div className="meta-item">
+            <div className="meta-item" style={{ color: darkMode ? '#b0b0b0' : '' }}>
               <i className="fa-solid fa-building me-2"></i>
               UN System
             </div>
-            <div className="meta-item">
+            <div className="meta-item" style={{ color: darkMode ? '#b0b0b0' : '' }}>
               <i className="fa-solid fa-location-dot me-2"></i>
               {region.name}
             </div>

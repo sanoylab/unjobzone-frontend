@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const ThumbnailJob = ({
   id,
@@ -11,16 +12,18 @@ const ThumbnailJob = ({
   jl,
   logo,
 }) => {
+  const { darkMode } = useContext(ThemeContext);
+  
   return (
     <div className="col-lg-4 col-md-6 mb-4">
       <div
         className="modern-job-card"
         style={{
-          background: 'rgba(255,255,255,0.65)',
+          background: darkMode ? '#1f1f1f' : 'rgba(255,255,255,0.65)',
           backdropFilter: 'blur(16px) saturate(180%)',
           borderRadius: '1.7rem',
-          border: '1.5px solid rgba(27, 75, 130, 0.10)',
-          boxShadow: '0 8px 32px rgba(27, 75, 130, 0.10)',
+          border: darkMode ? '1.5px solid rgba(80, 80, 80, 0.3)' : '1.5px solid rgba(27, 75, 130, 0.10)',
+          boxShadow: darkMode ? '0 8px 32px rgba(0, 0, 0, 0.2)' : '0 8px 32px rgba(27, 75, 130, 0.10)',
           padding: '2.1rem 1.5rem 1.5rem 1.5rem',
           display: 'flex',
           flexDirection: 'column',
@@ -61,9 +64,17 @@ const ThumbnailJob = ({
           }}>
             <img src={logo} alt="" style={{ width: '80px', height: '80px', objectFit: 'contain' }} />
           </div>
-          <div className="featured__option" style={{ fontSize: '0.98rem', fontWeight: 500, color: '#1B4B82' }}>
+          <div className="featured__option" style={{ 
+            fontSize: '0.98rem', 
+            fontWeight: 500, 
+            color: darkMode ? '#b0b0b0' : '#1B4B82' 
+          }}>
             <i className="fa-light fa-clock"></i>{' '}
-            <span style={{ color: new Date(end_date).toDateString() === new Date().toDateString() ? '#E53E3E' : '#1B4B82' }}>
+            <span style={{ 
+              color: new Date(end_date).toDateString() === new Date().toDateString() 
+                ? '#E53E3E' 
+                : darkMode ? '#b0b0b0' : '#1B4B82' 
+            }}>
               {new Date(end_date).toLocaleDateString('en-US', {
                 month: 'short',
                 day: '2-digit',
@@ -76,8 +87,8 @@ const ThumbnailJob = ({
           <span style={{
             display: 'inline-flex',
             alignItems: 'center',
-            background: 'rgba(27, 142, 242, 0.10)',
-            color: '#1B4B82',
+            background: darkMode ? 'rgba(75, 144, 214, 0.15)' : 'rgba(27, 142, 242, 0.10)',
+            color: darkMode ? '#4b90d6' : '#1B4B82',
             borderRadius: '2rem',
             padding: '0.32rem 1.1rem',
             fontSize: '0.97rem',
@@ -104,26 +115,40 @@ const ThumbnailJob = ({
         <div style={{
           fontSize: '1.18rem',
           fontWeight: 800,
-          color: '#1B4B82',
+          color: darkMode ? '#e4e4e4' : '#1B4B82',
           margin: '1.1rem 0 0.5rem 0',
           lineHeight: 1.25,
           letterSpacing: '-0.5px',
           minHeight: '2.5em',
         }}>
-          <Link to={`/job/${id}`} className="job__title" style={{ color: '#1B4B82', textDecoration: 'none', transition: 'color 0.2s' }}>
+          <Link to={`/job/${id}`} className="job__title" style={{ 
+            color: darkMode ? '#e4e4e4' : '#1B4B82', 
+            textDecoration: 'none', 
+            transition: 'color 0.2s' 
+          }}>
             {job_title.length > 100 ? `${job_title.substring(0, 100)}...` : job_title}
           </Link>
         </div>
         {jl && (
-          <div style={{ color: '#334E68', fontSize: '0.98rem', fontWeight: 500, marginBottom: '0.2rem' }}>
+          <div style={{ 
+            color: darkMode ? '#b0b0b0' : '#334E68', 
+            fontSize: '0.98rem', 
+            fontWeight: 500, 
+            marginBottom: '0.2rem' 
+          }}>
             <i className="fa-light rt-briefcase"></i> {jl}
           </div>
         )}
-        <p style={{ color: '#4A5568', fontSize: '0.97rem', fontWeight: 500, margin: 0 }}>{dept}</p>
+        <p style={{ 
+          color: darkMode ? '#b0b0b0' : '#4A5568', 
+          fontSize: '0.97rem', 
+          fontWeight: 500, 
+          margin: 0 
+        }}>{dept}</p>
       </div>
       <style>{`
         .modern-job-card:hover .job__title {
-          color: #1B8EF2 !important;
+          color: ${darkMode ? '#4b90d6' : '#1B8EF2'} !important;
         }
       `}</style>
     </div>

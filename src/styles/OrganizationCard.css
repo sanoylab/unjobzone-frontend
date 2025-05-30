@@ -215,4 +215,102 @@
 
 .org-card[data-category="other"] {
   border-bottom: 3px solid #718096;
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .org-card {
+  background-color: #1f1f1f;
+  border-color: rgba(80, 80, 80, 0.3);
+}
+
+body.dark-mode .org-card:hover {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .org-card .org-logo-container {
+  background: #2d2d2d;
+}
+
+body.dark-mode .org-card .org-logo-backdrop {
+  background-color: rgba(75, 144, 214, 0.05);
+}
+
+body.dark-mode .org-card .org-logo-backdrop:nth-child(2) {
+  background-color: rgba(75, 144, 214, 0.03);
+}
+
+body.dark-mode .org-card .org-logo {
+  filter: brightness(1.2) drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+body.dark-mode .org-card .job-count-badge {
+  background-color: rgba(75, 144, 214, 0.15);
+  color: #4b90d6;
+}
+
+body.dark-mode .org-card:hover .job-count-badge {
+  background-color: #1f3a60;
+  color: white;
+  box-shadow: 0 3px 10px rgba(31, 58, 96, 0.4);
+}
+
+body.dark-mode .org-card .org-title {
+  color: #e4e4e4;
+}
+
+body.dark-mode .org-card:hover .org-title {
+  color: #4b90d6;
+}
+
+body.dark-mode .org-card .org-description {
+  color: #b0b0b0;
+}
+
+body.dark-mode .org-card .card-footer {
+  border-color: rgba(80, 80, 80, 0.3);
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .org-card .action-button {
+  color: #4b90d6;
+  border-color: rgba(75, 144, 214, 0.3);
+}
+
+body.dark-mode .org-card:hover .action-button {
+  background-color: #1f3a60;
+  color: white;
+  border-color: #1f3a60;
+}
+
+body.dark-mode .org-meta {
+  border-color: rgba(80, 80, 80, 0.2);
+}
+
+body.dark-mode .org-meta-item {
+  color: #b0b0b0;
+}
+
+body.dark-mode .org-meta-item i {
+  color: #4b90d6;
+}
+
+/* Fix category colors in dark mode */
+body.dark-mode .org-card[data-category="specialized"] {
+  border-bottom: 3px solid #4b90d6;
+}
+
+body.dark-mode .org-card[data-category="programme"] {
+  border-bottom: 3px solid #4ade80;
+}
+
+body.dark-mode .org-card[data-category="fund"] {
+  border-bottom: 3px solid #f59e0b;
+}
+
+body.dark-mode .org-card[data-category="secretariat"] {
+  border-bottom: 3px solid #a78bfa;
+}
+
+body.dark-mode .org-card[data-category="other"] {
+  border-bottom: 3px solid #9ca3af;
 } 

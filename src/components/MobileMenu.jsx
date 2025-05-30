@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function MobileMenu() {
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
+  
   return (
     <div
     className="offcanvas offcanvas-end"
@@ -64,6 +68,16 @@ function MobileMenu() {
                   >
                     Blog
                   </Link>
+                </li>
+                <li className="navigation__menu--item-mobile">
+                  <button 
+                    className="navigation__menu--item-mobile__link theme-toggle text-start w-100"
+                    onClick={toggleTheme}
+                    style={{border: 'none', background: 'none'}}
+                  >
+                    {darkMode ? 'Light Mode ' : 'Dark Mode '}
+                    <i className={darkMode ? "fa-regular fa-sun" : "fa-regular fa-moon"}></i>
+                  </button>
                 </li>
               </ul>
             </nav>

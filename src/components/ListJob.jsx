@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const ListJob = ({
   id,
@@ -11,6 +12,7 @@ const ListJob = ({
   dept,
   logo,
 }) => {
+  const { darkMode } = useContext(ThemeContext);
   // Calculate days remaining until end date
   const today = new Date();
   const endDateObj = new Date(end_date);
@@ -32,12 +34,12 @@ const ListJob = ({
   return (
     <div className="col-lg-12" style={{ paddingRight: '0px', marginBottom: '16px' }}>
       <div style={{
-        background: 'white',
+        background: darkMode ? '#1f1f1f' : 'white',
         borderRadius: '12px',
         boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
         padding: '20px 24px',
         transition: 'transform 0.2s ease, box-shadow 0.2s ease',
-        border: '1px solid rgba(226, 232, 240, 0.6)',
+        border: darkMode ? '1px solid rgba(80, 80, 80, 0.3)' : '1px solid rgba(226, 232, 240, 0.6)',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
@@ -93,7 +95,7 @@ const ListJob = ({
               style={{
                 fontSize: '1.18rem',
                 fontWeight: 800,
-                color: '#1B4B82',
+                color: darkMode ? '#e4e4e4' : '#1B4B82',
                 textDecoration: 'none',
                 display: 'block',
                 marginBottom: '8px',
@@ -111,7 +113,7 @@ const ListJob = ({
               flexWrap: 'wrap',
               gap: '16px',
               fontSize: '0.97rem',
-              color: '#4A5568',
+              color: darkMode ? '#b0b0b0' : '#4A5568',
             }}>
               {/* Department */}
               <div style={{
@@ -163,7 +165,7 @@ const ListJob = ({
           <span style={{
             fontSize: '0.92rem',
             fontWeight: 500,
-            color: '#718096',
+            color: darkMode ? '#aaaaaa' : '#718096',
             marginBottom: '4px',
           }}>
             Deadline
@@ -173,7 +175,7 @@ const ListJob = ({
           <span style={{
             fontSize: '0.98rem',
             fontWeight: 500, 
-            color: hasExpired ? '#E53E3E' : isEndingSoon ? '#DD6B20' : '#1B4B82',
+            color: hasExpired ? '#E53E3E' : isEndingSoon ? '#DD6B20' : darkMode ? '#e4e4e4' : '#1B4B82',
             whiteSpace: 'nowrap',
           }}>
             {formattedEndDate}
@@ -184,7 +186,7 @@ const ListJob = ({
             <span style={{
               fontSize: '0.97rem',
               color: '#E53E3E',
-              background: 'rgba(229, 62, 62, 0.1)',
+              background: darkMode ? 'rgba(229, 62, 62, 0.2)' : 'rgba(229, 62, 62, 0.1)',
               padding: '3px 10px',
               borderRadius: '2rem',
               marginTop: '6px',
@@ -196,7 +198,7 @@ const ListJob = ({
             <span style={{
               fontSize: '0.97rem',
               color: '#DD6B20',
-              background: 'rgba(221, 107, 32, 0.1)',
+              background: darkMode ? 'rgba(221, 107, 32, 0.2)' : 'rgba(221, 107, 32, 0.1)',
               padding: '3px 10px',
               borderRadius: '2rem',
               marginTop: '6px',
@@ -207,8 +209,8 @@ const ListJob = ({
           ) : (
             <span style={{
               fontSize: '0.97rem',
-              color: '#38A169',
-              background: 'rgba(56, 161, 105, 0.1)',
+              color: darkMode ? '#4ade80' : '#38A169',
+              background: darkMode ? 'rgba(56, 161, 105, 0.2)' : 'rgba(56, 161, 105, 0.1)',
               padding: '3px 10px',
               borderRadius: '2rem',
               marginTop: '6px',

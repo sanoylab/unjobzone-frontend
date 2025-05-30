@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import un_logo from '../assets/img/un-logo.png';
 import who_logo from '../assets/img/who-logo.png';
@@ -6,14 +6,19 @@ import unicef_logo from '../assets/img/unicef-logo.png';
 import unhcr_logo from '../assets/img/unhcr-logo.png';
 import unfpa_logo from '../assets/img/unfpa.png';
 import unaids_logo from '../assets/img/unaids-logo.png';
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const APP_URL = import.meta.env.VITE_APP_URI;
 
 function JobDetailHero({ job }) {
+  const { darkMode } = useContext(ThemeContext);
+
   return (
     <section style={{
       width: '100%',
-      background: 'linear-gradient(100deg, #f8fafc 0%, #edf2f7 100%)',
+      background: darkMode 
+        ? 'linear-gradient(100deg, #121212 0%, #1a1a1a 100%)'
+        : 'linear-gradient(100deg, #f8fafc 0%, #edf2f7 100%)',
       position: 'relative',
       overflow: 'visible',
       display: 'flex',
@@ -22,7 +27,9 @@ function JobDetailHero({ job }) {
       zIndex: 1,
       padding: '2.2rem 1rem 2.4rem',
       minHeight: '200px',
-      boxShadow: 'inset 0 -1px 0 0 rgba(0,0,0,0.05)',
+      boxShadow: darkMode 
+        ? 'inset 0 -1px 0 0 rgba(255,255,255,0.05)'
+        : 'inset 0 -1px 0 0 rgba(0,0,0,0.05)',
       marginBottom: '20px',
     }}>
       {/* Simple accent line */}
@@ -32,17 +39,19 @@ function JobDetailHero({ job }) {
         top: '50%',
         width: '15%',
         height: '2px',
-        background: 'linear-gradient(90deg, #3182ce 0%, transparent 100%)',
+        background: darkMode 
+          ? 'linear-gradient(90deg, #4b90d6 0%, transparent 100%)'
+          : 'linear-gradient(90deg, #3182ce 0%, transparent 100%)',
         zIndex: 0,
       }} />
       
       {/* Scattered UN Agency Logos */}
-      <img src={un_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '5%', top: '20%', width: '60px', height: '60px', opacity: 0.1, zIndex: 0, filter: 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo1 14s ease-in-out infinite alternate' }} />
-      <img src={who_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '82%', top: '15%', width: '65px', height: '65px', opacity: 0.1, zIndex: 0, filter: 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo2 16s ease-in-out infinite alternate' }} />
-      <img src={unicef_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '12%', top: '72%', width: '62px', height: '62px', opacity: 0.09, zIndex: 0, filter: 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo3 18s ease-in-out infinite alternate' }} />
-      <img src={unhcr_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '74%', top: '68%', width: '58px', height: '58px', opacity: 0.1, zIndex: 0, filter: 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo4 15s ease-in-out infinite alternate' }} />
-      <img src={unfpa_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '25%', top: '30%', width: '55px', height: '55px', opacity: 0.09, zIndex: 0, filter: 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo5 17s ease-in-out infinite alternate' }} />
-      <img src={unaids_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '66%', top: '24%', width: '60px', height: '60px', opacity: 0.1, zIndex: 0, filter: 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo6 19s ease-in-out infinite alternate' }} />
+      <img src={un_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '5%', top: '20%', width: '60px', height: '60px', opacity: darkMode ? 0.05 : 0.1, zIndex: 0, filter: darkMode ? 'grayscale(60%) contrast(70%) brightness(1.5)' : 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo1 14s ease-in-out infinite alternate' }} />
+      <img src={who_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '82%', top: '15%', width: '65px', height: '65px', opacity: darkMode ? 0.05 : 0.1, zIndex: 0, filter: darkMode ? 'grayscale(60%) contrast(70%) brightness(1.5)' : 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo2 16s ease-in-out infinite alternate' }} />
+      <img src={unicef_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '12%', top: '72%', width: '62px', height: '62px', opacity: darkMode ? 0.04 : 0.09, zIndex: 0, filter: darkMode ? 'grayscale(60%) contrast(70%) brightness(1.5)' : 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo3 18s ease-in-out infinite alternate' }} />
+      <img src={unhcr_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '74%', top: '68%', width: '58px', height: '58px', opacity: darkMode ? 0.05 : 0.1, zIndex: 0, filter: darkMode ? 'grayscale(60%) contrast(70%) brightness(1.5)' : 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo4 15s ease-in-out infinite alternate' }} />
+      <img src={unfpa_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '25%', top: '30%', width: '55px', height: '55px', opacity: darkMode ? 0.04 : 0.09, zIndex: 0, filter: darkMode ? 'grayscale(60%) contrast(70%) brightness(1.5)' : 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo5 17s ease-in-out infinite alternate' }} />
+      <img src={unaids_logo} alt="UN Agency Logo" style={{ position: 'absolute', left: '66%', top: '24%', width: '60px', height: '60px', opacity: darkMode ? 0.05 : 0.1, zIndex: 0, filter: darkMode ? 'grayscale(60%) contrast(70%) brightness(1.5)' : 'grayscale(60%) contrast(70%) brightness(1.1)', objectFit: 'contain', animation: 'floatLogo6 19s ease-in-out infinite alternate' }} />
       
       <div style={{
         position: 'relative',
@@ -56,10 +65,13 @@ function JobDetailHero({ job }) {
         justifyContent: 'flex-start',
         padding: '1.8rem',
         borderRadius: '0.75rem',
-        background: 'white',
-        boxShadow: '0 1px 2px rgba(0,0,0,0.06)',
+        background: darkMode ? '#1f1f1f' : 'white',
+        boxShadow: darkMode 
+          ? '0 1px 2px rgba(0,0,0,0.3)'
+          : '0 1px 2px rgba(0,0,0,0.06)',
         animation: 'fadeInUpHero 0.8s ease-out both',
         gap: '24px',
+        border: darkMode ? '1px solid rgba(80, 80, 80, 0.3)' : 'none',
       }}>
         {/* Organization logo */}
         <div style={{
@@ -68,6 +80,9 @@ function JobDetailHero({ job }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          background: darkMode ? 'rgba(255, 255, 255, 0.05)' : 'transparent',
+          borderRadius: '8px',
+          padding: '12px',
         }}>
           <img
             src={`${APP_URL}/assets/logo/${job.logo}`}
@@ -76,6 +91,7 @@ function JobDetailHero({ job }) {
               maxWidth: '100%',
               maxHeight: '100%',
               objectFit: 'contain',
+              filter: darkMode ? 'brightness(0.9)' : 'none',
             }}
           />
         </div>
@@ -91,7 +107,7 @@ function JobDetailHero({ job }) {
             fontSize: '1.1rem',
             fontWeight: 700,
             fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
-            color: '#1B4B82',
+            color: darkMode ? '#e4e4e4' : '#1B4B82',
             lineHeight: 1.3,
             margin: 0,
             maxWidth: '100%',
@@ -106,7 +122,7 @@ function JobDetailHero({ job }) {
             flexWrap: 'wrap',
             gap: '16px',
             fontSize: '0.97rem',
-            color: '#4A5568',
+            color: darkMode ? '#b0b0b0' : '#4A5568',
           }}>
             {/* Location */}
             <div style={{
@@ -114,7 +130,7 @@ function JobDetailHero({ job }) {
               alignItems: 'center',
               gap: '6px',
             }}>
-              <i className="fa-light fa-location-dot" style={{ color: '#1B4B82', fontSize: '14px' }}></i>
+              <i className="fa-light fa-location-dot" style={{ color: darkMode ? '#4b90d6' : '#1B4B82', fontSize: '14px' }}></i>
               <span style={{ fontWeight: 500 }}>{job.duty_station}</span>
             </div>
             
@@ -125,7 +141,7 @@ function JobDetailHero({ job }) {
                 alignItems: 'center',
                 gap: '6px',
               }}>
-                <i className="fa-light rt-briefcase" style={{ color: '#1B4B82', fontSize: '14px' }}></i>
+                <i className="fa-light rt-briefcase" style={{ color: darkMode ? '#4b90d6' : '#1B4B82', fontSize: '14px' }}></i>
                 <span style={{ fontWeight: 500 }}>{job.jc}</span>
               </div>
             )}
@@ -137,7 +153,7 @@ function JobDetailHero({ job }) {
                 alignItems: 'center',
                 gap: '6px',
               }}>
-                <i className="fa-light fa-layer-group" style={{ color: '#1B4B82', fontSize: '14px' }}></i>
+                <i className="fa-light fa-layer-group" style={{ color: darkMode ? '#4b90d6' : '#1B4B82', fontSize: '14px' }}></i>
                 <span style={{ fontWeight: 500 }}>{job.job_level}</span>
               </div>
             )}
@@ -149,7 +165,7 @@ function JobDetailHero({ job }) {
                 alignItems: 'center',
                 gap: '6px',
               }}>
-                <i className="fa-light fa-hashtag" style={{ color: '#1B4B82', fontSize: '14px' }}></i>
+                <i className="fa-light fa-hashtag" style={{ color: darkMode ? '#4b90d6' : '#1B4B82', fontSize: '14px' }}></i>
                 <span style={{ fontWeight: 500 }}>{job.job_code_title}</span>
               </div>
             )}
@@ -161,7 +177,7 @@ function JobDetailHero({ job }) {
                 alignItems: 'center',
                 gap: '6px',
               }}>
-                <i className="fa-light fa-chart-simple" style={{ color: '#1B4B82', fontSize: '14px' }}></i>
+                <i className="fa-light fa-chart-simple" style={{ color: darkMode ? '#4b90d6' : '#1B4B82', fontSize: '14px' }}></i>
                 <span style={{ fontWeight: 500 }}>{job.jl}</span>
               </div>
             )}
@@ -176,7 +192,9 @@ function JobDetailHero({ job }) {
         top: '60%',
         width: '15%',
         height: '2px',
-        background: 'linear-gradient(90deg, transparent 0%, #3182ce 100%)',
+        background: darkMode 
+          ? 'linear-gradient(90deg, transparent 0%, #4b90d6 100%)'
+          : 'linear-gradient(90deg, transparent 0%, #3182ce 100%)',
         zIndex: 0,
       }} />
       

@@ -1,12 +1,14 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import JobCategory from "./JobCategory";
 import { getJobCategories } from "../Api";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function JobCategoryCards() {
   const [jobCategories, setJobCategories] = useState([]);
   const [isExpanded, setIsExpanded] = useState(false);
   const [visibleCategories, setVisibleCategories] = useState(6);
+  const { darkMode } = useContext(ThemeContext);
 
   const initialLoadCount = 6;
   const loadMoreCount = 6;
@@ -63,12 +65,13 @@ function JobCategoryCards() {
         top: '0',
         transform: 'translateX(-50%)',
         zIndex: 0,
-        opacity: 0.07,
+        opacity: darkMode ? 0.05 : 0.07,
         fontSize: '16rem',
         pointerEvents: 'none',
         width: '100%',
         textAlign: 'center',
         animation: 'floatSectionBlob 18s ease-in-out infinite',
+        color: darkMode ? '#4b90d6' : 'inherit'
       }}>
         <i className="fas fa-globe-africa"></i>
       </div>
@@ -80,11 +83,13 @@ function JobCategoryCards() {
           <h2 style={{
             fontSize: '2.75rem',
             fontWeight: 800,
-            color: '#1B4B82',
+            color: darkMode ? '#e4e4e4' : '#1B4B82',
             marginBottom: '1rem',
             lineHeight: 1.2,
             letterSpacing: '-1px',
-            background: 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
+            background: darkMode 
+              ? 'linear-gradient(90deg, #4b90d6 0%, #1f3a60 100%)'
+              : 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
@@ -93,7 +98,7 @@ function JobCategoryCards() {
           </h2>
           <p style={{
             fontSize: '1.15rem',
-            color: '#4A5568',
+            color: darkMode ? '#b0b0b0' : '#4A5568',
             maxWidth: '650px',
             margin: '0 auto',
             lineHeight: 1.7,
@@ -104,7 +109,11 @@ function JobCategoryCards() {
         </div>
 
         {jobCategories.length === 0 && (
-          <p style={{ textAlign: 'center', fontSize: '1.1rem', color: '#4A5568' }}>Loading categories or no categories found.</p>
+          <p style={{ 
+            textAlign: 'center', 
+            fontSize: '1.1rem', 
+            color: darkMode ? '#b0b0b0' : '#4A5568' 
+          }}>Loading categories or no categories found.</p>
         )}
 
         {jobCategories.length > 0 && (
@@ -126,7 +135,9 @@ function JobCategoryCards() {
             <button 
               onClick={handleToggleExpand}
               style={{
-                background: 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
+                background: darkMode 
+                  ? 'linear-gradient(90deg, #4b90d6 0%, #1f3a60 100%)'
+                  : 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
                 color: '#FFFFFF',
                 padding: '0.95rem 2.3rem',
                 borderRadius: '2rem',
@@ -134,15 +145,21 @@ function JobCategoryCards() {
                 fontSize: '1.08rem',
                 fontWeight: 600,
                 cursor: 'pointer',
-                boxShadow: '0 4px 18px rgba(27, 75, 130, 0.13)',
+                boxShadow: darkMode 
+                  ? '0 4px 18px rgba(0, 0, 0, 0.25)'
+                  : '0 4px 18px rgba(27, 75, 130, 0.13)',
                 transition: 'background 0.2s, transform 0.2s',
               }}
               onMouseOver={e => {
-                e.currentTarget.style.background = 'linear-gradient(90deg, #1B4B82 0%, #1B8EF2 100%)';
+                e.currentTarget.style.background = darkMode 
+                  ? 'linear-gradient(90deg, #1f3a60 0%, #4b90d6 100%)'
+                  : 'linear-gradient(90deg, #1B4B82 0%, #1B8EF2 100%)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseOut={e => {
-                e.currentTarget.style.background = 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)';
+                e.currentTarget.style.background = darkMode 
+                  ? 'linear-gradient(90deg, #4b90d6 0%, #1f3a60 100%)'
+                  : 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)';
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >

@@ -77,6 +77,45 @@
   }
 }
 
+/* Dark Mode Styles */
+body.dark-mode .search-container .input-group {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .search-container .input-group-text,
+body.dark-mode .search-container .form-control {
+  background-color: #2d2d2d !important;
+  border-color: #444 !important;
+  color: #e4e4e4;
+}
+
+body.dark-mode .search-container .form-control::placeholder {
+  color: #999;
+}
+
+body.dark-mode .search-container .form-control:focus {
+  border-color: #444;
+}
+
+body.dark-mode .stat-card {
+  background-color: #1f1f1f;
+  border-color: rgba(80, 80, 80, 0.3);
+  color: #e4e4e4;
+}
+
+body.dark-mode .stat-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .section-heading .heading-line {
+  background: linear-gradient(90deg, #4b90d6, #63b3ed);
+}
+
+body.dark-mode .no-results {
+  background-color: #1f1f1f;
+  color: #e4e4e4;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .search-container {

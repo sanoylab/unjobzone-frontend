@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import LinkedInPage from "./LinkedInPage";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function Header() {
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
+  
   return (
     <header className="rts__section rts__header absolute__header">
       <div className="container-none">
-        <div className="rts__menu__background">
+        <div className="rts__menu__background" style={{
+          backgroundColor: darkMode ? '#1f1f1f' : ''
+        }}>
           <div className="row">
             <div className="d-flex align-items-center justify-content-between">
               <div className="rts__logo">
@@ -27,23 +32,32 @@ function Header() {
                 <nav className="navigation__menu" id="offcanvas__menu">
                   <ul className="list-unstyled">
                   <li className="navigation__menu--item">
-                      <Link to="/" className="navigation__menu--item__link">
+                      <Link to="/" className="navigation__menu--item__link" style={{
+                        color: darkMode ? '#e4e4e4' : ''
+                      }}>
                         Home
                       </Link>
                     </li>
                     <li className="navigation__menu--item">
-                      <Link to="/jobs" className="navigation__menu--item__link">
+                      <Link to="/jobs" className="navigation__menu--item__link" style={{
+                        color: darkMode ? '#e4e4e4' : ''
+                      }}>
                         Browse Jobs
                       </Link>
                     </li>
                     <li className="navigation__menu--item">
-                    <Link to="/job-categories" className="navigation__menu--item__link">Job Category</Link>
+                    <Link to="/job-categories" className="navigation__menu--item__link" style={{
+                      color: darkMode ? '#e4e4e4' : ''
+                    }}>Job Category</Link>
                     
                   </li>
                     <li className="navigation__menu--item">
                       <Link
                         to="/organizations"
                         className="navigation__menu--item__link"
+                        style={{
+                          color: darkMode ? '#e4e4e4' : ''
+                        }}
                       >
                         Organizations
                       </Link>
@@ -52,6 +66,9 @@ function Header() {
                       <Link
                         to="/duty-stations"
                         className="navigation__menu--item__link"
+                        style={{
+                          color: darkMode ? '#e4e4e4' : ''
+                        }}
                       >
                         Duty Stations
                       </Link>
@@ -60,9 +77,30 @@ function Header() {
                       <Link
                         to="/blog"
                         className="navigation__menu--item__link"
+                        style={{
+                          color: darkMode ? '#e4e4e4' : ''
+                        }}
                       >
                         Blog
                       </Link>
+                    </li>
+                    <li className="navigation__menu--item d-flex align-items-center">
+                      <button 
+                        className="theme-toggle"
+                        onClick={toggleTheme}
+                        aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          height: '100%',
+                          padding: '0 15px',
+                          margin: 0,
+                          position: 'relative',
+                          color: darkMode ? '#e4e4e4' : ''
+                        }}
+                      >
+                        <i className={darkMode ? "fa-regular fa-sun" : "fa-regular fa-moon"}></i>
+                      </button>                    
                     </li>
                   </ul>
                 </nav>
