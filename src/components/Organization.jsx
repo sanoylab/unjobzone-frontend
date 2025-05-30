@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import OrganizationCard from "./OrganizationCard";
 import { getJobOrganization } from "../Api";
 import Spinner from "./Spinner";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function Organization({ searchFilter = '' }) {
   const [organizations, setOrganizations] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filteredOrgs, setFilteredOrgs] = useState([]);
   const APP_URL = import.meta.env.VITE_APP_URI;
+  const { darkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     async function fetchOrganizations() {
@@ -50,9 +52,9 @@ function Organization({ searchFilter = '' }) {
       <div className="row justify-content-center">
         <div className="col-md-8 text-center py-5">
           <div className="no-results">
-            <i className="fa-solid fa-search fa-3x text-muted mb-3"></i>
-            <h3>No organizations found</h3>
-            <p className="text-muted">Try adjusting your search terms</p>
+            <i className="fa-solid fa-search fa-3x mb-3" style={{ color: darkMode ? '#4b90d6' : '#6c757d' }}></i>
+            <h3 style={{ color: darkMode ? '#e4e4e4' : '' }}>No organizations found</h3>
+            <p style={{ color: darkMode ? '#b0b0b0' : '#6c757d' }}>Try adjusting your search terms</p>
           </div>
         </div>
       </div>
@@ -78,7 +80,7 @@ function Organization({ searchFilter = '' }) {
       {filteredOrgs.length > 0 && (
         <div className="row mt-5">
           <div className="col-12 text-center">
-            <p className="text-muted mb-0">
+            <p style={{ color: darkMode ? '#b0b0b0' : '#6c757d' }} className="mb-0">
               Showing {filteredOrgs.length} {filteredOrgs.length === 1 ? 'organization' : 'organizations'}
             </p>
           </div>

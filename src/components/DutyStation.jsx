@@ -1,7 +1,8 @@
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useContext } from "react";
 import DutyStationCard from "./DutyStationCard";
 import { getDutyStation } from "../Api";
 import Spinner from "./Spinner";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 // Predefined region categories
 const regions = [
@@ -44,6 +45,7 @@ function DutyStation() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('all');
   const [totalPositions, setTotalPositions] = useState(0);
+  const { darkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     async function fetchDutyStations() {
@@ -112,6 +114,11 @@ function DutyStation() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               aria-label="Search"
+              style={{
+                backgroundColor: darkMode ? '#2d2d2d' : '',
+                borderColor: darkMode ? '#444' : '',
+                color: darkMode ? '#e4e4e4' : ''
+              }}
             />
           </div>
           <div className="col-md-6">
@@ -121,6 +128,18 @@ function DutyStation() {
                   key={region.id}
                   className={`region-filter ${selectedRegion === region.id ? 'active' : ''}`}
                   onClick={() => setSelectedRegion(region.id)}
+                  style={{
+                    backgroundColor: darkMode 
+                      ? selectedRegion === region.id 
+                        ? '#1f3a60' 
+                        : '#2d2d2d'
+                      : '',
+                    color: darkMode 
+                      ? selectedRegion === region.id 
+                        ? 'white' 
+                        : '#b0b0b0'
+                      : ''
+                  }}
                 >
                   {region.name}
                   {regionCounts[region.id] > 0 && (
@@ -135,9 +154,9 @@ function DutyStation() {
 
       {filteredStations.length === 0 ? (
         <div className="no-results">
-          <i className="fa-solid fa-search"></i>
-          <h3>No duty stations found</h3>
-          <p>Try adjusting your search or filter criteria</p>
+          <i className="fa-solid fa-search" style={{ color: darkMode ? '#4b90d6' : '#cbd5e0' }}></i>
+          <h3 style={{ color: darkMode ? '#e4e4e4' : '#4a5568' }}>No duty stations found</h3>
+          <p style={{ color: darkMode ? '#b0b0b0' : '#718096' }}>Try adjusting your search or filter criteria</p>
         </div>
       ) : (
         <div className="stations-grid">
@@ -154,7 +173,7 @@ function DutyStation() {
           
           <div className="row mt-4">
             <div className="col-12 text-center">
-              <p className="text-muted">
+              <p style={{ color: darkMode ? '#b0b0b0' : '#718096' }}>
                 Showing {filteredStations.length} of {dutyStations.length} duty stations
               </p>
             </div>

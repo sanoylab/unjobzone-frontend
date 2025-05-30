@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { getJobFunctionCategories} from '../Api'
 import JobCategory from '../components/JobCategory';
 import Hero from '../components/Hero';
 import HomeHeader from '../components/HomeHeader';
+import { ThemeContext } from "../contexts/ThemeContext";
 
 // Define icon mapping for common UN job categories
 const categoryIconMap = {
@@ -66,6 +67,7 @@ const findCategoryIcon = (categoryName) => {
 
 function JobCategoryPage() {
   const [jobCategories, setJobCategories] = useState([]);
+  const { darkMode } = useContext(ThemeContext);
   
   useEffect(() => {
     async function fetchJobCategories() {
@@ -85,7 +87,7 @@ function JobCategoryPage() {
   }, []);
   
   return (
-    <div>
+    <div style={{ backgroundColor: darkMode ? '#121212' : '#fafbfc', minHeight: '100vh' }}>
       <Hero title="Job Categories" />
       <div className="rts__section section__padding overflow-hidden">
         <div className="container">

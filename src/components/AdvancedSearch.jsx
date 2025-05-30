@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ThemeContext } from "../contexts/ThemeContext";
 import { getJobOrganization, getJobCategories, getDutyStation }  from '../Api';
 
 function AdvancedSearch() {
+  const { darkMode } = useContext(ThemeContext);
   const [organizations, setOrganizations] = useState([]);
   const [jobCategories, setJobCategories] = useState([]);
   const [dutyStations, setDutyStations] = useState([]);
@@ -69,7 +71,7 @@ function AdvancedSearch() {
     left: '16px',
     top: '50%',
     transform: 'translateY(-50%)',
-    color: '#3182CE',
+    color: darkMode ? '#4b90d6' : '#3182CE',
     fontSize: '14px',
     zIndex: 2,
     pointerEvents: 'none',
@@ -86,9 +88,9 @@ function AdvancedSearch() {
     padding: '8px 16px 8px 44px',
     fontSize: '14px',
     borderRadius: '8px',
-    border: '1px solid #E2E8F0',
-    color: '#4A5568',
-    backgroundColor: '#FFFFFF',
+    border: darkMode ? '1px solid #444' : '1px solid #E2E8F0',
+    color: darkMode ? '#e4e4e4' : '#4A5568',
+    backgroundColor: darkMode ? '#2d2d2d' : '#FFFFFF',
     transition: 'all 0.2s ease',
     outline: 'none',
     boxSizing: 'border-box'
@@ -109,12 +111,12 @@ function AdvancedSearch() {
     fontSize: '14px',
     fontWeight: '600',
     color: '#FFFFFF',
-    backgroundColor: '#3182CE',
+    backgroundColor: darkMode ? '#1f3a60' : '#3182CE',
     border: 'none',
     borderRadius: '8px',
     cursor: 'pointer',
     transition: 'all 0.2s ease',
-    boxShadow: '0 2px 4px rgba(49, 130, 206, 0.2)',
+    boxShadow: darkMode ? '0 2px 4px rgba(0, 0, 0, 0.3)' : '0 2px 4px rgba(49, 130, 206, 0.2)',
     height: '48px',
     flex: '0 0 auto',
     whiteSpace: 'nowrap'
@@ -130,13 +132,13 @@ function AdvancedSearch() {
       <div className="container">
         <div className="row">
           <div className="advanced-search-card" style={{
-            backgroundColor: '#FFFFFF',
+            backgroundColor: darkMode ? '#1f1f1f' : '#FFFFFF',
             borderRadius: '12px',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+            boxShadow: darkMode ? '0 4px 20px rgba(0,0,0,0.2)' : '0 4px 20px rgba(0,0,0,0.08)',
             padding: '24px',
             position: 'relative',
             zIndex: 10,
-            border: '1px solid rgba(226, 232, 240, 0.8)',
+            border: darkMode ? '1px solid rgba(80, 80, 80, 0.3)' : '1px solid rgba(226, 232, 240, 0.8)',
           }}>
             <form onSubmit={handleSubmit} style={{
               display: 'flex',

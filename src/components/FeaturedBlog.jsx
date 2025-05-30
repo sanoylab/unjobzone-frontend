@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { getFeaturedBlog } from "../Api";
 import Spinner from "./Spinner";
 import { marked } from "marked";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function FeaturedBlog() {
   const [feacheredBlogs, setFeaturedBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const APP_URL = import.meta.env.VITE_APP_URI;
+  const { darkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     async function fetchFeaturedBlogs() {
@@ -59,7 +61,9 @@ function FeaturedBlog() {
                 overflow: 'hidden',
                 height: '100%',
                 position: 'relative',
-                background: 'white',
+                background: darkMode ? '#1f1f1f' : 'white',
+                border: darkMode ? '1px solid rgba(80, 80, 80, 0.3)' : 'none',
+                boxShadow: darkMode ? '0 8px 32px rgba(0, 0, 0, 0.2)' : '0 8px 32px rgba(0, 0, 0, 0.05)',
               }}>
                 {/* Featured Tag */}
                 <div style={{
@@ -67,13 +71,17 @@ function FeaturedBlog() {
                   top: '20px',
                   left: '20px',
                   zIndex: 3,
-                  background: 'linear-gradient(135deg, #3182ce 0%, #2c5282 100%)',
+                  background: darkMode 
+                    ? 'linear-gradient(135deg, #4b90d6 0%, #1f3a60 100%)'
+                    : 'linear-gradient(135deg, #3182ce 0%, #2c5282 100%)',
                   color: 'white',
                   padding: '8px 18px',
                   borderRadius: '30px',
                   fontSize: '0.85rem',
                   fontWeight: '600',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.12)',
+                  boxShadow: darkMode
+                    ? '0 4px 12px rgba(0,0,0,0.25)'
+                    : '0 4px 12px rgba(0,0,0,0.12)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '6px',
@@ -107,6 +115,7 @@ function FeaturedBlog() {
                         left: 0,
                         top: 0,
                         transition: 'transform 0.6s ease',
+                        filter: darkMode ? 'brightness(0.9)' : 'none',
                       }}
                       className="featured-blog-image"
                     />
@@ -136,7 +145,7 @@ function FeaturedBlog() {
                     }}>
                       <span style={{
                         fontSize: '0.85rem',
-                        color: '#3182ce',
+                        color: darkMode ? '#4b90d6' : '#3182ce',
                         fontWeight: '600',
                       }}>
                         UN Career
@@ -145,11 +154,11 @@ function FeaturedBlog() {
                         width: '5px',
                         height: '5px',
                         borderRadius: '50%',
-                        background: '#cbd5e0',
+                        background: darkMode ? '#555' : '#cbd5e0',
                       }}></span>
                       <span style={{
                         fontSize: '0.85rem',
-                        color: '#718096',
+                        color: darkMode ? '#b0b0b0' : '#718096',
                       }}>
                         8 min read
                       </span>
@@ -159,7 +168,7 @@ function FeaturedBlog() {
                       fontSize: 'clamp(1.5rem, 2vw, 1.9rem)',
                       fontWeight: '800',
                       lineHeight: '1.3',
-                      color: '#2d3748',
+                      color: darkMode ? '#e4e4e4' : '#2d3748',
                       marginBottom: '16px',
                       transition: 'color 0.2s ease',
                     }} className="featured-blog-title">
@@ -174,7 +183,7 @@ function FeaturedBlog() {
                     <p style={{
                       fontSize: '1rem',
                       lineHeight: '1.6',
-                      color: '#4a5568',
+                      color: darkMode ? '#b0b0b0' : '#4a5568',
                       marginBottom: '24px',
                       display: '-webkit-box',
                       WebkitLineClamp: 3,
@@ -188,7 +197,7 @@ function FeaturedBlog() {
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '8px',
-                      color: '#3182ce',
+                      color: darkMode ? '#4b90d6' : '#3182ce',
                       fontWeight: '700',
                       fontSize: '1rem',
                       textDecoration: 'none',
@@ -227,8 +236,16 @@ function FeaturedBlog() {
           opacity: 1;
         }
         
+        body.dark-mode .featured-blog-item:hover .featured-blog-title {
+          color: #4b90d6;
+        }
+        
         .featured-blog-item:hover .featured-blog-title {
           color: #3182ce;
+        }
+        
+        body.dark-mode .read-more-featured:hover {
+          color: #1f3a60;
         }
         
         .read-more-featured:hover {

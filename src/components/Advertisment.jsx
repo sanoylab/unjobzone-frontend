@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 const features = [
   { icon: "fa-globe", text: "Work with a Global Mission", color: "#1B8EF2" },
@@ -12,11 +13,15 @@ const sdgIcons = [
 ];
 
 const Advertisment = () => {
+  const { darkMode } = useContext(ThemeContext);
+  
   return (
     <section style={{
       width: '100%',
       minHeight: '520px',
-      background: 'linear-gradient(120deg, #EAF2FA 0%, #B3D8FF 60%, #F5F8FF 100%)',
+      background: darkMode 
+        ? 'linear-gradient(120deg, #121212 0%, #1f3a60 60%, #1a1a1a 100%)'
+        : 'linear-gradient(120deg, #EAF2FA 0%, #B3D8FF 60%, #F5F8FF 100%)',
       position: 'relative',
       overflow: 'hidden',
       display: 'flex',
@@ -33,7 +38,9 @@ const Advertisment = () => {
         top: '40%',
         width: '600px',
         height: '600px',
-        background: 'radial-gradient(circle at 60% 40%, #1B8EF2 0%, #1B4B82 100%)',
+        background: darkMode 
+          ? 'radial-gradient(circle at 60% 40%, #0a4b91 0%, #121212 100%)'
+          : 'radial-gradient(circle at 60% 40%, #1B8EF2 0%, #1B4B82 100%)',
         opacity: 0.10,
         filter: 'blur(120px)',
         zIndex: 0,
@@ -46,8 +53,8 @@ const Advertisment = () => {
         top: '50%',
         transform: 'translate(-50%, -50%)',
         fontSize: '16rem',
-        color: '#1B8EF2',
-        opacity: 0.07,
+        color: darkMode ? '#0a4b91' : '#1B8EF2',
+        opacity: darkMode ? 0.10 : 0.07,
         zIndex: 0,
         pointerEvents: 'none',
         animation: 'spinAdvertGlobe 40s linear infinite',
@@ -62,7 +69,7 @@ const Advertisment = () => {
         width: '90px',
         height: '90px',
         background: 'linear-gradient(135deg, #F59E42 0%, #FF5E5B 100%)',
-        opacity: 0.13,
+        opacity: darkMode ? 0.15 : 0.13,
         borderRadius: '50%',
         filter: 'blur(8px)',
         zIndex: 1,
@@ -94,7 +101,9 @@ const Advertisment = () => {
           <h2 style={{
             fontSize: '2.7rem',
             fontWeight: 900,
-            background: 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
+            background: darkMode 
+              ? 'linear-gradient(90deg, #4b90d6 0%, #e4e4e4 100%)'
+              : 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text',
@@ -108,7 +117,7 @@ const Advertisment = () => {
           </h2>
           <p style={{
             fontSize: '1.18rem',
-            color: '#334E68',
+            color: darkMode ? '#b0b0b0' : '#334E68',
             marginBottom: '2.2rem',
             fontWeight: 500,
             lineHeight: 1.7,
@@ -139,38 +148,43 @@ const Advertisment = () => {
                 minWidth: '210px',
                 marginBottom: 0,
                 justifyContent: 'flex-start',
-                background: 'rgba(255,255,255,0.65)',
+                background: darkMode ? 'rgba(40, 40, 40, 0.65)' : 'rgba(255,255,255,0.65)',
                 borderRadius: '2rem',
                 padding: '0.7rem 1.3rem',
                 boxShadow: `0 2px 12px ${f.color}11`,
-                border: `1.5px solid ${f.color}22`,
+                border: darkMode ? `1.5px solid ${f.color}33` : `1.5px solid ${f.color}22`,
                 backdropFilter: 'blur(4px)',
               }}>
                 <span style={{
                   width: '2.7rem', height: '2.7rem', borderRadius: '50%',
-                  background: f.color + '22', display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: '1.45rem', color: f.color, fontWeight: 700, boxShadow: `0 2px 12px ${f.color}33`,
-                  border: `2.5px solid ${f.color}33`,
-                  filter: 'drop-shadow(0 0 8px ' + f.color + '22)',
+                  background: f.color + (darkMode ? '33' : '22'), 
+                  display: 'flex', alignItems: 'center', 
+                  justifyContent: 'center',
+                  fontSize: '1.45rem', color: f.color, fontWeight: 700, 
+                  boxShadow: `0 2px 12px ${f.color}${darkMode ? '44' : '33'}`,
+                  border: `2.5px solid ${f.color}${darkMode ? '44' : '33'}`,
+                  filter: 'drop-shadow(0 0 8px ' + f.color + (darkMode ? '33' : '22') + ')',
                   transition: 'box-shadow 0.2s',
                 }}>
                   <i className={`fa-solid ${f.icon}`}></i>
                 </span>
-                <span style={{ fontWeight: 700, color: '#1B4B82', fontSize: '1.13rem', fontFamily: 'Inter, Segoe UI, Arial, sans-serif' }}>{f.text}</span>
+                <span style={{ fontWeight: 700, color: darkMode ? '#e4e4e4' : '#1B4B82', fontSize: '1.13rem', fontFamily: 'Inter, Segoe UI, Arial, sans-serif' }}>{f.text}</span>
               </li>
             ))}
           </ul>
           {/* CTA Button */}
           <a href="#" style={{
             display: 'inline-block',
-            background: 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
+            background: darkMode 
+              ? 'linear-gradient(90deg, #0a4b91 0%, #1f3a60 100%)'
+              : 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)',
             color: '#fff',
             padding: '1.18rem 3.1rem',
             borderRadius: '2.8rem',
             fontSize: '1.18rem',
             fontWeight: 900,
             textDecoration: 'none',
-            boxShadow: '0 12px 48px rgba(27, 75, 130, 0.18)',
+            boxShadow: darkMode ? '0 12px 48px rgba(0, 0, 0, 0.3)' : '0 12px 48px rgba(27, 75, 130, 0.18)',
             letterSpacing: '-0.5px',
             position: 'relative',
             overflow: 'hidden',
@@ -180,13 +194,21 @@ const Advertisment = () => {
           }}
             onMouseOver={e => {
               e.currentTarget.style.transform = 'translateY(-4px) scale(1.045)';
-              e.currentTarget.style.background = 'linear-gradient(90deg, #1B4B82 0%, #1B8EF2 100%)';
-              e.currentTarget.style.boxShadow = '0 20px 64px rgba(27, 75, 130, 0.22)';
+              e.currentTarget.style.background = darkMode 
+                ? 'linear-gradient(90deg, #1f3a60 0%, #0a4b91 100%)'
+                : 'linear-gradient(90deg, #1B4B82 0%, #1B8EF2 100%)';
+              e.currentTarget.style.boxShadow = darkMode 
+                ? '0 20px 64px rgba(0, 0, 0, 0.4)'
+                : '0 20px 64px rgba(27, 75, 130, 0.22)';
             }}
             onMouseOut={e => {
               e.currentTarget.style.transform = 'translateY(0) scale(1)';
-              e.currentTarget.style.background = 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)';
-              e.currentTarget.style.boxShadow = '0 12px 48px rgba(27, 75, 130, 0.18)';
+              e.currentTarget.style.background = darkMode 
+                ? 'linear-gradient(90deg, #0a4b91 0%, #1f3a60 100%)'
+                : 'linear-gradient(90deg, #1B8EF2 0%, #1B4B82 100%)';
+              e.currentTarget.style.boxShadow = darkMode 
+                ? '0 12px 48px rgba(0, 0, 0, 0.3)'
+                : '0 12px 48px rgba(27, 75, 130, 0.18)';
             }}
           >
             <span style={{ position: 'relative', zIndex: 2 }}>Explore UN Jobs</span>
@@ -199,13 +221,13 @@ const Advertisment = () => {
               width: '120%',
               height: '120%',
               borderRadius: '50%',
-              background: 'radial-gradient(circle, #1B8EF2 0%, #1B4B82 100%)',
-              opacity: 0.13,
-              filter: 'blur(18px)',
+              background: darkMode 
+                ? 'radial-gradient(circle, rgba(10, 75, 145, 0.6) 0%, transparent 70%)'
+                : 'radial-gradient(circle, rgba(27, 142, 242, 0.6) 0%, transparent 70%)',
+              opacity: 0,
               zIndex: 1,
-              pointerEvents: 'none',
-              animation: 'pulseAdvertBtn 2.8s infinite alternate',
-            }} />
+              animation: 'pulseRing 2s infinite',
+            }}></span>
           </a>
         </div>
         {/* Right: Illustration */}
@@ -266,24 +288,25 @@ const Advertisment = () => {
       </div>
       <style>{`
         @keyframes floatAdvertBlob {
-          0% { transform: translateY(0px) scale(1); }
-          100% { transform: translateY(-30px) scale(1.07); }
+          0% { transform: translateY(0) scale(1) rotate(0deg); }
+          100% { transform: translateY(-25px) scale(1.1) rotate(10deg); }
+        }
+        @keyframes floatAccent {
+          0% { transform: translateY(0) scale(1); }
+          100% { transform: translateY(-15px) scale(1.1); }
         }
         @keyframes spinAdvertGlobe {
           0% { transform: translate(-50%, -50%) rotate(0deg); }
           100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
-        @keyframes floatAccent {
-          0% { transform: translateY(0px) scale(1); }
-          100% { transform: translateY(-18px) scale(1.08); }
-        }
         @keyframes fadeInUp {
-          0% { opacity: 0; transform: translateY(40px); }
+          0% { opacity: 0; transform: translateY(30px); }
           100% { opacity: 1; transform: translateY(0); }
         }
-        @keyframes pulseAdvertBtn {
-          0% { opacity: 0.13; transform: scale(1); }
-          100% { opacity: 0.22; transform: scale(1.08); }
+        @keyframes pulseRing {
+          0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
+          50% { opacity: 0.2; }
+          100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
         }
         @media (max-width: 900px) {
           div[style*='maxWidth: 1200px'] {

@@ -1,4 +1,5 @@
 import  {Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
@@ -39,7 +40,11 @@ const router = createBrowserRouter(
 );
 
 const App = () => {
-  return <RouterProvider router={router} />;  
+  return (
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
+  );  
 };
 
 export default App;

@@ -1,20 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Hero from "../components/Hero";
 import DutyStation from "../components/DutyStation";
 import '../styles/DutyStationPage.css';
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function DutyStationPage() {
+  const { darkMode } = useContext(ThemeContext);
+  
   return (
     <div className="duty-station-page">
       <Hero 
         title="UN Duty Stations" 
-        subtitle="Explore opportunities in UN offices across the globe"
+        subtitle=""
       />
       
       {/* World Map Visualization */}
       <div className="container">
-        <div className="world-map-container">
-          <div className="map-background"></div>
+        <div className="world-map-container" style={{
+          backgroundColor: darkMode ? '#1f1f1f' : '',
+          borderColor: darkMode ? 'rgba(80, 80, 80, 0.3)' : ''
+        }}>
+          <div className="map-background" style={{
+            opacity: darkMode ? 0.2 : 0.1
+          }}></div>
           <div className="map-overlay"></div>
           
           {/* Map Visualization Elements */}
@@ -45,18 +53,21 @@ function DutyStationPage() {
           
           {/* Stats Display */}
           <div className="world-stats-container">
-            <div className="duty-stats">
+            <div className="duty-stats" style={{
+              backgroundColor: darkMode ? 'rgba(40, 40, 40, 0.8)' : 'rgba(255, 255, 255, 0.8)',
+              borderColor: darkMode ? 'rgba(80, 80, 80, 0.3)' : ''
+            }}>
               <div className="stat-item">
-                <h2>190+</h2>
-                <p>Member States</p>
+                <h2 style={{ color: darkMode ? '#e4e4e4' : '' }}>190+</h2>
+                <p style={{ color: darkMode ? '#b0b0b0' : '' }}>Member States</p>
               </div>
               <div className="stat-item">
-                <h2>80+</h2>
-                <p>Duty Stations</p>
+                <h2 style={{ color: darkMode ? '#e4e4e4' : '' }}>80+</h2>
+                <p style={{ color: darkMode ? '#b0b0b0' : '' }}>Duty Stations</p>
               </div>
               <div className="stat-item">
-                <h2>1000+</h2>
-                <p>Open Positions</p>
+                <h2 style={{ color: darkMode ? '#e4e4e4' : '' }}>1000+</h2>
+                <p style={{ color: darkMode ? '#b0b0b0' : '' }}>Open Positions</p>
               </div>
             </div>
           </div>

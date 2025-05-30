@@ -3,6 +3,290 @@ a{
   color: #000;
 }
 
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e4e4e4;
+}
+
+body.dark-mode a {
+  color: #e4e4e4;
+}
+
+/* Header and Navigation */
+body.dark-mode .rts__menu__background {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .rts__header.sticky {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode .rts__header.absolute__header {
+  background-color: transparent;
+}
+
+body.dark-mode .rts__header.relative__header {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .rts__header.sticky .rts__menu__background {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode .navigation__menu--item__link {
+  color: #e4e4e4;
+}
+
+/* Add hover state for dark mode navigation menu items */
+body.dark-mode .navigation__menu--item__link:hover {
+  color: #4b90d6 !important;
+  text-shadow: 0 0 0.5px #4b90d6;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+body.dark-mode .navigation__menu--item-mobile__link {
+  color: #e4e4e4;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Add hover state for mobile menu items in dark mode */
+body.dark-mode .navigation__menu--item-mobile__link:hover {
+  color: #4b90d6;
+}
+
+/* Cards and Content */
+body.dark-mode .rts__job__card,
+body.dark-mode .single__cat,
+body.dark-mode .organization-card,
+body.dark-mode .offcanvas {
+  background-color: #1f1f1f;
+  color: #e4e4e4;
+  border-color: #333;
+}
+
+/* Hero Sections */
+body.dark-mode .rts__banner,
+body.dark-mode .home__six__banner,
+body.dark-mode .rts__breadcrumb,
+body.dark-mode .home__hero {
+  background-color: #1f1f1f;
+  color: #e4e4e4;
+}
+
+body.dark-mode .breadcrumb-title,
+body.dark-mode .home__six__banner-content h1,
+body.dark-mode .home__six__banner-content p,
+body.dark-mode .rts__headline {
+  color: #e4e4e4;
+}
+
+/* Job Listings and Details */
+body.dark-mode .rts__job__details,
+body.dark-mode .rts__service__card,
+body.dark-mode .rts__single__blog,
+body.dark-mode .blog__item,
+body.dark-mode .single__blog__inner {
+  background-color: #1f1f1f;
+  color: #e4e4e4;
+  border-color: #333;
+}
+
+/* Advertisements */
+body.dark-mode .rts__advertisement,
+body.dark-mode .rts__advertisement .content-wrapper {
+  background-color: #1f1f1f;
+  color: #e4e4e4;
+}
+
+/* Footer */
+body.dark-mode .rts__footer,
+body.dark-mode .rts__footer-widgets,
+body.dark-mode .rts__footer-copyright {
+  background-color: #1a1a1a;
+  color: #e4e4e4;
+  border-color: #333;
+}
+
+body.dark-mode .footer__copyright {
+  background-color: #161616;
+}
+
+/* Forms and Inputs */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea,
+body.dark-mode .form-control,
+body.dark-mode .rts__finder__form,
+body.dark-mode .rts__form__group,
+body.dark-mode .react-datepicker__input-container input {
+  background-color: #2d2d2d;
+  color: #e4e4e4;
+  border-color: #444;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode select::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aaa;
+}
+
+/* Buttons */
+body.dark-mode .rts__btn,
+body.dark-mode .rts__btn-secondary {
+  background-color: #2d2d2d;
+  color: #e4e4e4;
+  border-color: #444;
+}
+
+/* Components with Inline Styles */
+/* HomeHero component - More specific targeting */
+body.dark-mode section[style*="min-height: 65vh"][style*="background: linear-gradient"] {
+  background: linear-gradient(135deg, #121212 0%, #1f3a60 60%, #0a4b91 100%) !important;
+}
+
+body.dark-mode section[style*="min-height: 65vh"] h1[style*="fontSize: '3.6rem'"] {
+  color: #e4e4e4 !important;
+}
+
+body.dark-mode section[style*="min-height: 65vh"] p[style*="fontSize: '1.15rem'"] {
+  color: #b0b0b0 !important;
+}
+
+body.dark-mode section[style*="min-height: 65vh"] div[style*="background: rgba(255, 255, 255, 0.7)"] {
+  background: rgba(50, 50, 50, 0.7) !important;
+  color: #e4e4e4 !important;
+  border-color: rgba(100, 100, 100, 0.3) !important;
+}
+
+body.dark-mode section[style*="min-height: 65vh"] div[style*="background: rgba(255,255,255,0.82)"] {
+  background: rgba(40, 40, 40, 0.82) !important;
+  border-color: rgba(80, 80, 80, 0.3) !important;
+}
+
+/* Target any inline style sections in dark mode */
+body.dark-mode section[style] {
+  background-color: #121212 !important;
+}
+
+body.dark-mode section[style*="background: linear-gradient"] {
+  background: linear-gradient(135deg, #121212 0%, #1f3a60 60%, #0a4b91 100%) !important;
+}
+
+body.dark-mode div[style*="color: #102A43"] {
+  color: #e4e4e4 !important;
+}
+
+body.dark-mode div[style*="color: #334E68"] {
+  color: #b0b0b0 !important;
+}
+
+body.dark-mode div[style*="background: rgba(255, 255, 255"] {
+  background-color: rgba(40, 40, 40, 0.85) !important;
+  border-color: rgba(80, 80, 80, 0.3) !important;
+}
+
+/* Advertisement component */
+body.dark-mode section[style*="background: linear-gradient(120deg, #EAF2FA 0%, #B3D8FF 60%, #F5F8FF 100%)"] {
+  background: linear-gradient(120deg, #121212 0%, #1f3a60 60%, #1a1a1a 100%) !important;
+}
+
+body.dark-mode li[style*="background: rgba(255,255,255,0.65)"] {
+  background: rgba(40, 40, 40, 0.65) !important;
+  border-color: rgba(80, 80, 80, 0.3) !important;
+}
+
+body.dark-mode li[style*="background: rgba(255,255,255,0.65)"] span[style*="color: #1B4B82"] {
+  color: #e4e4e4 !important;
+}
+
+body.dark-mode p[style*="color: #334E68"] {
+  color: #b0b0b0 !important;
+}
+
+/* Footer component */
+body.dark-mode footer[style*="background: linear-gradient(120deg, #EAF2FA 0%, #B3D8FF 100%)"] {
+  background: linear-gradient(120deg, #121212 0%, #1f3a60 100%) !important;
+}
+
+body.dark-mode div[style*="background: rgba(255,255,255,0.85)"] {
+  background: rgba(40, 40, 40, 0.85) !important;
+  border-color: rgba(80, 80, 80, 0.3) !important;
+}
+
+body.dark-mode span[style*="color: #334E68"] {
+  color: #b0b0b0 !important;
+}
+
+body.dark-mode div[style*="color: #1B4B82"] {
+  color: #b0b0b0 !important;
+}
+
+/* SVG elements */
+body.dark-mode svg circle {
+  opacity: 0.2 !important;
+}
+
+/* Misc UI Elements */
+body.dark-mode .offcanvas-header .btn-close {
+  filter: invert(1);
+}
+
+body.dark-mode .not-found-container {
+  background-color: #121212;
+}
+
+body.dark-mode .not-found-title {
+  color: #e4e4e4;
+}
+
+body.dark-mode .not-found-message {
+  color: #b0b0b0;
+}
+
+/* Theme Toggle Icon */
+.theme-toggle {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.2rem;
+  height: 100%;
+  position: relative;
+  top: 0;
+  vertical-align: middle;
+}
+
+.theme-toggle i {
+  transition: transform 0.3s ease, color 0.3s ease;
+  position: relative;
+  top: 0;
+  line-height: inherit;
+}
+
+/* Updated hover effect */
+.theme-toggle:hover i {
+  transform: rotate(30deg);
+  color: #4b90d6;
+}
+
+/* Style for the sun icon in dark mode */
+body.dark-mode .theme-toggle i.fa-sun {
+  color: #fbbf24; /* Amber/yellow color for the sun */
+}
+
+/* Style for the moon icon in light mode */
+body:not(.dark-mode) .theme-toggle i.fa-moon {
+  color: #3182ce; /* Blue color for the moon */
+}
+
+/* Ensure the theme toggle stays aligned with menu items during scroll */
+.navigation__menu--item .theme-toggle {
+  vertical-align: middle;
+  line-height: normal;
+}
+
 .rts__banner{
   border: 0px solid #ebeff0;
 }
